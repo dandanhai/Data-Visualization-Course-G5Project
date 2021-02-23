@@ -1,0 +1,20 @@
+name: "G5Project"
+title: "G5Project_ISSS602"
+description: |
+  G5Project_ISSS602
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Proposal"
+      href: proposal.html
+    - text: "Poster"
+      href: poster.html
+    - text: "Application"
+      href: application.html
+    - text: "User Guide"
+      href: usergudie.html
+    - text: "Research Paper"
+      href: index.html
+output: distill::distill_article

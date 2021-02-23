@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Some additional details about the blog",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-02-23T09:38:48+08:00"
+    },
+    {
+      "path": "index.html",
+      "title": "G5Project_ISSS602",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-02-23T09:38:49+08:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}
