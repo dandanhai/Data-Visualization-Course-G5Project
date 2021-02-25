@@ -2,6 +2,6 @@
 title: "G5Project_ISSS602"
 site: distill::distill_website 
 listing: 
-   post:
+   posts:
      - 2021-02-23-proposal
 ---
