@@ -1,5 +1,5 @@
 ---
-title: "Proposal"
+title: "Group 5 Proposal"
 description: |
   Below is our project proposal detail.
 author:
@@ -40,7 +40,7 @@ The project aims to use NFHS data to:
 - Visualize the relationships between vaccination and other variables.
 - Create predictive model of vaccination through Logistic regression, Decision tree and random forest
 
-# Proposed Scope and Methodology (Approach that we plan to take to solve the problem)
+# Proposed Scope and Methodology
 
 ## Data Preparation 
 
@@ -52,7 +52,7 @@ The first page of the visualization would be our Map. In the Map, we would show 
 
 The second page of the visualization would be our Exploratory Data Analysis (EDA). In our EDA, we will explore the factors that affect H1N1 vaccination. We will have visualizations for both a density plot and a multiplot. The density plot will help users visualize how every factor affects whether an individual would go for vaccination. Users can select the factors to be displayed on the correlation plot. The multiplot will help us to visualize the distribution of our target binary variable according to the factors in the survey. Users can select the factor that they wish to display on the visualization. 
 
-The third page of the visualization is our logistic regression. The fourth page is our decision tree. 
+The third page of the visualization is our logistic regression. The fourth page will showcase the decision tree and random forest model. 
 
 The last page of the visualization is our Model Comparison. 
 
@@ -76,7 +76,7 @@ Page 3: Predictive Analytics
 knitr::include_graphics('picture/3.jpg')
 ```
 
-Page 4: Decision Tree
+Page 4: Decision Tree/Random Forest
 
 Page 5: Model Comparison 
 
@@ -99,10 +99,10 @@ knitr::include_graphics('picture/4.png')
 ```
 
 # References
-Comparison of the Logistic Regression, Decision Tree, and Random Forest Models to Predict Red Wine Quality in R: https://towardsdatascience.com/comparison-of-the-logistic-regression-decision-tree-and-random-forest-models-to-predict-red-wine-313d012d6953
+Comparison of the Logistic Regression, Decision Tree, and Random Forest Models to Predict Red Wine Quality in R: <span style= "color:blue">https://towardsdatascience.com/comparison-of-the-logistic-regression-decision-tree-and-random-forest-models-to-predict-red-wine-313d012d6953</span>
 
-A COMPLETE GUIDE TO RANDOM FOREST IN R: https://www.listendata.com/2014/11/random-forest-with-r.html
+A COMPLETE GUIDE TO RANDOM FOREST IN R: <span style= "color:blue">https://www.listendata.com/2014/11/random-forest-with-r.html</span>
 
-Introduction to Random Forest in R: https://www.simplilearn.com/tutorials/data-science-tutorial/random-forest-in-r
+Introduction to Random Forest in R: <span style= "color:blue">https://www.simplilearn.com/tutorials/data-science-tutorial/random-forest-in-r</span>
 
-Logistic Regression in R: A Classification Technique to Predict Credit Card Default: https://blog.datasciencedojo.com/logistic-regression-in-r-tutorial/
+Logistic Regression in R: A Classification Technique to Predict Credit Card Default: <span style= "color:blue">https://blog.datasciencedojo.com/logistic-regression-in-r-tutorial/</span>
