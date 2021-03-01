@@ -17,9 +17,15 @@
     "input_file": {}
   },
   {
+<<<<<<< HEAD
     "path": "posts/welcome/",
     "title": "Welcome to G5Project_ISSS602",
     "description": "Welcome to our new blog, G5Project_ISSS602. We hope you enjoy \nreading what we have to say!",
+=======
+    "path": "posts/2021-02-23-proposal/",
+    "title": "Group 5 Proposal",
+    "description": "Below is our project proposal detail.",
+>>>>>>> 23315217eb8c0bc5b3cbb15e6c1c999cbc029a7e
     "author": [
       {
         "name": "Nora Jones",
@@ -28,9 +34,16 @@
     ],
     "date": "2021-02-23",
     "categories": [],
+<<<<<<< HEAD
     "contents": "\n\n\n\n",
     "preview": {},
     "last_modified": "2021-02-23T09:26:31+08:00",
     "input_file": {}
+=======
+    "contents": "\r\nMotivation of the project\r\nWith the outbreak of Covid-19 and recent advancements in vaccination, an important task that public health authorities are looking into is increasing vaccination rates. This would entail looking into the factors that result in an individual undergoing vaccination and how to predict whether an individual would go for the vaccine.\r\nOur team is interested in drawing a parallel to another 21st century pandemic, the H1N1 virus, which is also known as the swine flu, that broke out in 2009. An extensive study had been conducted by the USA known as the National 2009 H1N1 Flu Survey (NHFS) into the demographics, attitudes towards H1N1 virus or the vaccine, and whether an individual had taken the H1N1 vaccine. This extensive dataset would not just allow us to perform descriptive analytics on how H1N1 vaccination rates vary in USA, but also allows us to do predictions on whether an individual would go for the vaccine.\r\nData Source\r\nThe source for our data is provided at the following link: https://www.cdc.gov/nchs/nis/data_files_h1n1.htm\r\nProblems or issues that the project will address\r\nThis project will address the following problems:\r\nDescriptive Analytics: How do vaccination rates vary across states in the USA?\r\nPredictive Analytics: How do we predict whether an individual would go for the H1N1 vaccine?\r\nProject Objectives\r\nThe project aims to use NFHS data to:\r\nVisualize vaccination receptivity in across states in US\r\nVisualize the relationships between vaccination and other variables.\r\nCreate predictive model of vaccination through Logistic regression, Decision tree and random forest\r\nProposed Scope and Methodology\r\nData Preparation\r\nData cleaning will be done using Excel and R. Excel is used as the first preliminary data cleaning to remove columns that will not be used and to combine binary columns into a single column. As for R, we will be using it to remove rows that have blanks for our target variables and to remove columns that have a proportion of blanks above a certain percentage.\r\nVisualization\r\nThe first page of the visualization would be our Map. In the Map, we would show how the survey responses and vaccination rates differ across various states in the USA.\r\nThe second page of the visualization would be our Exploratory Data Analysis (EDA). In our EDA, we will explore the factors that affect H1N1 vaccination. We will have visualizations for both a density plot and a multiplot. The density plot will help users visualize how every factor affects whether an individual would go for vaccination. Users can select the factors to be displayed on the correlation plot. The multiplot will help us to visualize the distribution of our target binary variable according to the factors in the survey. Users can select the factor that they wish to display on the visualization.\r\nThe third page of the visualization is our logistic regression. The fourth page will showcase the decision tree and random forest model.\r\nThe last page of the visualization is our Model Comparison.\r\nEarly prototypes or storyboards\r\nPage 1: Map\r\n\r\n\r\n\r\nPage 2: Exploratory Data Analysis (EDA) - Density Plot & Multiplot\r\n\r\n\r\n\r\nPage 3: Predictive Analytics\r\n\r\n\r\n\r\nPage 4: Decision Tree/Random Forest\r\nPage 5: Model Comparison\r\nR Packages to be used\r\nPackage Name\r\nDescription\r\nShiny and shinydashboard\r\nFor building interactive web applications with R\r\ndplyr\r\nFor effective data manipulation\r\nreadr\r\nFor reading excel files in R\r\nggplot2\r\nFor plotting various visualizations and EDA\r\ndlookr\r\nFor plotting various visualizations and EDA\r\nrpart\r\nTo perform recursive partitioning I.e. Decision Tree modelling\r\nrandomForest\r\nTo perform random forest modelling\r\nProject Timeline\r\n\r\n\r\n\r\nReferences\r\nComparison of the Logistic Regression, Decision Tree, and Random Forest Models to Predict Red Wine Quality in R: https://towardsdatascience.com/comparison-of-the-logistic-regression-decision-tree-and-random-forest-models-to-predict-red-wine-313d012d6953\r\nA COMPLETE GUIDE TO RANDOM FOREST IN R: https://www.listendata.com/2014/11/random-forest-with-r.html\r\nIntroduction to Random Forest in R: https://www.simplilearn.com/tutorials/data-science-tutorial/random-forest-in-r\r\nLogistic Regression in R: A Classification Technique to Predict Credit Card Default: https://blog.datasciencedojo.com/logistic-regression-in-r-tutorial/\r\n\r\n\r\n\r\n",
+    "preview": "posts/2021-02-23-proposal/picture/1.jpg",
+    "last_modified": "2021-02-25T10:39:16+08:00",
+    "input_file": "proposal.utf8.md"
+>>>>>>> 23315217eb8c0bc5b3cbb15e6c1c999cbc029a7e
   }
 ]
