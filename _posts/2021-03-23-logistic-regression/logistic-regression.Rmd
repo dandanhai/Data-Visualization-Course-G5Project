@@ -1,4 +1,4 @@
----
+dis---
 title: "Logistic Regression"
 description: |
   A short description of the post.
@@ -11,13 +11,151 @@ output:
     self_contained: false
 ---
 
-
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+```{r}
+packages = c('tidyverse','readr','ISLR')
+for (p in packages){
+  if(!require(p, character.only = T)){
+  install.packages(p)
+  }
+  library(p,character.only= T ) 
+} 
+
+```
+
+```{r}
+H1N1 <- read_csv('data/H1N1_Final_dan_edit.csv')
+```
+
+```{r}
+glimpse(H1N1)
+```
+
+
+
+
+```{r}
+# using purrr::map to find out the NA percentage for later use. We will only select the column with missing percentage lower than 50% to run my logistic 
+map(H1N1, ~mean(is.na(.)))
+```
+
+
+
+
+
+```{r}
+#exclude the NA column in the target variable
+H1N1 <- H1N1 %>%
+  filter(!is.na(VACC_H1N1_F))
+
+#double check how many NA in the target variable 
+H1N1 %>%
+  summarise(count = sum(is.na(VACC_H1N1_F)))
+```
+
+```{r}
+H1N1$VACC_H1N1_F <- ifelse(H1N1$VACC_H1N1_F=="Yes",1,0)
+```
+
+```{r}
+# in case I mess up, I copy the database
+nH1N1 <- data.frame(H1N1)
+```
+
+
+
+
+
+
+
+```{r}
+# data modification, change all the category data with 'YES' 'NO' into 1, 0
+
+
+#target variable VACC_H1N1_F
+H1N1$VACC_H1N1_F <- ifelse(H1N1$VACC_H1N1_F=="Yes",1,0)
+
+
+# variable VACC_SEAS_F
+nH1N1$VACC_SEAS_F  <- nH1N1$VACC_SEAS_F %>%
+  replace_na('No') 
+nH1N1$VACC_SEAS_F  <- ifelse(nH1N1$VACC_SEAS_F =="Yes",1,0)
+
+# variable B_H1N1_ANTIV 
+nH1N1$B_H1N1_ANTIV  <- nH1N1$B_H1N1_ANTIV %>%
+  replace_na('No') 
+nH1N1$B_H1N1_ANTIV  <- ifelse(nH1N1$B_H1N1_ANTIV  =="Yes",1,0)
+
+# variable B_H1N1_AVOID
+nH1N1$B_H1N1_AVOID <- nH1N1$B_H1N1_AVOID %>%
+  replace_na('No')
+nH1N1$B_H1N1_AVOID <- ifelse(nH1N1$B_H1N1_AVOID == "Yes",1,0)
+
+# variable B_H1N1_FMASK 
+nH1N1$B_H1N1_FMASK <- nH1N1$B_H1N1_FMASK %>%
+  replace_na('No')
+nH1N1$B_H1N1_FMASK <- ifelse(nH1N1$B_H1N1_FMASK == "Yes",1,0)
+
+# variable B_H1N1_HANDS
+nH1N1$B_H1N1_HANDS <- nH1N1$B_H1N1_HANDS %>%
+  replace_na('No')
+nH1N1$B_H1N1_HANDS <- ifelse(nH1N1$B_H1N1_HANDS == "Yes",1,0)
+
+# variable B_H1N1_LARGE
+nH1N1$B_H1N1_LARGE <- nH1N1$B_H1N1_LARGE %>%
+  replace_na('No')
+nH1N1$B_H1N1_LARGE <- ifelse(nH1N1$B_H1N1_LARGE == "Yes",1,0)
+
+# variable B_H1N1_RCONT
+nH1N1$B_H1N1_RCONT <- nH1N1$B_H1N1_RCONT %>%
+  replace_na('No')
+nH1N1$B_H1N1_RCONT <- ifelse(nH1N1$B_H1N1_RCONT == "Yes",1,0)
+
+# variable B_H1N1_TOUCH
+nH1N1$B_H1N1_TOUCH <- nH1N1$B_H1N1_TOUCH %>%
+  replace_na('No')
+nH1N1$B_H1N1_TOUCH <- ifelse(nH1N1$B_H1N1_TOUCH == "Yes",1,0)
+
+# variable HEALTH_WORKER_F
+nH1N1$HEALTH_WORKER_F <- nH1N1$HEALTH_WORKER_F %>%
+  replace_na('No')
+nH1N1$HEALTH_WORKER_F <- ifelse(nH1N1$HEALTH_WORKER_F == 'Yes', 1,0)
+
+# variable MARITAL
+nH1N1$MARITAL <- nH1N1$MARITAL %>%
+  replace_na('Not Married')
+nH1N1$MARITAL <- ifelse(nH1N1$MARITAL == 'Married', 1,0)
+
+
+```
+
+
+
+
+
+```{r}
+# continue data modification, to replace the '#N/A' as 0, because replace_na cannot recognize it
+
+#variable concern.level
+nH1N1$CONCERN.LEVEL[nH1N1$CONCERN.LEVEL == '#N/A'] <- 0
+
+#variable INT_H1N1
+nH1N1$INT_H1N1[nH1N1$INT_H1N1 == '#N/A'] <- 0
+
+#variable KNOW_H1N1
+nH1N1$KNOW_H1N1[nH1N1$KNOW_H1N1 == '#N/A'] <- 0
+
+#variable DOCREC, redesign it as original column of 'Doctor Recommendation for H1N1 vaccine', exclude other opinion as 0
+nH1N1$DOCREC[nH1N1$DOCREC == '#N/A'] <- 0
+nH1N1$DOCREC[nH1N1$DOCREC == '2' ] <- 0
+nH1N1$DOCREC[nH1N1$DOCREC == '3' ] <- 0
+nH1N1$DOCREC[nH1N1$DOCREC == '4' ] <- 0
+
+
+```
 
 
