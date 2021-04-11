@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Logistic Regression"]},{"type":"character","attributes":{},"value":["Blow blog is my individual assignment and I am plan to build the explanatory model.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["HAI Dan"]}]}]},{"type":"character","attributes":{},"value":["03-23-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Logistic Regression"]},{"type":"character","attributes":{},"value":["Blow blog is my individual assignment and I am plan to build the explanatory model.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["HAI Dan"]}]}]},{"type":"character","attributes":{},"value":["03-23-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[4]},{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1477,6 +1477,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#overview">1. Overview</a><ul>
+<li><a href="#core-purpose-of-dataviz-exercise">1.1 Core Purpose of Dataviz Exercise</a></li>
+<li><a href="#literature-review">1.2 Literature review</a></li>
+</ul></li>
+<li><a href="#interactivity">2.0 Interactivity</a></li>
+<li><a href="#step-by-step-data-visualisation-preparation">3.0 Step-by-step Data Visualisation Preparation</a><ul>
+<li><a href="#installing-and-launching-r-packages">3.1 Installing and launching R packages</a></li>
+<li><a href="#data-preparation">3.2 Data Preparation</a><ul>
+<li><a href="#share-code-in-the-group-project">3.2.1 Share Code in the group project</a></li>
+<li><a href="#building-explainatory-model">3.2.2 Building Explainatory Model</a></li>
+</ul></li>
+<li><a href="#model-selection">3.3 Model Selection</a><ul>
+<li><a href="#add-three-transfrom-varialbes">3.3.1 Add three transfrom varialbes</a></li>
+<li><a href="#select-behavior-variable-to-continue-build-explanatory-model">3.3.2 Select Behavior Variable to Continue Build Explanatory Model</a></li>
+</ul></li>
+<li><a href="#blorr-and-sjplot-package-exploration">3.4 ‘blorr’ and ‘sjPlot’ Package Exploration</a></li>
+</ul></li>
+<li><a href="#sketch-of-proposed-visualisation">4 Sketch of proposed visualisation</a></li>
+<li><a href="#references">5.References</a></li>
+</ul>
+</nav>
+</div>
 <h1 id="overview">1. Overview</h1>
 <h2 id="core-purpose-of-dataviz-exercise">1.1 Core Purpose of Dataviz Exercise</h2>
 <ul>
@@ -1486,7 +1512,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="literature-review">1.2 Literature review</h2>
 <ul>
 <li><p>Before doing this project, Prof. Kam recommended many very useful packages, so I will use a large number of <strong>blorr packages</strong> in the following paragraphs.Blorr Tools designed to make it easier for users, particularly beginner/intermediate R users to build logistic regression models. Includes comprehensive regression output, variable selection procedures, model validation techniques and a ‘shiny’ app for interactive model building. At the same time, I find the package ‘jtools’ and ‘huxtable’ by using the function ‘summs’, which have the similar function with blorr’s ‘blr_regress’ , so I focus on using <strong>blorr</strong>. And in the end, I using the ‘sjPlot’ package to plot the insight graph on model’s odd ratio. ‘sjPlot’ is the collection of plotting and table output functions for data visualization</p></li>
-<li><p>At the same time, a key consideration in the literature review is how to perform a good explanatory model. I review several article about building the explanatory model. Among those, I review a lot from the Dimitrios Tziotis[—] article. I also read many other articles and the second consultation with Prof Kam, and finally decided to interpret the result after I done the explanatory model.</p></li>
+<li><p>At the same time, a key consideration in the literature review is how to perform a good explanatory model. I review several article about building the explanatory model. Among those, I review a lot from the <a href='https://towardsdatascience.com/explanatory-modeling-f1f890d11ac2'>Dimitrios Tziotis</a> article. I also read many other articles and the second consultation with Prof Kam, and finally decided to interpret the result after I done the explanatory model.</p></li>
 </ul>
 <h1 id="interactivity">2.0 Interactivity</h1>
 <ul>
@@ -1714,7 +1740,7 @@ $ Region            &lt;chr&gt; &quot;West Region&quot;, &quot;Midwest Region&qu
 </code></pre>
 </div>
 </div>
-<h3 id="plot-missing-values">Plot missing values:</h3>
+<p><strong>Plot missing values:</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>aggr</span><span class='op'>(</span><span class='va'>dat1</span><span class='op'>[</span>,<span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>]</span>, col <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'green'</span>,<span class='st'>'red'</span><span class='op'>)</span>, numbers <span class='op'>=</span> <span class='cn'>TRUE</span>, sortVars <span class='op'>=</span> <span class='cn'>TRUE</span>, 
@@ -1737,7 +1763,7 @@ $ Region            &lt;chr&gt; &quot;West Region&quot;, &quot;Midwest Region&qu
    VACC_SEAS_F 0.003997732
    VACC_H1N1_F 0.000000000</code></pre>
 </div>
-<h3 id="base-model">Base model</h3>
+<p><strong>Base model</strong></p>
 <p>The following is a list of all the possible explanations variable for vaccinations and we did a logistic regression.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1814,8 +1840,7 @@ BIC:                         44036.762    AIC:                            43816.
 -----------------------------------------------------------------------------------</code></pre>
 </div>
 <p>It can be seen that the current AIC is 43816.19. Next, we will try to select variable to fit the model by Stepwise.</p>
-<h3 id="collinearity-diagnostics">collinearity diagnostics</h3>
-<p>VIF that exceed 10 are often regarded as indicating multicollinearity, but in weaker models values above 2.5 may be a cause for concern. In our model, it seem all the explanatory varialbe is fine</p>
+<p><strong>collinearity diagnostics</strong> VIF that exceed 10 are often regarded as indicating multicollinearity, but in weaker models values above 2.5 may be a cause for concern. In our model, it seem all the explanatory varialbe is fine</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_coll_diag</span><span class='op'>(</span><span class='va'>model0</span><span class='op'>)</span>
@@ -1984,10 +2009,38 @@ B_H1N1_AVOID    43814.843    44026.008    43766.843
 </code></pre>
 </div>
 </div>
-<h3 id="model-selection">3.3 Model Selection</h3>
+<h2 id="model-selection">3.3 Model Selection</h2>
 <p>However, we found that AIC had no change after step wise, which proved that this method was not applicable to our variable. So the next part I will do is to select model begin with our domain knowledge in H1N1 vaccination.</p>
 <p>The model selection process will involve fitting several candidate models until we run into the one that’s closest to the “true” model. At every comparison, candidate models will be evaluated with respect to specific asymptotic criteria (to be explained). We’ll start off with a very simple model。</p>
 <p>We also see reports on goodness-of-fit statistics and criteria such as AIC, BIC, Deviance, which can be used for model selection under certain conditions. The obvious next steps are to add more predictors into the model and see whether the fit improves.</p>
+<h3 id="add-three-transfrom-varialbes">3.3.1 Add three transfrom varialbes</h3>
+<p>there are three variable we combine and concatenate from original data set</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CONCERN LEVEL 0-3</td>
+<td>0 is not at all, 1 is not very, 2 is somewhat concerned, 3 is very concern</td>
+</tr>
+<tr class="even">
+<td>KNOW_H1N1 0-2</td>
+<td>0 no knowledge, 1 a little knowledge, 2 a lot</td>
+</tr>
+<tr class="odd">
+<td>DOCREC 0-4</td>
+<td>0 is unknown and refused, 1 neither vaccine is recommend, 2 seasonal,3 H1N1, 4 both</td>
+</tr>
+</tbody>
+</table>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>model</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> , data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
@@ -2018,7 +2071,7 @@ nagelkerke                 Adj Count R2      0.379      0.514
 count_r2                            AIC      0.787      0.793
 count_adj                           BIC      0.000      0.075</code></pre>
 </div>
-<h3 id="select-behavior-variable-to-continue-build-explanatory-model">Select Behavior Variable to Continue Build Explanatory Model</h3>
+<h3 id="select-behavior-variable-to-continue-build-explanatory-model">3.3.2 Select Behavior Variable to Continue Build Explanatory Model</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>gfit1a</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>B_H1N1_ANTIV</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
@@ -2152,7 +2205,7 @@ count_r2                            AIC      0.796      0.796
 count_adj                           BIC      0.091      0.095</code></pre>
 </div>
 <p><strong>After adding variable ‘HH_CHILE_R’, AIC did not show any significant decrease, so ‘HH_CHILE_R’ are determined not to fit this model</strong></p>
-<h3 id="n_adult_r">N_ADULT_R</h3>
+<p><strong>N_ADULT_R</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>gfit1j</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>B_H1N1_ANTIV</span><span class='op'>+</span><span class='va'>CHRONIC_MED_F</span> <span class='op'>+</span><span class='va'>HEALTH_WORKER_F</span> <span class='op'>+</span> <span class='va'>MARITAL</span><span class='op'>+</span> <span class='va'>N_ADULT_R</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
@@ -2177,7 +2230,7 @@ count_r2                            AIC      0.796      0.796
 count_adj                           BIC      0.091      0.092</code></pre>
 </div>
 <p><strong>After adding variable ‘N_ADULT_R’, AIC did not show any significant decrease, so ‘N_ADULT_R’ are determined not to fit this model</strong></p>
-<p>###SEX_I</p>
+<p><strong>SEX_I</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>gfit1k</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>B_H1N1_ANTIV</span><span class='op'>+</span><span class='va'>CHRONIC_MED_F</span> <span class='op'>+</span><span class='va'>HEALTH_WORKER_F</span> <span class='op'>+</span> <span class='va'>MARITAL</span><span class='op'>+</span> <span class='va'>SEX_I</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
@@ -2203,7 +2256,7 @@ count_adj                           BIC      0.091      0.092</code></pre>
 </div>
 <p><strong>After adding variable ‘SEX_I’, AIC did not show any significant decrease, so ‘SEX_I’ are determined not to fit this model</strong></p>
 <p>Although this AIC is still lower than original model0 we initially chose, we have evidence to prove that the variable we chose can better explain this model. so our best fit model so fat is gfit1h &lt;- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL, data= dat1, family = binomial(link = ‘logit’))</p>
-<h3 id="blorr-and-sjplot-package-exploration">3.4 ‘blorr’ and ‘sjPlot’ Package Exploration</h3>
+<h2 id="blorr-and-sjplot-package-exploration">3.4 ‘blorr’ and ‘sjPlot’ Package Exploration</h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_regress</span><span class='op'>(</span><span class='va'>gfit1h</span><span class='op'>)</span>
@@ -2266,8 +2319,7 @@ Count R2:                        0.796    Adj Count R2:                       0.
 BIC:                         44797.405    AIC:                            44673.991 
 -----------------------------------------------------------------------------------</code></pre>
 </div>
-<h3 id="collinearity-diagnostics-1">collinearity diagnostics</h3>
-<p>VIF that <strong>exceed 10</strong> are often regarded as indicating multicollinearity, but in weaker models values <strong>above 2.5</strong> may be a cause for concern. In our model, it seem all the explanatory varialbe is fine.</p>
+<p><strong>collinearity diagnostics</strong> VIF that <strong>exceed 10</strong> are often regarded as indicating multicollinearity, but in weaker models values <strong>above 2.5</strong> may be a cause for concern. In our model, it seem all the explanatory varialbe is fine.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_coll_diag</span><span class='op'>(</span><span class='va'>gfit1h</span><span class='op'>)</span>
@@ -2444,7 +2496,7 @@ Chi-Square    DF    Pr &gt; ChiSq
 </div>
 <p><img src="logistic-regression_files/figure-html5/unnamed-chunk-32-1.png" width="624" /></p>
 </div>
-<h3 id="model-interpretation">Model interpretation</h3>
+<p><strong>Model interpretation</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/coef.html'>coef</a></span><span class='op'>(</span><span class='va'>gfit1h</span><span class='op'>)</span><span class='op'>)</span>
@@ -2495,7 +2547,7 @@ HEALTH_WORKER_FYes MARITALNot Married
 <ul>
 <li>H1N1 vaccination probability is 86% lower in MARITAL-Not Married, compared to MARITAL-Married.</li>
 </ul>
-<h3 id="plot">Plot</h3>
+<p><strong>Plot</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>plot_model</span><span class='op'>(</span><span class='va'>gfit1h</span>, 
@@ -2509,9 +2561,17 @@ HEALTH_WORKER_FYes MARITALNot Married
 <p><img src="photo/1.jpeg" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <ul>
-<li>The upper left corner provides the graph or information that the user chooses to see, such as odd ratio, test_hosmer_lemeshow,plot_diag_difdev, then the corresponding graph and the information appears on the right side to showcase</li>
+<li>The upper left corner provides the option that the user chooses to see, such as odd ratio, test_hosmer_lemeshow,plot_diag_difdev, then the corresponding graph and the information appears on the right side to showcase</li>
 <li>The bottom left hand corner gives the user the option of selecting variable to see how that variable interprets/explain the model and then on the right hand side the message will show up.</li>
 </ul>
+<h1 id="references">5.References</h1>
+<ol type="1">
+<li><a href="https://towardsdatascience.com/explanatory-modeling-f1f890d11ac2" class="uri">https://towardsdatascience.com/explanatory-modeling-f1f890d11ac2</a></li>
+<li><a href="https://cran.r-project.org/web/packages/blorr/blorr.pdf" class="uri">https://cran.r-project.org/web/packages/blorr/blorr.pdf</a></li>
+<li><a href="https://www.r-statistics.com/2010/07/visualization-of-regression-coefficients-in-r/" class="uri">https://www.r-statistics.com/2010/07/visualization-of-regression-coefficients-in-r/</a></li>
+<li><a href="https://cran.r-project.org/web/packages/sjPlot/index.html" class="uri">https://cran.r-project.org/web/packages/sjPlot/index.html</a></li>
+<li><a href="https://easystats.github.io/performance/reference/performance_roc.html" class="uri">https://easystats.github.io/performance/reference/performance_roc.html</a></li>
+</ol>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

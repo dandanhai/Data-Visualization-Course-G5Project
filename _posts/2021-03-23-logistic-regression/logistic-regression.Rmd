@@ -7,6 +7,8 @@ author:
 date: 03-23-2021
 output:
   distill::distill_article:
+    toc: true
+    toc_depth: 4
     self_contained: false
 ---
 
@@ -21,7 +23,7 @@ output:
 ## 1.2 Literature review
 - Before doing this project, Prof. Kam recommended many very useful packages, so I will use a large number of **blorr packages** in the following paragraphs.Blorr Tools designed to make it easier for users, particularly beginner/intermediate R users to build logistic regression models. Includes comprehensive regression output, variable selection procedures, model validation techniques and a ‘shiny’ app for interactive model building. At the same time, I find the package 'jtools' and 'huxtable' by using the function 'summs', which have the similar function with blorr's 'blr_regress' , so I focus on using **blorr**. And in the end, I using the 'sjPlot' package to plot the insight graph on model's odd ratio. 'sjPlot' is the collection of plotting and table output functions for data visualization
 
-- At the same time,  a key consideration in the literature review is how to perform a good explanatory model. I review several article about building the explanatory model. Among those, I review a lot from the Dimitrios Tziotis[---] article. I also read many other articles and the second consultation with Prof Kam, and finally decided to interpret the result after I done the explanatory model.
+- At the same time,  a key consideration in the literature review is how to perform a good explanatory model. I review several article about building the explanatory model. Among those, I review a lot from the <a href='https://towardsdatascience.com/explanatory-modeling-f1f890d11ac2'>Dimitrios Tziotis</a> article. I also read many other articles and the second consultation with Prof Kam, and finally decided to interpret the result after I done the explanatory model.
 
 
 # 2.0 Interactivity
@@ -163,7 +165,7 @@ dat1$VACC_H1N1_F <- ifelse(dat1$VACC_H1N1_F=="Yes",1,0)
 dat1$HH_CHILD_R <- ifelse(dat1$HH_CHILD_R=="0",0,1)
 ```
 
-### Plot missing values:
+**Plot missing values:**
 
 ```{r,warning=FALSE}
 
@@ -173,7 +175,7 @@ aggr(dat1[,1:10], col = c('green','red'), numbers = TRUE, sortVars = TRUE,
 ```
 
 
-### Base model
+**Base model**
 
 The following is a list of all the possible explanations variable for vaccinations and we did a logistic regression.
 
@@ -186,7 +188,7 @@ blr_model_fit_stats(model0)
 It can be seen that the current AIC is 43816.19. Next, we will try to select variable to fit the model by Stepwise.
 
 
-### collinearity diagnostics
+**collinearity diagnostics**
 VIF that exceed 10 are often regarded as indicating multicollinearity, but in weaker models values above 2.5 may be a cause for concern. In our model, it seem all the explanatory varialbe is fine
 
 ```{r, eval=FALSE}
@@ -210,7 +212,7 @@ blr_step_p_backward(model2)
 ```
 
 
-### 3.3 Model Selection
+## 3.3 Model Selection
 However, we found that AIC had no change after step wise, which proved that this method was not applicable to our variable. So the next part I will do is to select model begin with our domain knowledge in H1N1 vaccination.
 
 
@@ -220,6 +222,15 @@ We’ll start off with a very simple model。
 We also see reports on goodness-of-fit statistics and criteria such as AIC, BIC, Deviance, which can be used for model selection under certain conditions.
 The obvious next steps are to add more predictors into the model and see whether the fit improves. 
 
+### 3.3.1 Add three transfrom varialbes
+
+there are three variable we combine and concatenate from original data set
+
+Variable  | Definition
+------------- | -------------
+CONCERN LEVEL  0-3  | 0 is not at all,	1 is not very,	2 is somewhat concerned,	3 is very concern
+KNOW_H1N1   0-2    | 0 no knowledge,	1 a little knowledge,	2 a lot
+DOCREC 0-4 | 0 is unknown	and refused, 1 neither vaccine is recommend, 2 seasonal,3 H1N1,	4 both	
 ```{r}
 model <- glm(VACC_H1N1_F ~ CONCERN_LEVEL , data= dat1, family = binomial(link = 'logit'))
 
@@ -232,7 +243,7 @@ model2 <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC, data= dat1, fami
 blr_multi_model_fit_stats(model,model2)
 ```
 
-###   Select Behavior Variable to Continue Build Explanatory Model
+### 3.3.2 Select Behavior Variable to Continue Build Explanatory Model
 
 ```{r}
 gfit1a = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV, data= dat1, family = binomial(link = 'logit'))
@@ -273,7 +284,7 @@ blr_multi_model_fit_stats(gfit1h, gfit1i)
 **After adding variable 'HH_CHILE_R', AIC did not show any significant decrease, so 'HH_CHILE_R' are determined not to fit this model**
 
 
-### N_ADULT_R
+**N_ADULT_R**
 
 ```{r}
 gfit1j <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL+ N_ADULT_R, data= dat1, family = binomial(link = 'logit'))
@@ -282,7 +293,7 @@ blr_multi_model_fit_stats(gfit1h, gfit1j)
 
 **After adding variable 'N_ADULT_R', AIC did not show any significant decrease, so 'N_ADULT_R' are determined not to fit this model**
 
-###SEX_I
+**SEX_I**
 
 ```{r}
 gfit1k <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL+ SEX_I, data= dat1, family = binomial(link = 'logit'))
@@ -295,7 +306,7 @@ blr_multi_model_fit_stats(gfit1h, gfit1k)
 Although this AIC is still lower than original model0 we initially chose, we have evidence to prove that the variable we chose can better explain this model. so our best fit model so fat is gfit1h <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL, data= dat1, family = binomial(link = 'logit'))
 
 
-### 3.4 'blorr' and 'sjPlot' Package Exploration
+## 3.4 'blorr' and 'sjPlot' Package Exploration
 ```{r}
 blr_regress(gfit1h)
 blr_model_fit_stats(gfit1h)
@@ -303,7 +314,7 @@ blr_model_fit_stats(gfit1h)
 
 
 
-### collinearity diagnostics
+**collinearity diagnostics**
 VIF that **exceed 10** are often regarded as indicating multicollinearity, but in weaker models values **above 2.5** may be a cause for concern. In our model, it seem all the explanatory varialbe is fine.
 
 ```{r}
@@ -328,7 +339,7 @@ blr_plot_diag_difchisq(gfit1h)
 
 
 
-### Model interpretation
+**Model interpretation**
 
 
 
@@ -378,7 +389,7 @@ MARITALNot Married:
 
 
 
-### Plot
+**Plot**
 
 ```{r}
 plot_model(gfit1h, 
@@ -391,10 +402,16 @@ plot_model(gfit1h,
 knitr::include_graphics('photo/1.jpeg')
 ```
 
-- The upper left corner provides the graph or information that the user chooses to see, such as odd ratio, test_hosmer_lemeshow,plot_diag_difdev, then the corresponding graph and the information appears on the right side to showcase
+- The upper left corner provides the option that the user chooses to see, such as odd ratio, test_hosmer_lemeshow,plot_diag_difdev, then the corresponding graph and the information appears on the right side to showcase
 - The bottom left hand corner gives the user the option of selecting variable to see how that variable interprets/explain the model and then on the right hand side the message will show up.
 
- 
+# 5.References
+1.  https://towardsdatascience.com/explanatory-modeling-f1f890d11ac2
+2. https://cran.r-project.org/web/packages/blorr/blorr.pdf
+3. https://www.r-statistics.com/2010/07/visualization-of-regression-coefficients-in-r/
+4. https://cran.r-project.org/web/packages/sjPlot/index.html
+5. https://easystats.github.io/performance/reference/performance_roc.html
+
 
 
 
