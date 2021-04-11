@@ -5,7 +5,7 @@ description: |
 author:
   - name: Desmond LIM Pek Loong
  
-date: 03-23-2021
+date: 04-10-2021
 output:
   distill::distill_article:
     toc: true
@@ -30,6 +30,17 @@ A similar situation was the H1N1 virus pandemic which occurred in 2009, where an
 ## 1.1 Purpose
 
 The purpose of the study is to develop various predictive models on the individuals who are likely to take the H1N1 vaccine based on the flu survey data , to be able to assess the models for the optimal model and visualize the assessment. 
+
+
+## 1.2 Literature Review
+
+We looked at two shiny featuring model predictions to gain insight on what functions and features our predictive model app should include.
+
+The first application was created by Vladislav Fridkin (Fridkin, n.d.) on interactive mushroom edibility predictions with XGboost model. The application uses XGBoost algorithm to predict if a mushroom is edible or poisonous. The user was given the flexibility to adjust 8 different parameters to obtain the best model. It showed visualizations on model accuracy and feature importance. The application was good with the customizabilty of the model parameters, however it seemed limited with by focusing only on one algorithm for modeling.  
+
+The second application predict payments on individual insurance claims using machine learning  built by (Merlino, 2018). The application uses logistic regression and XGboost model to fit different parts of their models. The application does not allow any flexibility to their predictive model as there are no user inputs for the model.The user can only vary the confidence interval of the results.The visualization shown is the simulation results of claims. 
+
+Thus, after looking into the two applications, we find that to enhance the user experience and usefulness for predictive modeling application, the application must provide the user the flexibility to compare between different prediction algorithms and ability to tune those models. Visualization of the modeling results will be shown to allow the user to relate the parameters he had used to the model performance.  
 
 # 2. Data Preparation
 
@@ -379,7 +390,7 @@ summary(h1n1model) #To check the data again.
 
 # 3 Modeling
 
-## 3.1 Literature Review: Choosing the right Modeling Package
+## 3.1 Choosing the right Modeling Package
 
 The R *caret* package is a set of functions that streamlines the process for predictive model building. It's current release consist 238 models.As different modeling functions has different syntax for modeling training and prediction, it will be difficult to keep track of which algorithms are in which package. For example, a random forest model will be using *randomforest()* syntax to run the model and a neural network model requires the *neuralnet()* syntax. Moreover, each of the algorithm will have their own arguments, making it difficult and time-consuming if different models are required to be used in the same code. 
 
@@ -790,3 +801,5 @@ User of the shiny app would be able to tune and explore the four different model
 2. Band, A. (2020b, May 23). How to find the optimal value of K in KNN? - Towards Data Science. Medium. https://towardsdatascience.com/how-to-find-the-optimal-value-of-k-in-knn-35d936e554eb#:%7E:text=The%20optimal%20K%20value%20usually,be%20aware%20of%20the%20outliers.
 3.Robin, X., Turck, N., Hainard, A., Tiberti, N., Lisacek, F., Sanchez, J. C., & Müller, M. (2011). pROC: an open-source package for R and S+ to analyze and compare ROC curves. BMC Bioinformatics, 12(1), 12. https://doi.org/10.1186/1471-2105-12-77
 4.Panchal, F. S., & Panchal, M. (2014). Review on Methods of Selecting Number of Hidden Nodes in Artificial Neural Network. International Journal of Computer Science and Mobile Computing, 3(11), 455–464. https://www.ijcsmc.com/docs/papers/November2014/V3I11201499a19.pdf
+5.Fridkin, V. (n.d.). Shrooming - Interactive mushroom edibility predictions with XGBoost. Https://Shiny.Rstudio.Com/. https://vfridkin.shinyapps.io/mushroom_app/
+6. Merlino, A. (2018). Machine Learning for Insurance Claims. Https://Www.Tychobra.Com/Posts/Claims-Ml/. https://tychobra.shinyapps.io/wc-pm-dashboard/
