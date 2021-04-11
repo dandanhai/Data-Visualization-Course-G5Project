@@ -1,0 +1,3159 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+<title>G5Project_ISSS602: Predictive Modeling of H1N1 Vaccination</title>
+
+<meta property="description" itemprop="description" content="The predictive modeling component of the Shiny application allows the user to customize and use different modeling techniques to build a predictive model to predict whether an individual would take the H1N1 vaccine."/>
+
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2021-03-23"/>
+<meta property="article:created" itemprop="dateCreated" content="2021-03-23"/>
+<meta name="article:author" content="Desmond LIM Pek Loong"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="G5Project_ISSS602: Predictive Modeling of H1N1 Vaccination"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="The predictive modeling component of the Shiny application allows the user to customize and use different modeling techniques to build a predictive model to predict whether an individual would take the H1N1 vaccine."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="G5Project_ISSS602"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:title" content="G5Project_ISSS602: Predictive Modeling of H1N1 Vaccination"/>
+<meta property="twitter:description" content="The predictive modeling component of the Shiny application allows the user to customize and use different modeling techniques to build a predictive model to predict whether an individual would take the H1N1 vaccine."/>
+
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Predictive Modeling of H1N1 Vaccination"]},{"type":"character","attributes":{},"value":["The predictive modeling component of the Shiny application allows the user to customize and use different modeling techniques to build a predictive model to predict whether an individual would take the H1N1 vaccine."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Desmond LIM Pek Loong"]}]}]},{"type":"character","attributes":{},"value":["03-23-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[4]},{"type":"logical","attributes":{},"value":[false]}]}]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["data/H1N1_Final_dan_edit.csv","data/Proposed Viz.png","data/Proposed Viz2.png","data/state_region.csv","decision-tree_files/anchor-4.2.2/anchor.min.js","decision-tree_files/bowser-1.9.3/bowser.min.js","decision-tree_files/crosstalk-1.1.0.1/css/crosstalk.css","decision-tree_files/crosstalk-1.1.0.1/js/crosstalk.js","decision-tree_files/crosstalk-1.1.0.1/js/crosstalk.js.map","decision-tree_files/crosstalk-1.1.0.1/js/crosstalk.min.js","decision-tree_files/crosstalk-1.1.0.1/js/crosstalk.min.js.map","decision-tree_files/distill-2.2.21/template.v2.js","decision-tree_files/figure-html5/unnamed-chunk-12-1.png","decision-tree_files/figure-html5/unnamed-chunk-13-1.png","decision-tree_files/figure-html5/unnamed-chunk-14-1.png","decision-tree_files/figure-html5/unnamed-chunk-15-1.png","decision-tree_files/figure-html5/unnamed-chunk-23-1.png","decision-tree_files/figure-html5/unnamed-chunk-23-2.png","decision-tree_files/figure-html5/unnamed-chunk-24-1.png","decision-tree_files/figure-html5/unnamed-chunk-25-1.png","decision-tree_files/figure-html5/unnamed-chunk-26-1.png","decision-tree_files/figure-html5/unnamed-chunk-27-1.png","decision-tree_files/figure-html5/unnamed-chunk-28-1.png","decision-tree_files/figure-html5/unnamed-chunk-29-1.png","decision-tree_files/figure-html5/unnamed-chunk-31-1.png","decision-tree_files/figure-html5/unnamed-chunk-32-1.png","decision-tree_files/figure-html5/unnamed-chunk-33-1.png","decision-tree_files/figure-html5/unnamed-chunk-34-1.png","decision-tree_files/figure-html5/unnamed-chunk-36-1.png","decision-tree_files/header-attrs-2.7/header-attrs.js","decision-tree_files/htmlwidgets-1.5.3/htmlwidgets.js","decision-tree_files/jquery-1.11.3/jquery-AUTHORS.txt","decision-tree_files/jquery-1.11.3/jquery.js","decision-tree_files/jquery-1.11.3/jquery.min.js","decision-tree_files/jquery-1.11.3/jquery.min.map","decision-tree_files/panelset-0.2.6/panelset.css","decision-tree_files/panelset-0.2.6/panelset.js","decision-tree_files/plotly-binding-4.9.3/plotly.js","decision-tree_files/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css","decision-tree_files/plotly-main-1.57.1/plotly-latest.min.js","decision-tree_files/popper-2.6.0/popper.min.js","decision-tree_files/tippy-6.2.7/tippy-bundle.umd.min.js","decision-tree_files/tippy-6.2.7/tippy-light-border.css","decision-tree_files/tippy-6.2.7/tippy.css","decision-tree_files/tippy-6.2.7/tippy.umd.min.js","decision-tree_files/typedarray-0.1/typedarray.min.js","decision-tree_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+<script type="application/javascript">
+
+function getMeta(metaName) {
+  var metas = document.getElementsByTagName('meta');
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return '';
+}
+
+function offsetURL(url) {
+  var offset = getMeta('distill:offset');
+  return offset ? offset + '/' + url : url;
+}
+
+function createFuseIndex() {
+
+  // create fuse index
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
+  var fuse = new window.Fuse([], options);
+
+  // fetch the main search.json
+  return fetch(offsetURL('search.json'))
+    .then(function(response) {
+      if (response.status == 200) {
+        return response.json().then(function(json) {
+          // index main articles
+          json.articles.forEach(function(article) {
+            fuse.add(article);
+          });
+          // download collections and index their articles
+          return Promise.all(json.collections.map(function(collection) {
+            return fetch(offsetURL(collection)).then(function(response) {
+              if (response.status === 200) {
+                return response.json().then(function(articles) {
+                  articles.forEach(function(article) {
+                    fuse.add(article);
+                  });
+                })
+              } else {
+                return Promise.reject(
+                  new Error('Unexpected status from search index request: ' +
+                            response.status)
+                );
+              }
+            });
+          })).then(function() {
+            return fuse;
+          });
+        });
+
+      } else {
+        return Promise.reject(
+          new Error('Unexpected status from search index request: ' +
+                      response.status)
+        );
+      }
+    });
+}
+
+window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  // get search element (bail if we don't have one)
+  var searchEl = window.document.getElementById('distill-search');
+  if (!searchEl)
+    return;
+
+  createFuseIndex()
+    .then(function(fuse) {
+
+      // make search box visible
+      searchEl.classList.remove('hidden');
+
+      // initialize autocomplete
+      var options = {
+        autoselect: true,
+        hint: false,
+        minLength: 2,
+      };
+      window.autocomplete(searchEl, options, [{
+        source: function(query, callback) {
+          const searchOptions = {
+            isCaseSensitive: false,
+            shouldSort: true,
+            minMatchCharLength: 2,
+            limit: 10,
+          };
+          var results = fuse.search(query, searchOptions);
+          callback(results
+            .map(function(result) { return result.item; })
+          );
+        },
+        templates: {
+          suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
+            var html = `
+              <div class="search-item">
+                <h3>${suggestion.title}</h3>
+                <div class="search-item-description">
+                  ${suggestion.description || ''}
+                </div>
+                <div class="search-item-preview">
+                  ${img}
+                </div>
+              </div>
+            `;
+            return html;
+          }
+        }
+      }]).on('autocomplete:selected', function(event, suggestion) {
+        window.location.href = offsetURL(suggestion.path);
+      });
+      // remove inline display style on autocompleter (we want to
+      // manage responsive display via css)
+      $('.algolia-autocomplete').css("display", "");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+});
+
+</script>
+
+<style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
+
+/* Algolioa Autocomplete */
+
+.algolia-autocomplete {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: sub;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  border: 1px #0F2E3D solid;
+  width: 180px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-nav .algolia-autocomplete {
+    display: none;
+    visibility: hidden;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete {
+    display: inline-block;
+    visibility: visible;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+    margin-left: 0;
+    width: 400px;
+    max-height: 400px;
+  }
+}
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 550px;
+  max-height: 70vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 3px;
+  margin-left: -150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+  border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+  overflow: hidden;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+  display: inline-block;
+  overflow: hidden;
+  height: 2.8em;
+  width: 80%;
+  margin-right: 4%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+  display: inline-block;
+  width: 15%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+  height: 3em;
+  width: auto;
+  display: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+  display: initial;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #eee;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+</style>
+
+
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme
+  $('code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.7/header-attrs.js"></script>
+  <link href="../../site_libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+  <script src="../../site_libs/panelset-0.2.6/panelset.js"></script>
+  <script src="../../site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+  <script src="../../site_libs/plotly-binding-4.9.3/plotly.js"></script>
+  <script src="../../site_libs/typedarray-0.1/typedarray.min.js"></script>
+  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <link href="../../site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="../../site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+  <link href="../../site_libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="../../site_libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Predictive Modeling of H1N1 Vaccination","description":"The predictive modeling component of the Shiny application allows the user to customize and use different modeling techniques to build a predictive model to predict whether an individual would take the H1N1 vaccine.","authors":[{"author":"Desmond LIM Pek Loong","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-03-23T00:00:00.000+08:00","citationText":"Loong, 2021"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">G5Project_ISSS602</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="../../index.html">Home</a>
+<a href="../../group5proposal.html">Proposal</a>
+<a href="../../poster.html">Poster</a>
+<a href="../../application.html">Application</a>
+<a href="../../usergudie.html">User Guide</a>
+<a href="../../index.html">Research Paper</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Predictive Modeling of H1N1 Vaccination</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>The predictive modeling component of the Shiny application allows the user to customize and use different modeling techniques to build a predictive model to predict whether an individual would take the H1N1 vaccine.</p></p>
+</div>
+
+<div class="d-byline">
+  Desmond LIM Pek Loong  
+  
+<br/>03-23-2021
+</div>
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#introduction">1. Introduction</a>
+<ul>
+<li><a href="#purpose">1.1 Purpose</a></li>
+</ul></li>
+<li><a href="#data-preparation">2. Data Preparation</a>
+<ul>
+<li><a href="#data-source">2.1 Data Source</a></li>
+<li><a href="#date-wrangling-and-cleaning">2.2 Date Wrangling and Cleaning</a></li>
+</ul></li>
+<li><a href="#modeling">3 Modeling</a>
+<ul>
+<li><a href="#literature-review-choosing-the-right-modeling-package">3.1 Literature Review: Choosing the right Modeling Package</a></li>
+<li><a href="#data-splitting">3.2 Data Splitting</a></li>
+<li><a href="#model-tuning">3.3 Model Tuning</a></li>
+</ul></li>
+<li><a href="#plotting-variable-importance">4. Plotting Variable Importance</a></li>
+<li><a href="#model-comparision-by-rocauc-and-visualisations">5. Model Comparision by ROC/AUC and Visualisations</a>
+<ul>
+<li><a href="#comparing-roc-packages">5.1 Comparing ROC Packages</a>
+<ul>
+<li><a href="#using-rocr-package">5.1.1 Using <em>ROCR</em> Package</a></li>
+<li><a href="#using-proc-package">5.1.2 Using <em>pROC</em> Package</a></li>
+<li><a href="#using-plotroc-package">5.1.3 Using <em>plotROC</em> Package</a></li>
+<li><a href="#roc-package-comparison">5.1.4 ROC Package Comparison</a></li>
+</ul></li>
+<li><a href="#obtaining-the-auc-table">5.2 Obtaining the AUC Table</a></li>
+<li><a href="#comparing-model-performance-via-resampling">5.3 Comparing Model Performance via Resampling</a></li>
+</ul></li>
+<li><a href="#proposed-visualisation-from-shiny-module">6. Proposed Visualisation from Shiny Module</a></li>
+<li><a href="#conclusionreflections">7. Conclusion/Reflections</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</nav>
+</div>
+<h1 id="introduction">1. Introduction</h1>
+<p>With the ongoing COVID-19 pandemic, the world is experiencing first-hand on how a virus could affect economy, society and the deaths that it could cause. The importance of having a vaccine and having the general population taking the vaccine is key to curbing the spread of the virus and saving lives.</p>
+<p>A similar situation was the H1N1 virus pandemic which occurred in 2009, where an estimated amount of 151,700-575,400 people worldwide had died during the first year of the virus. Being able to predict which individuals are likely to receive their H1N1 vaccinations, it will guide governments, health officials to know what are the important predictors that lead them to take the H1N1 vaccine. This understanding would be useful in future efforts to promote vaccination to the public, especially when a vaccine for the current pandemic is made.</p>
+<h2 id="purpose">1.1 Purpose</h2>
+<p>The purpose of the study is to develop various predictive models on the individuals who are likely to take the H1N1 vaccine based on the flu survey data , to be able to assess the models for the optimal model and visualize the assessment.</p>
+<h1 id="data-preparation">2. Data Preparation</h1>
+<p>The data used was obtained from the United States Centre of Disease Control and Prevention (CDC)’s website <em><a href="https://www.cdc.gov/nchs/nis/data_files_h1n1.htm" class="uri">https://www.cdc.gov/nchs/nis/data_files_h1n1.htm</a></em> on the National 2009 H1N1 flu survey conducted in the US.</p>
+<h2 id="data-source">2.1 Data Source</h2>
+<p>The dataset in excel format was imported by <em>read_csv</em> into the RStudio environment. The following code was used to launch the mentioned packages in R.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#R packages used to modelling and visualization</span>
+
+<span class='va'>packages</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'tidyverse'</span>,<span class='st'>'readr'</span>,<span class='st'>'caret'</span>,<span class='st'>'caTools'</span>,<span class='st'>'ggpubr'</span>,<span class='st'>'ROCR'</span>,<span class='st'>'pROC'</span>,<span class='st'>'plotROC'</span>,<span class='st'>'plotly'</span><span class='op'>)</span>
+<span class='kw'>for</span> <span class='op'>(</span><span class='va'>p</span> <span class='kw'>in</span> <span class='va'>packages</span><span class='op'>)</span><span class='op'>{</span>
+  <span class='kw'>if</span><span class='op'>(</span><span class='op'>!</span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='va'>p</span>, character.only <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
+  <span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='va'>p</span><span class='op'>)</span>
+  <span class='op'>}</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>p</span>,character.only<span class='op'>=</span> <span class='cn'>T</span> <span class='op'>)</span> 
+<span class='op'>}</span> 
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>H1N1</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>'data/H1N1_Final_dan_edit.csv'</span><span class='op'>)</span>
+
+<span class='fu'>glimpse</span><span class='op'>(</span><span class='va'>H1N1</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Check for missing data i.e NA is conducted on the data. Variables with missing data were noted down.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>H1N1</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>       VACC_H1N1_F        VACC_SEAS_F       B_H1N1_ANTIV 
+       0.005694632        0.005652346        0.203865020 
+      B_H1N1_AVOID       B_H1N1_FMASK       B_H1N1_HANDS 
+       0.207910465        0.201976207        0.202765562 
+      B_H1N1_LARGE       B_H1N1_RCONT       B_H1N1_TOUCH 
+       0.203794542        0.203963690        0.205373252 
+     CONCERN LEVEL               HQ23               HQ24 
+       0.000000000        0.854434484        0.962717073 
+            HQ24_B           INT_H1N1           INT_NEXT 
+       0.994587280        0.000000000        0.000000000 
+          INT_SEAS          KNOW_H1N1                Q23 
+       0.000000000        0.000000000        0.960165765 
+               Q24              Q24_B             DOCREC 
+       0.977136897        0.996447903        0.000000000 
+   ILI_DIAG_H1N1_F    ILI_DIAG_SEAS_F              ILI_F 
+       0.961913622        0.961913622        0.020889716 
+       ILI_OTHER_F        ILI_TREAT_F              PSL_1 
+       0.017083897        0.922488160        1.000000000 
+             PSL_2                 Q9             Q9_NUM 
+       1.000000000        1.000000000        1.000000000 
+     CHRONIC_MED_F   CLOSE_UNDER6MO_F    HEALTH_WORKER_F 
+       0.031799729        0.226291159        0.225713239 
+ PATIENT_CONTACT_F             AGEGRP     EDUCATION_COMP 
+       0.265195083        0.000000000        0.244009359 
+        HH_CHILD_R             HISP_I           INC_CAT1 
+       0.007132386        0.000000000        0.214436739 
+            INSURE            MARITAL          N_ADULT_R 
+       1.000000000        0.244544993        0.007132386 
+        N_PEOPLE_R                Q95         Q95_INDSTR 
+       0.003157420        0.994432228        0.595554240 
+         Q95_OCCPN         RACEETH4_I         RENT_OWN_R 
+       0.595554240        0.000000000        0.983451737 
+             SEX_I              STATE REAS_NOH1N1_AHAD_F 
+       0.000000000        0.000000000        0.399484100 
+REAS_NOH1N1_ALLG_F REAS_NOH1N1_CANT_F REAS_NOH1N1_COST_F 
+       0.399484100        0.399484100        0.399484100 
+REAS_NOH1N1_DKNW_F REAS_NOH1N1_DWRK_F REAS_NOH1N1_GOTO_F 
+       0.399484100        0.399484100        0.399484100 
+REAS_NOH1N1_NDOC_F REAS_NOH1N1_NEVR_F REAS_NOH1N1_NNDD_F 
+       0.399484100        0.399484100        0.399484100 
+REAS_NOH1N1_NOTA_F REAS_NOH1N1_OTHR_F REAS_NOH1N1_REFD_F 
+       0.399484100        0.399484100        0.399484100 
+REAS_NOH1N1_SAVE_F REAS_NOH1N1_SEFF_F REAS_NOH1N1_TIME_F 
+       0.399484100        0.399484100        0.399484100 </code></pre>
+</div>
+<h2 id="date-wrangling-and-cleaning">2.2 Date Wrangling and Cleaning</h2>
+<p>Before the dataset can be used for modelling, the missing data would need to processed.</p>
+<p>The following section focused on wrangling the data set and cleaning up missing variables. The code below is used to remove the missing data from the target variable, <em>VACC_H1N1_F</em>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#exclude the NA column in the target variable</span>
+<span class='va'>H1N1</span> <span class='op'>&lt;-</span> <span class='va'>H1N1</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>H1N1</span><span class='op'>)</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>H1N1</span><span class='op'>)</span> <span class='op'>==</span> <span class='st'>'CONCERN LEVEL'</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='st'>"CONCERN_LEVEL"</span> <span class='co'>#Renaming of variable "Concern Level"</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>H1N1</span><span class='op'>[</span><span class='va'>H1N1</span> <span class='op'>==</span> <span class='st'>'#N/A'</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='cn'>NA</span> <span class='co'># Changing all the value with "#N/A" to actual missing value.</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>H1N1</span><span class='op'>)</span><span class='op'>)</span> <span class='co'>#Check for missing values again.</span>
+</code></pre>
+</div>
+<pre><code>       VACC_H1N1_F        VACC_SEAS_F       B_H1N1_ANTIV 
+       0.000000000        0.003997732        0.203132974 
+      B_H1N1_AVOID       B_H1N1_FMASK       B_H1N1_HANDS 
+       0.207201588        0.201360930        0.202098100 
+      B_H1N1_LARGE       B_H1N1_RCONT       B_H1N1_TOUCH 
+       0.203189680        0.203274738        0.204678197 
+     CONCERN_LEVEL               HQ23               HQ24 
+       0.203473207        0.854834137        0.963198185 
+            HQ24_B           INT_H1N1           INT_NEXT 
+       0.994740573        0.255146016        0.692755883 
+          INT_SEAS          KNOW_H1N1                Q23 
+       0.459625744        0.204479728        0.960518855 
+               Q24              Q24_B             DOCREC 
+       0.977417068        0.996597675        0.044031755 
+   ILI_DIAG_H1N1_F    ILI_DIAG_SEAS_F              ILI_F 
+       0.961993195        0.961993195        0.020484831 
+       ILI_OTHER_F        ILI_TREAT_F              PSL_1 
+       0.016869861        0.922497874        1.000000000 
+             PSL_2                 Q9             Q9_NUM 
+       1.000000000        1.000000000        1.000000000 
+     CHRONIC_MED_F   CLOSE_UNDER6MO_F    HEALTH_WORKER_F 
+       0.031216331        0.225333144        0.224766090 
+ PATIENT_CONTACT_F             AGEGRP     EDUCATION_COMP 
+       0.264346470        0.000000000        0.242968528 
+        HH_CHILD_R             HISP_I           INC_CAT1 
+       0.007074001        0.000000000        0.213198185 
+            INSURE            MARITAL          N_ADULT_R 
+       1.000000000        0.243592288        0.007074001 
+        N_PEOPLE_R                Q95         Q95_INDSTR 
+       0.003118798        0.994527927        0.594074284 
+         Q95_OCCPN         RACEETH4_I         RENT_OWN_R 
+       0.594074284        0.000000000        0.983612135 
+             SEX_I              STATE REAS_NOH1N1_AHAD_F 
+       0.000000000        0.000000000        0.401020697 
+REAS_NOH1N1_ALLG_F REAS_NOH1N1_CANT_F REAS_NOH1N1_COST_F 
+       0.401020697        0.401020697        0.401020697 
+REAS_NOH1N1_DKNW_F REAS_NOH1N1_DWRK_F REAS_NOH1N1_GOTO_F 
+       0.401020697        0.401020697        0.401020697 
+REAS_NOH1N1_NDOC_F REAS_NOH1N1_NEVR_F REAS_NOH1N1_NNDD_F 
+       0.401020697        0.401020697        0.401020697 
+REAS_NOH1N1_NOTA_F REAS_NOH1N1_OTHR_F REAS_NOH1N1_REFD_F 
+       0.401020697        0.401020697        0.401020697 
+REAS_NOH1N1_SAVE_F REAS_NOH1N1_SEFF_F REAS_NOH1N1_TIME_F 
+       0.401020697        0.401020697        0.401020697 </code></pre>
+</div>
+<p>Data will more than 50% of missing values are removed. 27 variables are wrangled into a new data set <em>h1n1data</em>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>h1n1data</span> <span class='op'>&lt;-</span><span class='va'>H1N1</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>select</span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span>,
+                   <span class='va'>VACC_SEAS_F</span>,
+                   <span class='va'>B_H1N1_ANTIV</span>,
+                   <span class='va'>B_H1N1_AVOID</span>,
+                   <span class='va'>B_H1N1_FMASK</span>,
+                   <span class='va'>B_H1N1_HANDS</span>,
+                   <span class='va'>B_H1N1_LARGE</span>,
+                   <span class='va'>B_H1N1_RCONT</span>,
+                   <span class='va'>B_H1N1_TOUCH</span>,
+                   <span class='va'>CONCERN_LEVEL</span>,
+                   <span class='va'>INT_H1N1</span>,
+                   <span class='va'>KNOW_H1N1</span>,
+                   <span class='va'>INT_SEAS</span>,  
+                   <span class='va'>DOCREC</span>,
+                   <span class='va'>CHRONIC_MED_F</span>,
+                   <span class='va'>CLOSE_UNDER6MO_F</span>,         
+                   <span class='va'>HEALTH_WORKER_F</span>,
+                   <span class='va'>PATIENT_CONTACT_F</span>,
+                   <span class='va'>AGEGRP</span>,
+                   <span class='va'>EDUCATION_COMP</span>,
+                   <span class='va'>HH_CHILD_R</span>,
+                   <span class='va'>INC_CAT1</span>,
+                   <span class='va'>MARITAL</span>,
+                   <span class='va'>RACEETH4_I</span>,
+                   <span class='va'>N_ADULT_R</span>,
+                   <span class='va'>SEX_I</span>,
+                   <span class='va'>STATE</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>The column variables are transformed in factor(categorical) variables.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>h1n1data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/transform.html'>transform</a></span><span class='op'>(</span><span class='va'>h1n1data</span>,
+                   VACC_H1N1_F<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span><span class='op'>)</span>,
+                   VACC_SEAS_F<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>VACC_SEAS_F</span><span class='op'>)</span>,
+                   B_H1N1_ANTIV<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_ANTIV</span><span class='op'>)</span>,
+                   B_H1N1_AVOID<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_AVOID</span><span class='op'>)</span>,
+                   B_H1N1_FMASK<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_FMASK</span><span class='op'>)</span>,
+                   B_H1N1_HANDS<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_HANDS</span><span class='op'>)</span>,
+                   B_H1N1_LARGE<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_LARGE</span><span class='op'>)</span>,
+                   B_H1N1_RCONT<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_RCONT</span><span class='op'>)</span>,
+                   B_H1N1_TOUCH<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_TOUCH</span><span class='op'>)</span>,
+                   CONCERN_LEVEL<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>CONCERN_LEVEL</span><span class='op'>)</span>,
+                   INT_H1N1<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>INT_H1N1</span><span class='op'>)</span>,
+                   KNOW_H1N1<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>KNOW_H1N1</span><span class='op'>)</span>,
+                   DOCREC<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>DOCREC</span><span class='op'>)</span>,
+                   CHRONIC_MED_F<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>CHRONIC_MED_F</span><span class='op'>)</span>,
+                   CLOSE_UNDER6MO_F<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>CLOSE_UNDER6MO_F</span><span class='op'>)</span>,
+                   HEALTH_WORKER_F<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>HEALTH_WORKER_F</span><span class='op'>)</span>,
+                   AGEGRP<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>AGEGRP</span><span class='op'>)</span>,
+                   EDUCATION_COMP<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>EDUCATION_COMP</span><span class='op'>)</span>,
+                   HH_CHILD_R<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>HH_CHILD_R</span><span class='op'>)</span>,
+                   INC_CAT1<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>INC_CAT1</span><span class='op'>)</span>,
+                   MARITAL<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>MARITAL</span><span class='op'>)</span>,
+                   RACEETH4_I<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>RACEETH4_I</span><span class='op'>)</span>,
+                   N_ADULT_R<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>N_ADULT_R</span><span class='op'>)</span>,
+                   SEX_I<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>SEX_I</span><span class='op'>)</span>,
+                   STATE<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>STATE</span><span class='op'>)</span>,
+                   PATIENT_CONTACT_F <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>PATIENT_CONTACT_F</span><span class='op'>)</span>,
+                   INT_SEAS <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>INT_SEAS</span><span class='op'>)</span>
+                   <span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>The code below added a column which recoded the various states into regions.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>region</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"data/state_region.csv"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>h1n1data</span><span class='op'>$</span><span class='va'>state_recoded</span> <span class='op'>&lt;-</span> <span class='fu'>str_to_title</span><span class='op'>(</span><span class='va'>h1n1data</span><span class='op'>$</span><span class='va'>STATE</span><span class='op'>)</span>
+<span class='va'>h1n1data</span> <span class='op'>&lt;-</span> <span class='fu'>left_join</span><span class='op'>(</span><span class='va'>h1n1data</span>, <span class='va'>region</span>,
+                      by<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"state_recoded"</span> <span class='op'>=</span> <span class='st'>"State"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>h1n1data</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code> VACC_H1N1_F VACC_SEAS_F  B_H1N1_ANTIV B_H1N1_AVOID B_H1N1_FMASK
+ No :53471   No  :38210   No  :53438   No  :15263   No  :52444  
+ Yes:17069   Yes :32048   Yes : 2773   Yes :40661   Yes : 3892  
+             NA&#39;s:  282   NA&#39;s:14329   NA&#39;s:14616   NA&#39;s:14204  
+                                                                
+                                                                
+                                                                
+                                                                
+ B_H1N1_HANDS B_H1N1_LARGE B_H1N1_RCONT B_H1N1_TOUCH CONCERN_LEVEL
+ No  : 9813   No  :36252   No  :37220   No  :17939   0   : 6861   
+ Yes :46471   Yes :19955   Yes :18981   Yes :38163   1   :17218   
+ NA&#39;s:14256   NA&#39;s:14333   NA&#39;s:14339   NA&#39;s:14438   2   :22490   
+                                                     3   : 9618   
+                                                     NA&#39;s:14353   
+                                                                  
+                                                                  
+ INT_H1N1     KNOW_H1N1    INT_SEAS      DOCREC      CHRONIC_MED_F
+ 0   :17731   0   :30895   0   :15490   0   : 1948   No  :51265   
+ 1   :19663   1   : 5251   1   :13543   1   :40462   Yes :17073   
+ 2   : 9961   2   :19970   2   : 5670   2   : 8687   NA&#39;s: 2202   
+ 3   : 5187   NA&#39;s:14424   3   : 3415   3   : 2534                
+ NA&#39;s:17998                NA&#39;s:32422   4   :13803                
+                                        NA&#39;s: 3106                
+                                                                  
+ CLOSE_UNDER6MO_F HEALTH_WORKER_F PATIENT_CONTACT_F
+ No  :50032       No  :48599      No  :46951       
+ Yes : 4613       Yes : 6086      Yes : 4942       
+ NA&#39;s:15895       NA&#39;s:15855      NA&#39;s:18647       
+                                                   
+                                                   
+                                                   
+                                                   
+                AGEGRP               EDUCATION_COMP  HH_CHILD_R  
+ 10 - 17 Years     : 6833   &lt; 12 Years      : 4995   0   :39356  
+ 18 - 34 Years     :11037   12 Years        :12158   1   :12383  
+ 35 - 44 Years     : 8243   College Graduate:21376   2   :11333  
+ 45 - 54 Years     :11071   Some College    :14872   3   : 6969  
+ 55 - 64 Years     :11685   NA&#39;s            :17139   NA&#39;s:  499  
+ 6 Months - 9 Years: 7332                                        
+ 65+ Years         :14339                                        
+               INC_CAT1            MARITAL     
+ $75,001 - $100,000:19781   Married    :28539  
+ $50,001 - $75,000 : 9985   Not Married:24818  
+ $35,001 - $50,000 : 7976   NA&#39;s       :17183  
+ $15,001 - $25,000 : 5805                      
+ $25,001 - $35,000 : 5134                      
+ (Other)           : 6820                      
+ NA&#39;s              :15039                      
+                                 RACEETH4_I    N_ADULT_R   
+ Hispanic                             : 5469   1   :18654  
+ Non-Hispanic, Black Only             : 5776   2   :40293  
+ Non-Hispanic, Other or Multiple Races: 4626   3   : 7996  
+ Non-Hispanic, White Only             :54669   4   : 3098  
+                                               NA&#39;s:  499  
+                                                           
+                                                           
+    SEX_I                        STATE       state_recoded     
+ Female:40314   TEXAS               : 1720   Length:70540      
+ Male  :30226   NEW MEXICO          : 1678   Class :character  
+                CALIFORNIA          : 1637   Mode  :character  
+                GEORGIA             : 1605                     
+                MARYLAND            : 1584                     
+                DISTRICT OF COLUMBIA: 1581                     
+                (Other)             :60735                     
+    Region         
+ Length:70540      
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   
+                   </code></pre>
+</div>
+<p>The predictors are plotted against the target variable to check for complete or quasi-complete separation.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="panelset">
+<div class="panel">
+<span class="panel-name">Plots I</span>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="decision-tree_files/figure-html5/unnamed-chunk-13-1.png" width="624" /></p>
+</div>
+</div>
+<div class="panel">
+<span class="panel-name">Plots II</span><br />
+
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="decision-tree_files/figure-html5/unnamed-chunk-14-1.png" width="624" /></p>
+</div>
+</div>
+<div class="panel">
+<span class="panel-name">Plots III</span>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="decision-tree_files/figure-html5/unnamed-chunk-15-1.png" width="624" /></p>
+</div>
+</div>
+</div>
+<p>The new dataframe <em>h1n1model</em> is created. 3 variables with complete/quasi-complete separation were removed.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>h1n1model</span> <span class='op'>&lt;-</span> <span class='va'>h1n1data</span> <span class='co'>#new dataframe for predictive modeling</span>
+              
+
+<span class='va'>h1n1model</span> <span class='op'>&lt;-</span><span class='fu'>select</span><span class='op'>(</span><span class='va'>h1n1model</span>,<span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>INT_H1N1</span>,<span class='va'>B_H1N1_ANTIV</span>,<span class='va'>INT_SEAS</span>, <span class='va'>state_recoded</span>, <span class='va'>Region</span><span class='op'>)</span><span class='op'>)</span> <span class='co'>#Remove variable with complete separation from dataset.</span>
+
+
+<span class='va'>h1n1model</span> <span class='op'>&lt;-</span> <span class='va'>h1n1model</span> <span class='op'>%&gt;%</span> <span class='co'>#Omitting na in order as some models unable to process with missing values. </span>
+             <span class='va'>na.omit</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>h1n1model</span><span class='op'>)</span> <span class='co'>#To check the data again.</span>
+</code></pre>
+</div>
+<pre><code> VACC_H1N1_F VACC_SEAS_F B_H1N1_AVOID B_H1N1_FMASK B_H1N1_HANDS
+ No :30432   No :20780   No :10338    No :36863    No : 6618   
+ Yes: 9075   Yes:18727   Yes:29169    Yes: 2644    Yes:32889   
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+ B_H1N1_LARGE B_H1N1_RCONT B_H1N1_TOUCH CONCERN_LEVEL KNOW_H1N1
+ No :25744    No :26430    No :12467    0: 4486       0:21859  
+ Yes:13763    Yes:13077    Yes:27040    1:12541       1: 2903  
+                                        2:16183       2:14745  
+                                        3: 6297                
+                                                               
+                                                               
+                                                               
+ DOCREC    CHRONIC_MED_F CLOSE_UNDER6MO_F HEALTH_WORKER_F
+ 0:  917   No :28467     No :36077        No :34785      
+ 1:24438   Yes:11040     Yes: 3430        Yes: 4722      
+ 2: 5363                                                 
+ 3: 1271                                                 
+ 4: 7518                                                 
+                                                         
+                                                         
+ PATIENT_CONTACT_F                AGEGRP              EDUCATION_COMP 
+ No :35658         10 - 17 Years     :   0   &lt; 12 Years      : 3300  
+ Yes: 3849         18 - 34 Years     :8122   12 Years        : 8593  
+                   35 - 44 Years     :6220   College Graduate:16515  
+                   45 - 54 Years     :8283   Some College    :11099  
+                   55 - 64 Years     :8367                           
+                   6 Months - 9 Years:   0                           
+                   65+ Years         :8515                           
+ HH_CHILD_R               INC_CAT1            MARITAL     
+ 0:27196    $10,001 - $15,000 : 1979   Married    :21477  
+ 1: 4939    $15,001 - $25,000 : 4335   Not Married:18030  
+ 2: 4570    $25,001 - $35,000 : 3826                      
+ 3: 2802    $35,001 - $50,000 : 5879                      
+            $50,001 - $75,000 : 7082                      
+            $75,001 - $100,000:13303                      
+            &lt;= $10,000        : 3103                      
+                                 RACEETH4_I    N_ADULT_R
+ Hispanic                             : 2581   1:11389  
+ Non-Hispanic, Black Only             : 3083   2:22005  
+ Non-Hispanic, Other or Multiple Races: 2274   3: 4399  
+ Non-Hispanic, White Only             :31569   4: 1714  
+                                                        
+                                                        
+                                                        
+    SEX_I                        STATE      
+ Female:23154   NEW MEXICO          :  964  
+ Male  :16353   DISTRICT OF COLUMBIA:  926  
+                TEXAS               :  926  
+                CALIFORNIA          :  896  
+                ARIZONA             :  878  
+                VIRGINIA            :  863  
+                (Other)             :34054  </code></pre>
+</div>
+<h1 id="modeling">3 Modeling</h1>
+<h2 id="literature-review-choosing-the-right-modeling-package">3.1 Literature Review: Choosing the right Modeling Package</h2>
+<p>The R <em>caret</em> package is a set of functions that streamlines the process for predictive model building. It’s current release consist 238 models.As different modeling functions has different syntax for modeling training and prediction, it will be difficult to keep track of which algorithms are in which package. For example, a random forest model will be using <em>randomforest()</em> syntax to run the model and a neural network model requires the <em>neuralnet()</em> syntax. Moreover, each of the algorithm will have their own arguments, making it difficult and time-consuming if different models are required to be used in the same code.</p>
+<p>There is no need to call for the library for the different modeling packages using <em>caret</em>. <em>caret</em> will assist to load the required packages when used and if the package is missing, there will be a prompt for installation.</p>
+<p>The <em>train()</em> function in <em>caret</em> has multiple functions:</p>
+<ol type="1">
+<li>Building a model using a specific algorithm</li>
+<li>Cross validating the model</li>
+<li>Tune the parameters for optimal model performance</li>
+<li>Choose the optimal model based on a given evaluation metric</li>
+<li>Preprocessing</li>
+</ol>
+<p>The <em>caret</em> package made it easier by combining the data pre-processing, model hyperparameter tuning within the same package. It allows quick change of model with minor syntax change, allowing it the most suitable model to be found.</p>
+<h2 id="data-splitting">3.2 Data Splitting</h2>
+<p>As the H1N1 vaccination (<em>VACC_H1N1_F</em>) is the target variable is important for analysis, a balance of the target variable across the training/test sets, the function <em>createDataPartition</em> was used to create training/testing sets using stratified random sampling.</p>
+<p>Data is split with 80% as training data and 20% are testing data.In place of partitioning a validation dataset, the <em>traincontrol</em> function is used for the cross-validation of the training data set.</p>
+<p>The below code shows the spliting of the dataset.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>123</span><span class='op'>)</span>
+
+<span class='co'># define an 80%/20% train/test split of the h1n1model data set</span>
+<span class='va'>split</span><span class='op'>=</span><span class='fl'>0.80</span> 
+<span class='va'>trainIndex</span> <span class='op'>&lt;-</span> <span class='fu'>createDataPartition</span><span class='op'>(</span><span class='va'>h1n1model</span><span class='op'>$</span><span class='va'>VACC_H1N1_F</span>, p<span class='op'>=</span><span class='va'>split</span>, list<span class='op'>=</span><span class='cn'>FALSE</span><span class='op'>)</span>
+<span class='va'>data_train</span> <span class='op'>&lt;-</span> <span class='va'>h1n1model</span><span class='op'>[</span> <span class='va'>trainIndex</span>,<span class='op'>]</span>
+<span class='va'>data_test</span> <span class='op'>&lt;-</span> <span class='va'>h1n1model</span><span class='op'>[</span><span class='op'>-</span><span class='va'>trainIndex</span>,<span class='op'>]</span>
+</code></pre>
+</div>
+</div>
+<h2 id="model-tuning">3.3 Model Tuning</h2>
+<p>The function <em>trainControl</em> generates parameters that further control how models are created, with different resampling methods like bootstrap re-sampling, k-fold cross validation. In the code below, the k-fold cross validation method with <em>number =</em> referring to the number of folds being used. The repeated k-fold cross validation method involves splitting the dataset into k-subsets and repeating in a number of time. For each subset is held out while the model is trained on all other subsets. This process is completed until accuracy is determine for each instance in the dataset, and an overall accuracy estimate is provided.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fitControl</span> <span class='op'>&lt;-</span> <span class='fu'>trainControl</span><span class='op'>(</span>
+  method <span class='op'>=</span> <span class='st'>"cv"</span>,
+  number <span class='op'>=</span> <span class='fl'>5</span>,
+  classProbs <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  summaryFunction <span class='op'>=</span> <span class='va'>twoClassSummary</span>, <span class='co'>#twoClassSummary computes the sensitivity, specificity and aread under the ROC curve. </span>
+  savePredictions <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>There are two main ways of tuning the model within the <em>caret</em> package, using <em>tuneLength</em> or <em>tuneGrid</em>.</p>
+<p>The <em>tuneLength</em> parameter allows the user to enter a value which will determine the number of default values being used as the main parameter for a specific model. The number used can be applicable throughout all the models. The <em>tuneGrid</em> function create a dataframe to store the tuning parameter grid specified by the user. It allows the user to determine which are the values a model will take as it’s main parameter. The parameters in the <em>tuneGrid</em> is model specific. Using <em>tuneGrid</em> will be more applicable as it provides the user more model customizability and fine tuning.</p>
+<p>For random forest using the <em>ranger</em> method in caret, three options are available for tuning the model. Firstly, <em>mtry</em> which refers to the number of variables randomly sampled as candidates at each split. Split rule defines which splitting method is used. The default used is <em>Gini</em> where the split minimizes the the Gini impurtity for classification. The minimum node size refers to the minimum number of observations in a terminal node.</p>
+<p>According the research (Probst et al.,2019), <em>mtry</em> has the most influence over the model performance and the best value of mtry depends on the number of variables that are related to the outcome.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Random Forest:</span>
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>123</span><span class='op'>)</span>
+
+<span class='va'>m</span><span class='op'>=</span><span class='fl'>4</span>
+<span class='va'>ns</span><span class='op'>=</span><span class='fl'>10</span>
+
+<span class='va'>rf_grid</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/expand.grid.html'>expand.grid</a></span><span class='op'>(</span>
+                mtry <span class='op'>=</span> <span class='fl'>2</span><span class='op'>:</span><span class='va'>m</span>,
+                splitrule <span class='op'>=</span><span class='st'>"gini"</span>,
+                min.node.size <span class='op'>=</span> <span class='fl'>10</span>
+                      <span class='op'>)</span>
+
+<span class='va'>model_rf</span> <span class='op'>&lt;-</span> <span class='fu'>train</span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span><span class='op'>~</span><span class='va'>.</span>, 
+                  data<span class='op'>=</span><span class='va'>data_train</span>, 
+                  trControl <span class='op'>=</span> <span class='va'>fitControl</span>, 
+                  method <span class='op'>=</span> <span class='st'>"ranger"</span>,
+                  metric <span class='op'>=</span> <span class='st'>"ROC"</span>,
+                  importance <span class='op'>=</span> <span class='st'>"impurity"</span>,
+                  tuneGrid <span class='op'>=</span> <span class='va'>rf_grid</span><span class='op'>)</span>
+
+<span class='va'>model_rf</span>
+</code></pre>
+</div>
+<pre><code>Random Forest 
+
+31606 samples
+   23 predictor
+    2 classes: &#39;No&#39;, &#39;Yes&#39; 
+
+No pre-processing
+Resampling: Cross-Validated (5 fold) 
+Summary of sample sizes: 25285, 25285, 25284, 25285, 25285 
+Resampling results across tuning parameters:
+
+  mtry  ROC        Sens       Spec     
+  2     0.8335559  0.9952764  0.0738292
+  3     0.8390148  0.9692352  0.2856749
+  4     0.8417187  0.9558860  0.3809917
+
+Tuning parameter &#39;splitrule&#39; was held constant at a value of
+ gini
+Tuning parameter &#39;min.node.size&#39; was held constant at a
+ value of 10
+ROC was used to select the optimal model using the largest value.
+The final values used for the model were mtry = 4, splitrule =
+ gini and min.node.size = 10.</code></pre>
+</div>
+<p>The <em>rpart2</em> method within the <em>caret</em> package allows for the tuning for the maximum depth of the tree. This tuning variable can help to limit the decsion tree model from growing too deep which might cause over-fitting.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Decision Tree</span>
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>123</span><span class='op'>)</span>
+
+<span class='va'>depth</span> <span class='op'>=</span> <span class='fl'>5</span> <span class='co'>#User-defined maximum depth of decision tree</span>
+
+<span class='va'>dt_grid</span><span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/expand.grid.html'>expand.grid</a></span><span class='op'>(</span>maxdepth <span class='op'>=</span> <span class='va'>depth</span><span class='op'>)</span>
+
+<span class='va'>model_dt</span> <span class='op'>&lt;-</span> <span class='fu'>train</span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span><span class='op'>~</span><span class='va'>.</span>, 
+                  data<span class='op'>=</span><span class='va'>data_train</span>, 
+                  trControl <span class='op'>=</span> <span class='va'>fitControl</span>, 
+                  method <span class='op'>=</span> <span class='st'>"rpart2"</span>,
+                  metric <span class='op'>=</span> <span class='st'>"ROC"</span>,
+                  tuneGrid <span class='op'>=</span> <span class='va'>dt_grid</span>
+                  <span class='op'>)</span>
+
+<span class='va'>model_dt</span>
+</code></pre>
+</div>
+<pre><code>CART 
+
+31606 samples
+   23 predictor
+    2 classes: &#39;No&#39;, &#39;Yes&#39; 
+
+No pre-processing
+Resampling: Cross-Validated (5 fold) 
+Summary of sample sizes: 25285, 25285, 25284, 25285, 25285 
+Resampling results:
+
+  ROC        Sens       Spec     
+  0.7841742  0.9484104  0.4137741
+
+Tuning parameter &#39;maxdepth&#39; was held constant at a value of 5</code></pre>
+</div>
+<p>The principle behind K-Nearest Neighbor(KNN) algorithm is to find K predefined number of training samples that are closest in the distance to a new point &amp; predict a label for our new point using these samples. For classification the KNN method starts by identifying the k most similar training observations (i.e. neighbors) to the new observation, and then assigns the observation to the class containing the majority of its neighbors.</p>
+<p>The choice of k considerably impacts the output of KNN model. <em>k = 1</em> corresponds to a highly flexible method resulting to a training error rate of 0 (over-fitting), but the test error rate may be quite high. The value of optimal k is usually the square root of N, where N is the total number of samples.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#K-Nearest Neighbors</span>
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>123</span><span class='op'>)</span>
+
+<span class='va'>kv</span><span class='op'>=</span><span class='fl'>10</span>  <span class='co'>#User-defined k value</span>
+
+<span class='va'>knn_grid</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/expand.grid.html'>expand.grid</a></span><span class='op'>(</span>k<span class='op'>=</span> <span class='va'>kv</span><span class='op'>)</span>
+
+<span class='va'>model_knn</span> <span class='op'>&lt;-</span> <span class='fu'>train</span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span><span class='op'>~</span><span class='va'>.</span>, 
+                  data<span class='op'>=</span><span class='va'>data_train</span>, 
+                  trControl <span class='op'>=</span> <span class='va'>fitControl</span>, 
+                  method <span class='op'>=</span> <span class='st'>"knn"</span>,
+                  metric <span class='op'>=</span> <span class='st'>"ROC"</span>,
+                  tuneGrid <span class='op'>=</span> <span class='va'>knn_grid</span>
+                  <span class='op'>)</span>
+
+<span class='va'>model_knn</span>
+</code></pre>
+</div>
+<pre><code>k-Nearest Neighbors 
+
+31606 samples
+   23 predictor
+    2 classes: &#39;No&#39;, &#39;Yes&#39; 
+
+No pre-processing
+Resampling: Cross-Validated (5 fold) 
+Summary of sample sizes: 25285, 25285, 25284, 25285, 25285 
+Resampling results:
+
+  ROC        Sens       Spec     
+  0.8048322  0.9500945  0.3513774
+
+Tuning parameter &#39;k&#39; was held constant at a value of 10</code></pre>
+</div>
+<p>For the neural network(nnet) model,there are two tuning parameters, which need to be set. First is the number of nodes in the hidden layer and second, it is the value of the “weight decay” parameter.</p>
+<p>The hidden layer of the neural network is the intermediate layer between the input and output layer of a neuron network (Panchal &amp; Panchal, 2014, p. 460). The hidden nodes might cause overfitting when too many neurons(hidden nodes) are present in the network. The purpose of the weight decay factor is to prevent overfitting.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#Neural Network  </span>
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>123</span><span class='op'>)</span>
+
+<span class='va'>sz</span> <span class='op'>=</span> <span class='fl'>1</span> <span class='co'>#User-defined number of hidden nodes</span>
+<span class='va'>dc</span> <span class='op'>=</span> <span class='fl'>0</span> <span class='co'>#USer-defined decay rate</span>
+
+<span class='va'>nnet_grid</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/expand.grid.html'>expand.grid</a></span><span class='op'>(</span> size <span class='op'>=</span> <span class='va'>sz</span>,
+                          decay <span class='op'>=</span> <span class='va'>dc</span><span class='op'>)</span>
+
+
+<span class='va'>model_nnet</span> <span class='op'>&lt;-</span> <span class='fu'>train</span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span><span class='op'>~</span><span class='va'>.</span>, 
+                  data<span class='op'>=</span><span class='va'>data_train</span>, 
+                  trControl <span class='op'>=</span> <span class='va'>fitControl</span>, 
+                  method <span class='op'>=</span> <span class='st'>"nnet"</span>,
+                  metric <span class='op'>=</span> <span class='st'>"ROC"</span>,
+                  tuneGrid <span class='op'>=</span> <span class='va'>nnet_grid</span>
+                  <span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># weights:  99
+initial  value 26589.627274 
+iter  10 value 13626.461983
+iter  20 value 13376.340522
+iter  30 value 12915.052594
+iter  40 value 12606.753114
+iter  50 value 12331.349382
+iter  60 value 11946.723445
+iter  70 value 11776.270369
+iter  80 value 11732.724596
+iter  90 value 11718.627201
+iter 100 value 11717.572046
+final  value 11717.572046 
+stopped after 100 iterations
+# weights:  99
+initial  value 17171.750195 
+iter  10 value 11380.634022
+iter  20 value 11309.563841
+iter  30 value 11278.590198
+iter  40 value 11264.527582
+iter  50 value 11259.782750
+iter  60 value 11256.844758
+iter  70 value 11253.710980
+iter  80 value 11241.607724
+iter  90 value 11232.658714
+iter 100 value 11232.389316
+final  value 11232.389316 
+stopped after 100 iterations
+# weights:  99
+initial  value 19684.645375 
+iter  10 value 10712.335323
+iter  20 value 10503.529519
+iter  30 value 10471.490428
+iter  40 value 10447.308989
+iter  50 value 10426.685950
+iter  60 value 10414.830002
+iter  70 value 10410.289543
+iter  80 value 10409.708839
+final  value 10409.698890 
+converged
+# weights:  99
+initial  value 17241.041006 
+iter  10 value 13626.329956
+iter  20 value 12536.157114
+iter  30 value 11488.105019
+iter  40 value 11293.383176
+iter  50 value 11148.360692
+iter  60 value 11045.260594
+iter  70 value 10976.829467
+iter  80 value 10943.918263
+iter  90 value 10928.649520
+iter 100 value 10914.121349
+final  value 10914.121349 
+stopped after 100 iterations
+# weights:  99
+initial  value 16605.060349 
+iter  10 value 12063.508758
+iter  20 value 11550.729798
+iter  30 value 11528.194364
+iter  40 value 11510.989549
+iter  50 value 11503.611516
+iter  60 value 11493.210692
+iter  70 value 11487.004214
+iter  80 value 11481.522394
+iter  90 value 11473.852666
+iter 100 value 11468.934232
+final  value 11468.934232 
+stopped after 100 iterations
+# weights:  99
+initial  value 18646.728694 
+iter  10 value 14221.978222
+iter  20 value 14022.646547
+iter  30 value 13911.598167
+iter  40 value 13319.594765
+iter  50 value 12953.457998
+iter  60 value 12841.826303
+iter  70 value 12639.090264
+iter  80 value 12554.912863
+iter  90 value 12535.639135
+iter 100 value 12531.439084
+final  value 12531.439084 
+stopped after 100 iterations</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>model_nnet</span>
+</code></pre>
+</div>
+<pre><code>Neural Network 
+
+31606 samples
+   23 predictor
+    2 classes: &#39;No&#39;, &#39;Yes&#39; 
+
+No pre-processing
+Resampling: Cross-Validated (5 fold) 
+Summary of sample sizes: 25285, 25285, 25284, 25285, 25285 
+Resampling results:
+
+  ROC        Sens       Spec     
+  0.7411793  0.9238097  0.3256198
+
+Tuning parameter &#39;size&#39; was held constant at a value of 1
+
+Tuning parameter &#39;decay&#39; was held constant at a value of 0</code></pre>
+</div>
+<h1 id="plotting-variable-importance">4. Plotting Variable Importance</h1>
+<p>Variable importance helps to identify most important variables that contribute most significantly to the target variable.Being able to select the most important predictor variables that explains the major part of variance of a target variable can help to identify and build high performing models.</p>
+<p>The variable importance of each trained model is plotted.(<em>Note:kNN does not have variable importance</em>)</p>
+<div class="panelset">
+<div class="panel">
+<p><span class="panel-name">Variable Importance of Random Forest</span></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>rfImp</span> <span class='op'>&lt;-</span> <span class='fu'>varImp</span><span class='op'>(</span><span class='va'>model_rf</span><span class='op'>)</span>
+<span class='va'>dtImp</span> <span class='op'>&lt;-</span> <span class='fu'>varImp</span><span class='op'>(</span><span class='va'>model_dt</span><span class='op'>)</span>
+<span class='va'>nnetImp</span> <span class='op'>&lt;-</span> <span class='fu'>varImp</span><span class='op'>(</span><span class='va'>model_nnet</span><span class='op'>)</span>
+
+<span class='va'>No_Var</span><span class='op'>=</span><span class='fl'>5</span> <span class='co'>#No.of variable importance to be shown can be user-defined.</span>
+
+<span class='va'>g1</span> <span class='op'>&lt;-</span> <span class='va'>rfImp</span><span class='op'>$</span><span class='va'>importance</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>rownames_to_column</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>arrange</span><span class='op'>(</span><span class='va'>Overall</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>mutate</span><span class='op'>(</span>rowname <span class='op'>=</span> <span class='fu'>forcats</span><span class='fu'>::</span><span class='fu'><a href='https://forcats.tidyverse.org/reference/fct_inorder.html'>fct_inorder</a></span><span class='op'>(</span><span class='va'>rowname</span> <span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>top_n</span><span class='op'>(</span><span class='va'>No_Var</span>,<span class='va'>Overall</span><span class='op'>)</span> <span class='op'>%&gt;%</span>  <span class='co'>#top 5 Importance</span>
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>rowname</span>, y <span class='op'>=</span> <span class='va'>Overall</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>geom_col</span><span class='op'>(</span>color<span class='op'>=</span><span class='st'>"black"</span>,fill <span class='op'>=</span> <span class='st'>"light blue"</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>coord_flip</span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>xlab</span><span class='op'>(</span><span class='st'>"Variable"</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>ggtitle</span><span class='op'>(</span><span class='st'>"Variable Importance of Random Forest Model"</span><span class='op'>)</span> <span class='op'>+</span> 
+    <span class='fu'>theme_minimal</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'>theme</span><span class='op'>(</span>panel.background <span class='op'>=</span> <span class='fu'>element_rect</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"gray80"</span>, color <span class='op'>=</span> <span class='st'>"gray80"</span>, size <span class='op'>=</span><span class='fl'>0.5</span>, linetype <span class='op'>=</span> <span class='st'>"solid"</span><span class='op'>)</span>,
+       panel.grid.major <span class='op'>=</span> <span class='fu'>element_line</span><span class='op'>(</span>size <span class='op'>=</span><span class='fl'>0.5</span>, linetype <span class='op'>=</span> <span class='st'>"solid"</span>, color <span class='op'>=</span> <span class='st'>"white"</span><span class='op'>)</span>, <span class='co'>#major refers to grid line at values</span>
+       panel.grid.minor <span class='op'>=</span> <span class='fu'>element_line</span><span class='op'>(</span>size <span class='op'>=</span><span class='fl'>0.25</span>, linetype <span class='op'>=</span> <span class='st'>"solid"</span>, color <span class='op'>=</span> <span class='st'>"white"</span><span class='op'>)</span><span class='op'>)</span> <span class='co'># minor refers line in between grid values</span>
+
+<span class='fu'>ggplotly</span><span class='op'>(</span><span class='va'>g1</span>, tooltip <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"rowname"</span>, <span class='st'>"Overall"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div id="htmlwidget-d71df8e7ff16351265c5" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d71df8e7ff16351265c5">{"x":{"data":[{"orientation":"h","width":[0.9,0.9,0.9,0.9,0.9],"base":[0,0,0,0,0],"x":[18.2359585268045,24.8869169214332,30.709481313405,69.2805079158989,100],"y":[1,2,3,4,5],"text":["rowname: HEALTH_WORKER_FYes<br />Overall:  18.23596","rowname: DOCREC2<br />Overall:  24.88692","rowname: DOCREC1<br />Overall:  30.70948","rowname: DOCREC4<br />Overall:  69.28051","rowname: VACC_SEAS_FYes<br />Overall: 100.00000"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(173,216,230,1)","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.4063926940639,"r":7.30593607305936,"b":41.8264840182648,"l":130.776255707763},"plot_bgcolor":"rgba(204,204,204,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Variable Importance of Random Forest Model","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-5,105],"tickmode":"array","ticktext":["0","25","50","75","100"],"tickvals":[0,25,50,75,100],"categoryorder":"array","categoryarray":["0","25","50","75","100"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Overall","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,5.6],"tickmode":"array","ticktext":["HEALTH_WORKER_FYes","DOCREC2","DOCREC1","DOCREC4","VACC_SEAS_FYes"],"tickvals":[1,2,3,4,5],"categoryorder":"array","categoryarray":["HEALTH_WORKER_FYes","DOCREC2","DOCREC1","DOCREC4","VACC_SEAS_FYes"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Variable","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"dd02b796299":{"x":{},"y":{},"type":"bar"}},"cur_data":"dd02b796299","visdat":{"dd02b796299":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="panel">
+<p><span class="panel-name">Variable Importance of Decision Tree</span></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>g2</span> <span class='op'>&lt;-</span> <span class='va'>dtImp</span><span class='op'>$</span><span class='va'>importance</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>rownames_to_column</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>arrange</span><span class='op'>(</span><span class='va'>Overall</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>mutate</span><span class='op'>(</span>rowname <span class='op'>=</span> <span class='fu'>forcats</span><span class='fu'>::</span><span class='fu'><a href='https://forcats.tidyverse.org/reference/fct_inorder.html'>fct_inorder</a></span><span class='op'>(</span><span class='va'>rowname</span> <span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>top_n</span><span class='op'>(</span><span class='va'>No_Var</span>,<span class='va'>Overall</span><span class='op'>)</span> <span class='op'>%&gt;%</span>  <span class='co'>#top 5 Importance</span>
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>rowname</span>, y <span class='op'>=</span> <span class='va'>Overall</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>geom_col</span><span class='op'>(</span>color<span class='op'>=</span><span class='st'>"black"</span>,fill <span class='op'>=</span> <span class='st'>"light blue"</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>coord_flip</span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>xlab</span><span class='op'>(</span><span class='st'>"Variable"</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>ggtitle</span><span class='op'>(</span><span class='st'>"Variable Importance of Decision Tree Model"</span><span class='op'>)</span> <span class='op'>+</span> 
+    <span class='fu'>theme_minimal</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'>theme</span><span class='op'>(</span>panel.background <span class='op'>=</span> <span class='fu'>element_rect</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"gray80"</span>, color <span class='op'>=</span> <span class='st'>"gray80"</span>, size <span class='op'>=</span><span class='fl'>0.5</span>, linetype <span class='op'>=</span> <span class='st'>"solid"</span><span class='op'>)</span>,
+       panel.grid.major <span class='op'>=</span> <span class='fu'>element_line</span><span class='op'>(</span>size <span class='op'>=</span><span class='fl'>0.5</span>, linetype <span class='op'>=</span> <span class='st'>"solid"</span>, color <span class='op'>=</span> <span class='st'>"white"</span><span class='op'>)</span>, <span class='co'>#major refers to grid line at values</span>
+       panel.grid.minor <span class='op'>=</span> <span class='fu'>element_line</span><span class='op'>(</span>size <span class='op'>=</span><span class='fl'>0.25</span>, linetype <span class='op'>=</span> <span class='st'>"solid"</span>, color <span class='op'>=</span> <span class='st'>"white"</span><span class='op'>)</span><span class='op'>)</span> <span class='co'># minor refers line in between grid values</span>
+
+<span class='fu'>ggplotly</span><span class='op'>(</span><span class='va'>g2</span>, tooltip <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"rowname"</span>, <span class='st'>"Overall"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div id="htmlwidget-c76289a2c327c36c0433" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c76289a2c327c36c0433">{"x":{"data":[{"orientation":"h","width":[0.9,0.9,0.9,0.9,0.9],"base":[0,0,0,0,0],"x":[24.9272016160619,25.258635091715,27.4749244977431,65.8105301166099,100],"y":[1,2,3,4,5],"text":["rowname: HEALTH_WORKER_FYes<br />Overall:  24.92720","rowname: DOCREC1<br />Overall:  25.25864","rowname: DOCREC2<br />Overall:  27.47492","rowname: VACC_SEAS_FYes<br />Overall:  65.81053","rowname: DOCREC4<br />Overall: 100.00000"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(173,216,230,1)","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.4063926940639,"r":7.30593607305936,"b":41.8264840182648,"l":130.776255707763},"plot_bgcolor":"rgba(204,204,204,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Variable Importance of Decision Tree Model","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-5,105],"tickmode":"array","ticktext":["0","25","50","75","100"],"tickvals":[0,25,50,75,100],"categoryorder":"array","categoryarray":["0","25","50","75","100"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Overall","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,5.6],"tickmode":"array","ticktext":["HEALTH_WORKER_FYes","DOCREC1","DOCREC2","VACC_SEAS_FYes","DOCREC4"],"tickvals":[1,2,3,4,5],"categoryorder":"array","categoryarray":["HEALTH_WORKER_FYes","DOCREC1","DOCREC2","VACC_SEAS_FYes","DOCREC4"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Variable","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"dd0701f6c20":{"x":{},"y":{},"type":"bar"}},"cur_data":"dd0701f6c20","visdat":{"dd0701f6c20":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="panel">
+<p><span class="panel-name">Variable Importance of Neural Network</span></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>g3</span> <span class='op'>&lt;-</span> <span class='va'>nnetImp</span><span class='op'>$</span><span class='va'>importance</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>rownames_to_column</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>arrange</span><span class='op'>(</span><span class='va'>Overall</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>mutate</span><span class='op'>(</span>rowname <span class='op'>=</span> <span class='fu'>forcats</span><span class='fu'>::</span><span class='fu'><a href='https://forcats.tidyverse.org/reference/fct_inorder.html'>fct_inorder</a></span><span class='op'>(</span><span class='va'>rowname</span> <span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>top_n</span><span class='op'>(</span><span class='va'>No_Var</span>,<span class='va'>Overall</span><span class='op'>)</span> <span class='op'>%&gt;%</span>  <span class='co'>#top 5 Importance</span>
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>rowname</span>, y <span class='op'>=</span> <span class='va'>Overall</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>geom_col</span><span class='op'>(</span>color<span class='op'>=</span><span class='st'>"black"</span>,fill <span class='op'>=</span> <span class='st'>"light blue"</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>coord_flip</span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>xlab</span><span class='op'>(</span><span class='st'>"Variable"</span><span class='op'>)</span><span class='op'>+</span>
+    <span class='fu'>ggtitle</span><span class='op'>(</span><span class='st'>"Variable Importance of Neural Network Model"</span><span class='op'>)</span> <span class='op'>+</span> 
+    <span class='fu'>theme_minimal</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'>theme</span><span class='op'>(</span>panel.background <span class='op'>=</span> <span class='fu'>element_rect</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"gray80"</span>, color <span class='op'>=</span> <span class='st'>"gray80"</span>, size <span class='op'>=</span><span class='fl'>0.5</span>, linetype <span class='op'>=</span> <span class='st'>"solid"</span><span class='op'>)</span>,
+       panel.grid.major <span class='op'>=</span> <span class='fu'>element_line</span><span class='op'>(</span>size <span class='op'>=</span><span class='fl'>0.5</span>, linetype <span class='op'>=</span> <span class='st'>"solid"</span>, color <span class='op'>=</span> <span class='st'>"white"</span><span class='op'>)</span>, <span class='co'>#major refers to grid line at values</span>
+       panel.grid.minor <span class='op'>=</span> <span class='fu'>element_line</span><span class='op'>(</span>size <span class='op'>=</span><span class='fl'>0.25</span>, linetype <span class='op'>=</span> <span class='st'>"solid"</span>, color <span class='op'>=</span> <span class='st'>"white"</span><span class='op'>)</span><span class='op'>)</span> <span class='co'># minor refers line in between grid values</span>
+
+<span class='fu'>ggplotly</span><span class='op'>(</span><span class='va'>g3</span>, tooltip <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"rowname"</span>, <span class='st'>"Overall"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div id="htmlwidget-d6865431f3aaf64c1d37" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d6865431f3aaf64c1d37">{"x":{"data":[{"orientation":"h","width":[0.9,0.9,0.9,0.9,0.9],"base":[0,0,0,0,0],"x":[31.8277313713564,32.7172301979378,50.6010822123337,99.5454136385648,100],"y":[1,2,3,4,5],"text":["rowname: DOCREC4<br />Overall:  31.82773","rowname: PATIENT_CONTACT_FYes<br />Overall:  32.71723","rowname: DOCREC2<br />Overall:  50.60108","rowname: VACC_SEAS_FYes<br />Overall:  99.54541","rowname: DOCREC3<br />Overall: 100.00000"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(173,216,230,1)","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"}},"showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":45.4063926940639,"r":7.30593607305936,"b":41.8264840182648,"l":142.465753424658},"plot_bgcolor":"rgba(204,204,204,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Variable Importance of Neural Network Model","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-5,105],"tickmode":"array","ticktext":["0","25","50","75","100"],"tickvals":[0,25,50,75,100],"categoryorder":"array","categoryarray":["0","25","50","75","100"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Overall","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,5.6],"tickmode":"array","ticktext":["DOCREC4","PATIENT_CONTACT_FYes","DOCREC2","VACC_SEAS_FYes","DOCREC3"],"tickvals":[1,2,3,4,5],"categoryorder":"array","categoryarray":["DOCREC4","PATIENT_CONTACT_FYes","DOCREC2","VACC_SEAS_FYes","DOCREC3"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Variable","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"dd02a2451d":{"x":{},"y":{},"type":"bar"}},"cur_data":"dd02a2451d","visdat":{"dd02a2451d":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<h1 id="model-comparision-by-rocauc-and-visualisations">5. Model Comparision by ROC/AUC and Visualisations</h1>
+<p>Note: Compare the model, note the predicted results.</p>
+<p>The ROC (Receiver Operating Characteristic) curve is used to evaluate the strength of a classification model and also to compare between classification models.The ROC curve shows the trade-off between the true positive rate and the false positive rate. To compare between models, the AUC (area under the curve) is used. AUC provides an aggregate measure of performance of a model across the classification thresholds. It is a representation of the model’s capability to distinguish between the classes.</p>
+<h2 id="comparing-roc-packages">5.1 Comparing ROC Packages</h2>
+<p>The following R packages <em>ROCR</em>, <em>pROC</em> and <em>plotROC</em> are used to plot the ROC curves of the predictive models. The packages are later compared on usability, comprehensiveness and visualization of ROC curves.</p>
+<h3 id="using-rocr-package">5.1.1 Using <em>ROCR</em> Package</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#using ROCR package </span>
+
+<span class='co'>#ROC Curve for Random Forest</span>
+<span class='va'>rf_pred</span> <span class='op'>&lt;-</span> <span class='fu'>prediction</span><span class='op'>(</span><span class='va'>model_rf</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>Yes</span>,<span class='va'>model_rf</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>obs</span><span class='op'>)</span>
+<span class='va'>rf_perf</span> <span class='op'>&lt;-</span> <span class='fu'>performance</span><span class='op'>(</span><span class='va'>rf_pred</span>,<span class='st'>"tpr"</span>,<span class='st'>"fpr"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>rf_perf</span>, main <span class='op'>=</span> <span class='st'>"ROC Curves of Models"</span><span class='op'>)</span>
+
+
+<span class='co'>#ROC Curve for Decision Tree</span>
+<span class='va'>dt_pred</span> <span class='op'>&lt;-</span><span class='fu'>prediction</span><span class='op'>(</span><span class='va'>model_dt</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>Yes</span>,<span class='va'>model_dt</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>obs</span><span class='op'>)</span>
+<span class='va'>dt_perf</span> <span class='op'>&lt;-</span> <span class='fu'>performance</span><span class='op'>(</span><span class='va'>dt_pred</span>,<span class='st'>"tpr"</span>,<span class='st'>"fpr"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>dt_perf</span>, add <span class='op'>=</span> <span class='cn'>TRUE</span>, col <span class='op'>=</span> <span class='st'>"blue"</span><span class='op'>)</span>
+
+<span class='co'>#ROC Curve for KNN</span>
+<span class='va'>knn_pred</span> <span class='op'>&lt;-</span><span class='fu'>prediction</span><span class='op'>(</span><span class='va'>model_knn</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>Yes</span>,<span class='va'>model_knn</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>obs</span><span class='op'>)</span>
+<span class='va'>knn_perf</span> <span class='op'>&lt;-</span> <span class='fu'>performance</span><span class='op'>(</span><span class='va'>knn_pred</span>,<span class='st'>"tpr"</span>,<span class='st'>"fpr"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>knn_perf</span>, add <span class='op'>=</span> <span class='cn'>TRUE</span>, col <span class='op'>=</span> <span class='st'>"red"</span><span class='op'>)</span>
+
+<span class='co'>#ROC Curve for Neural Network</span>
+<span class='va'>nnet_pred</span> <span class='op'>&lt;-</span><span class='fu'>prediction</span><span class='op'>(</span><span class='va'>model_nnet</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>Yes</span>,<span class='va'>model_nnet</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>obs</span><span class='op'>)</span>
+<span class='va'>nnet_perf</span> <span class='op'>&lt;-</span> <span class='fu'>performance</span><span class='op'>(</span><span class='va'>nnet_pred</span>,<span class='st'>"tpr"</span>,<span class='st'>"fpr"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>nnet_perf</span>, add <span class='op'>=</span> <span class='cn'>TRUE</span>, col <span class='op'>=</span> <span class='st'>"green"</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/graphics/legend.html'>legend</a></span><span class='op'>(</span><span class='st'>"right"</span>, legend <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Random Forest"</span>,<span class='st'>"Decision Tree"</span>,<span class='st'>"KNN"</span>,<span class='st'>"Neural Network"</span><span class='op'>)</span>,bty<span class='op'>=</span> <span class='st'>'n'</span>,cex <span class='op'>=</span> <span class='fl'>1</span>, lty <span class='op'>=</span><span class='fl'>1</span>, 
+       col<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"black"</span>,<span class='st'>"blue"</span>,<span class='st'>"red"</span>,<span class='st'>"green"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="decision-tree_files/figure-html5/unnamed-chunk-26-1.png" width="624" /></p>
+</div>
+<h3 id="using-proc-package">5.1.2 Using <em>pROC</em> Package</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#using pROC package</span>
+
+<span class='co'>#ROC Curve for Random Forest</span>
+<span class='va'>rf_pROC</span> <span class='op'>&lt;-</span> <span class='fu'>roc</span><span class='op'>(</span><span class='va'>model_rf</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>obs</span>,<span class='va'>model_rf</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>Yes</span> <span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>rf_pROC</span>, print.auc <span class='op'>=</span> <span class='cn'>TRUE</span>, grid <span class='op'>=</span> <span class='cn'>TRUE</span>, col <span class='op'>=</span> <span class='st'>"red"</span><span class='op'>)</span>
+
+<span class='co'>#ROC Curve for Decision Tree</span>
+<span class='va'>dt_pROC</span> <span class='op'>&lt;-</span> <span class='fu'>roc</span><span class='op'>(</span><span class='va'>model_dt</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>obs</span>,<span class='va'>model_dt</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>Yes</span> <span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>dt_pROC</span>, print.auc <span class='op'>=</span> <span class='cn'>TRUE</span>, col <span class='op'>=</span> <span class='st'>"blue"</span>, add <span class='op'>=</span> <span class='cn'>TRUE</span>, print.auc.y <span class='op'>=</span> <span class='fl'>.4</span><span class='op'>)</span>
+
+<span class='co'>#ROC Curve for KNN</span>
+<span class='va'>knn_pROC</span> <span class='op'>&lt;-</span> <span class='fu'>roc</span><span class='op'>(</span><span class='va'>model_knn</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>obs</span>,<span class='va'>model_knn</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>Yes</span> <span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>knn_pROC</span>, print.auc <span class='op'>=</span> <span class='cn'>TRUE</span>, col <span class='op'>=</span> <span class='st'>"green"</span>, add <span class='op'>=</span> <span class='cn'>TRUE</span>, print.auc.y <span class='op'>=</span> <span class='fl'>.3</span><span class='op'>)</span>
+
+<span class='co'>#ROC Curve for Neural Network</span>
+<span class='va'>nnet_pROC</span> <span class='op'>&lt;-</span> <span class='fu'>roc</span><span class='op'>(</span><span class='va'>model_nnet</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>obs</span>,<span class='va'>model_nnet</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>$</span><span class='va'>Yes</span> <span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>nnet_pROC</span>, print.auc <span class='op'>=</span> <span class='cn'>TRUE</span>, col <span class='op'>=</span> <span class='st'>"black"</span>, add <span class='op'>=</span> <span class='cn'>TRUE</span>, print.auc.y <span class='op'>=</span> <span class='fl'>.2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="decision-tree_files/figure-html5/unnamed-chunk-27-1.png" width="624" /></p>
+</div>
+<h3 id="using-plotroc-package">5.1.3 Using <em>plotROC</em> Package</h3>
+<div class="layout-chunk" data-layout="1-body-outset">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#USing plotROC package</span>
+              <span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> 
+              <span class='fu'>geom_roc</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>d <span class='op'>=</span> <span class='va'>obs</span>, m <span class='op'>=</span> <span class='va'>Yes</span>, color<span class='op'>=</span><span class='st'>"Random Forest"</span><span class='op'>)</span>, <span class='va'>model_rf</span><span class='op'>$</span><span class='va'>pred</span>,n.cuts <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>+</span> <span class='co'>#ROC Curve for Random Forest</span>
+              <span class='fu'>geom_roc</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>d <span class='op'>=</span> <span class='va'>obs</span>, m <span class='op'>=</span> <span class='va'>Yes</span>, color<span class='op'>=</span><span class='st'>"Decision Tree"</span><span class='op'>)</span>, <span class='va'>model_dt</span><span class='op'>$</span><span class='va'>pred</span>,n.cuts <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>+</span> <span class='co'>#ROC Curve for Decision Tree</span>
+              <span class='fu'>geom_roc</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>d <span class='op'>=</span> <span class='va'>obs</span>, m <span class='op'>=</span> <span class='va'>Yes</span>, color<span class='op'>=</span><span class='st'>"KNN"</span><span class='op'>)</span>, <span class='va'>model_knn</span><span class='op'>$</span><span class='va'>pred</span>,n.cuts <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>+</span> <span class='co'>#ROC Curve for KNN </span>
+              <span class='fu'>geom_roc</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>d <span class='op'>=</span> <span class='va'>obs</span>, m <span class='op'>=</span> <span class='va'>Yes</span>, color<span class='op'>=</span><span class='st'>"Neural Network"</span><span class='op'>)</span>, <span class='va'>model_nnet</span><span class='op'>$</span><span class='va'>pred</span>,n.cuts <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'>+</span>  <span class='co'>#ROC Curve for Neural Network</span>
+              <span class='fu'>scale_color_manual</span><span class='op'>(</span>values<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Random Forest"</span><span class='op'>=</span><span class='st'>"red"</span>, <span class='st'>"Decision Tree"</span><span class='op'>=</span><span class='st'>"blue"</span>,<span class='st'>"KNN"</span><span class='op'>=</span><span class='st'>"green"</span>,<span class='st'>"Neural Network"</span><span class='op'>=</span><span class='st'>"black"</span><span class='op'>)</span>, 
+              name<span class='op'>=</span><span class='st'>"Models"</span>, guide<span class='op'>=</span><span class='st'>"legend"</span><span class='op'>)</span> <span class='op'>+</span> 
+              <span class='fu'>coord_equal</span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+              <span class='fu'>style_roc</span><span class='op'>(</span>theme <span class='op'>=</span> <span class='va'>theme_grey</span>,xlab <span class='op'>=</span> <span class='st'>"1-Specificity"</span>, ylab <span class='op'>=</span><span class='st'>"Sensitivity"</span><span class='op'>)</span><span class='op'>+</span>
+              <span class='fu'>theme</span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"bottom"</span><span class='op'>)</span><span class='op'>+</span>
+              <span class='fu'>labs</span><span class='op'>(</span>title<span class='op'>=</span><span class='st'>"ROC Plots Comparison"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="decision-tree_files/figure-html5/unnamed-chunk-28-1.png" width="672" /></p>
+</div>
+<h3 id="roc-package-comparison">5.1.4 ROC Package Comparison</h3>
+<p>Based on report (Robin et al., 2011, p. 12), the <em>pROC</em> is a report dedicated to ROC analysis compared to <em>ROCR</em>. Both <em>pROC</em> and <em>ROCR</em> use simple commands to for plotting the ROC curve. <em>ROCR</em> re<em>quiring only 3 commands and </em>pROC* requiring 2 commands for a basic plot. One key difference between the <em>plotROC</em> package and the other two, <em>plotROC</em> allows the use of <em>ggplot</em>’s geoms to plot the ROC curve, enabling usage of the extensive <em>ggplot</em> package. where the other two packages use the base plot function in R.</p>
+<p>Thus, for the purpose of a ROC visualisation for shiny,<em>plotROC</em> is deemed to be the more appropriate package for it’s usability for plotting via <em>ggplot</em>.</p>
+<h2 id="obtaining-the-auc-table">5.2 Obtaining the AUC Table</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>CombineAUC</span> <span class='op'>&lt;-</span> <span class='fu'>calc_auc</span><span class='op'>(</span><span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> 
+              <span class='fu'>geom_roc</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>d <span class='op'>=</span> <span class='va'>obs</span>, m <span class='op'>=</span> <span class='va'>Yes</span>,<span class='op'>)</span>, <span class='va'>model_rf</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='va'>AUCdt</span> <span class='op'>&lt;-</span> <span class='fu'>calc_auc</span><span class='op'>(</span><span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> 
+              <span class='fu'>geom_roc</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>d <span class='op'>=</span> <span class='va'>obs</span>, m <span class='op'>=</span> <span class='va'>Yes</span><span class='op'>)</span>, <span class='va'>model_dt</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>)</span><span class='op'>)</span> 
+
+<span class='va'>AUCknn</span> <span class='op'>&lt;-</span> <span class='fu'>calc_auc</span><span class='op'>(</span><span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> 
+              <span class='fu'>geom_roc</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>d <span class='op'>=</span> <span class='va'>obs</span>, m <span class='op'>=</span> <span class='va'>Yes</span><span class='op'>)</span>, <span class='va'>model_knn</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>)</span><span class='op'>)</span> 
+
+<span class='va'>AUCnnet</span> <span class='op'>&lt;-</span> <span class='fu'>calc_auc</span><span class='op'>(</span><span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> 
+              <span class='fu'>geom_roc</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>d <span class='op'>=</span> <span class='va'>obs</span>, m <span class='op'>=</span> <span class='va'>Yes</span><span class='op'>)</span>, <span class='va'>model_nnet</span><span class='op'>$</span><span class='va'>pred</span><span class='op'>)</span><span class='op'>)</span> 
+           
+
+<span class='va'>CombineAUC</span> <span class='op'>&lt;-</span> <span class='fu'>bind_rows</span><span class='op'>(</span><span class='va'>CombineAUC</span>,<span class='va'>AUCdt</span>,<span class='va'>AUCknn</span>,<span class='va'>AUCnnet</span><span class='op'>)</span> <span class='co'>#Combining AUC values of each model into one dataframe</span>
+
+<span class='va'>Model</span> <span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Random Forest"</span>, <span class='st'>"Decision Tree"</span>,<span class='st'>"kNN"</span>,<span class='st'>"Neural Network"</span><span class='op'>)</span>
+<span class='va'>AUC</span> <span class='op'>&lt;-</span> <span class='va'>CombineAUC</span><span class='op'>$</span><span class='va'>AUC</span>
+<span class='va'>FinalAUC</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span><span class='va'>Model</span>,<span class='va'>AUC</span><span class='op'>)</span>
+
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='va'>FinalAUC</span>, <span class='fu'>aes</span><span class='op'>(</span> x<span class='op'>=</span><span class='va'>Model</span>, y<span class='op'>=</span> <span class='va'>AUC</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+                  <span class='fu'>geom_bar</span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"Identity"</span>, fill<span class='op'>=</span> <span class='st'>"#E7B800"</span>, color <span class='op'>=</span><span class='st'>"black"</span><span class='op'>)</span><span class='op'>+</span>
+                  <span class='fu'>geom_text</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>y<span class='op'>=</span><span class='va'>AUC</span>, ymax<span class='op'>=</span> <span class='va'>AUC</span>, label <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>AUC</span>, <span class='fl'>3</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span>
+                  <span class='fu'>coord_flip</span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span>
+                  <span class='fu'>geom_hline</span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='va'>AUC</span><span class='op'>[</span><span class='va'>AUC</span> <span class='op'>==</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>AUC</span><span class='op'>)</span><span class='op'>]</span>,color <span class='op'>=</span> <span class='st'>"red"</span>,linetype <span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span><span class='op'>+</span>
+                  <span class='fu'>theme_grey</span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="decision-tree_files/figure-html5/unnamed-chunk-29-1.png" width="624" /></p>
+</div>
+<p>As seen from both the AUC table and the ROC curve, it is shown the Random Forest model has performed the best with the highest AUC at 0.837 and highest ROC curve.</p>
+<h2 id="comparing-model-performance-via-resampling">5.3 Comparing Model Performance via Resampling</h2>
+<p>The <em>caret</em>’s <em>resamples()</em> function assist to resampling performance on the final model produced during the model training.It creates summary statistics (mean, min, max, etc.) for each performance metric for the list of models.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>rvalues</span> <span class='op'>&lt;-</span><span class='fu'>resamples</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>'Random Forest'</span><span class='op'>=</span><span class='va'>model_rf</span>,<span class='st'>'Decision Tree'</span><span class='op'>=</span><span class='va'>model_dt</span>,kNN<span class='op'>=</span><span class='va'>model_knn</span>, <span class='st'>'Neural Network'</span><span class='op'>=</span><span class='va'>model_nnet</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>rvalues</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+Call:
+summary.resamples(object = rvalues)
+
+Models: Random Forest, Decision Tree, kNN, Neural Network 
+Number of resamples: 5 
+
+ROC 
+                    Min.   1st Qu.    Median      Mean   3rd Qu.
+Random Forest  0.8325592 0.8366193 0.8424705 0.8417187 0.8480867
+Decision Tree  0.7774597 0.7819551 0.7825665 0.7841742 0.7869916
+kNN            0.7918626 0.7983920 0.8044332 0.8048322 0.8136617
+Neural Network 0.6875573 0.7225108 0.7347946 0.7411793 0.7355749
+                    Max. NA&#39;s
+Random Forest  0.8488579    0
+Decision Tree  0.7918983    0
+kNN            0.8158115    0
+Neural Network 0.8254590    0
+
+Sens 
+                    Min.   1st Qu.    Median      Mean   3rd Qu.
+Random Forest  0.9515301 0.9533785 0.9548255 0.9558860 0.9574861
+Decision Tree  0.9439310 0.9463956 0.9486548 0.9484104 0.9492813
+kNN            0.9474225 0.9480386 0.9498870 0.9500945 0.9501027
+Neural Network 0.8264531 0.8540041 0.9385911 0.9238097 1.0000000
+                    Max. NA&#39;s
+Random Forest  0.9622099    0
+Decision Tree  0.9537893    0
+kNN            0.9550216    0
+Neural Network 1.0000000    0
+
+Spec 
+                    Min.   1st Qu.    Median      Mean   3rd Qu.
+Random Forest  0.3719008 0.3739669 0.3760331 0.3809917 0.3856749
+Decision Tree  0.4001377 0.4008264 0.4166667 0.4137741 0.4228650
+kNN            0.3312672 0.3326446 0.3615702 0.3513774 0.3629477
+Neural Network 0.0000000 0.0000000 0.4366391 0.3256198 0.5488981
+                    Max. NA&#39;s
+Random Forest  0.3973829    0
+Decision Tree  0.4283747    0
+kNN            0.3684573    0
+Neural Network 0.6425620    0</code></pre>
+</div>
+<p>A box-whiskers plot is used to visualized the re-sampling distributions of the models.The best performing model on resamples based on mean ROC score was Random Forest model.Neural network model has the highest sensitivity.</p>
+<div class="layout-chunk" data-layout="1-body-outset">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>trellis.par.set</span><span class='op'>(</span><span class='op'>)</span>
+<span class='fu'>bwplot</span><span class='op'>(</span><span class='va'>rvalues</span>,layout<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>3</span>,<span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="decision-tree_files/figure-html5/unnamed-chunk-31-1.png" width="672" /></p>
+</div>
+<h1 id="proposed-visualisation-from-shiny-module">6. Proposed Visualisation from Shiny Module</h1>
+<p><img src="data/Proposed%20Viz2.png" /></p>
+<h1 id="conclusionreflections">7. Conclusion/Reflections</h1>
+<p>The purpose of this post was to review the packages available for predictive modeling, how to compare the results of those modes and how to incorporate into a Shiny App. As highlighted in section 3, the <em>caret</em> package was found to be a “wholesome” package when it comes to model building, providing most of the functions required to predictive modeling.</p>
+<p>User of the shiny app would be able to tune and explore the four different models made available. Various visualizations to assess the models were provided for users to assess the parameters and models used.</p>
+<h1 id="references">References</h1>
+<ol type="1">
+<li>Probst, P., Wright, M., &amp; Boulesteix, A.-L. (2019). Hyperparameters and Tuning Strategies for Random Forest. <a href="https://arxiv.org/pdf/1804.03515.pdf" class="uri">https://arxiv.org/pdf/1804.03515.pdf</a></li>
+<li>Band, A. (2020b, May 23). How to find the optimal value of K in KNN? - Towards Data Science. Medium. <a href="https://towardsdatascience.com/how-to-find-the-optimal-value-of-k-in-knn-35d936e554eb#:%7E:text=The%20optimal%20K%20value%20usually,be%20aware%20of%20the%20outliers" class="uri">https://towardsdatascience.com/how-to-find-the-optimal-value-of-k-in-knn-35d936e554eb#:%7E:text=The%20optimal%20K%20value%20usually,be%20aware%20of%20the%20outliers</a>. 3.Robin, X., Turck, N., Hainard, A., Tiberti, N., Lisacek, F., Sanchez, J. C., &amp; Müller, M. (2011). pROC: an open-source package for R and S+ to analyze and compare ROC curves. BMC Bioinformatics, 12(1), 12. <a href="https://doi.org/10.1186/1471-2105-12-77" class="uri">https://doi.org/10.1186/1471-2105-12-77</a> 4.Panchal, F. S., &amp; Panchal, M. (2014). Review on Methods of Selecting Number of Hidden Nodes in Artificial Neural Network. International Journal of Computer Science and Mobile Computing, 3(11), 455–464. <a href="https://www.ijcsmc.com/docs/papers/November2014/V3I11201499a19.pdf" class="uri">https://www.ijcsmc.com/docs/papers/November2014/V3I11201499a19.pdf</a></li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
