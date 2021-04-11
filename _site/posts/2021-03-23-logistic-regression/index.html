@@ -1,0 +1,3158 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+<title>G5Project_ISSS602: Logistic Regression</title>
+
+<meta property="description" itemprop="description" content="Blow blog is my individual assignment and I am plan to build the explanatory model."/>
+
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2021-03-23"/>
+<meta property="article:created" itemprop="dateCreated" content="2021-03-23"/>
+<meta name="article:author" content="HAI Dan"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="G5Project_ISSS602: Logistic Regression"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="Blow blog is my individual assignment and I am plan to build the explanatory model."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="G5Project_ISSS602"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:title" content="G5Project_ISSS602: Logistic Regression"/>
+<meta property="twitter:description" content="Blow blog is my individual assignment and I am plan to build the explanatory model."/>
+
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Logistic Regression"]},{"type":"character","attributes":{},"value":["Blow blog is my individual assignment and I am plan to build the explanatory model."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["HAI Dan"]}]}]},{"type":"character","attributes":{},"value":["03-23-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["data/data.csv","data/H1N1 Edit.xlsx","data/H1N1_Final_dan_edit.csv","data/H1N1_Final.csv","data/H1N1_Kai Lin.xlsx","data/H1N1.csv","data/H1N1.xlsx","data/state_region.csv","logistic-regression_files/anchor-4.2.2/anchor.min.js","logistic-regression_files/bowser-1.9.3/bowser.min.js","logistic-regression_files/distill-2.2.21/template.v2.js","logistic-regression_files/figure-html5/unnamed-chunk-13-1.png","logistic-regression_files/figure-html5/unnamed-chunk-31-1.png","logistic-regression_files/figure-html5/unnamed-chunk-32-1.png","logistic-regression_files/figure-html5/unnamed-chunk-34-1.png","logistic-regression_files/jquery-1.11.3/jquery.min.js","logistic-regression_files/popper-2.6.0/popper.min.js","logistic-regression_files/tippy-6.2.7/tippy-bundle.umd.min.js","logistic-regression_files/tippy-6.2.7/tippy-light-border.css","logistic-regression_files/tippy-6.2.7/tippy.css","logistic-regression_files/tippy-6.2.7/tippy.umd.min.js","logistic-regression_files/webcomponents-2.0.0/webcomponents.js","photo/1.jpeg"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+<script type="application/javascript">
+
+function getMeta(metaName) {
+  var metas = document.getElementsByTagName('meta');
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return '';
+}
+
+function offsetURL(url) {
+  var offset = getMeta('distill:offset');
+  return offset ? offset + '/' + url : url;
+}
+
+function createFuseIndex() {
+
+  // create fuse index
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
+  var fuse = new window.Fuse([], options);
+
+  // fetch the main search.json
+  return fetch(offsetURL('search.json'))
+    .then(function(response) {
+      if (response.status == 200) {
+        return response.json().then(function(json) {
+          // index main articles
+          json.articles.forEach(function(article) {
+            fuse.add(article);
+          });
+          // download collections and index their articles
+          return Promise.all(json.collections.map(function(collection) {
+            return fetch(offsetURL(collection)).then(function(response) {
+              if (response.status === 200) {
+                return response.json().then(function(articles) {
+                  articles.forEach(function(article) {
+                    fuse.add(article);
+                  });
+                })
+              } else {
+                return Promise.reject(
+                  new Error('Unexpected status from search index request: ' +
+                            response.status)
+                );
+              }
+            });
+          })).then(function() {
+            return fuse;
+          });
+        });
+
+      } else {
+        return Promise.reject(
+          new Error('Unexpected status from search index request: ' +
+                      response.status)
+        );
+      }
+    });
+}
+
+window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  // get search element (bail if we don't have one)
+  var searchEl = window.document.getElementById('distill-search');
+  if (!searchEl)
+    return;
+
+  createFuseIndex()
+    .then(function(fuse) {
+
+      // make search box visible
+      searchEl.classList.remove('hidden');
+
+      // initialize autocomplete
+      var options = {
+        autoselect: true,
+        hint: false,
+        minLength: 2,
+      };
+      window.autocomplete(searchEl, options, [{
+        source: function(query, callback) {
+          const searchOptions = {
+            isCaseSensitive: false,
+            shouldSort: true,
+            minMatchCharLength: 2,
+            limit: 10,
+          };
+          var results = fuse.search(query, searchOptions);
+          callback(results
+            .map(function(result) { return result.item; })
+          );
+        },
+        templates: {
+          suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
+            var html = `
+              <div class="search-item">
+                <h3>${suggestion.title}</h3>
+                <div class="search-item-description">
+                  ${suggestion.description || ''}
+                </div>
+                <div class="search-item-preview">
+                  ${img}
+                </div>
+              </div>
+            `;
+            return html;
+          }
+        }
+      }]).on('autocomplete:selected', function(event, suggestion) {
+        window.location.href = offsetURL(suggestion.path);
+      });
+      // remove inline display style on autocompleter (we want to
+      // manage responsive display via css)
+      $('.algolia-autocomplete').css("display", "");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+});
+
+</script>
+
+<style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
+
+/* Algolioa Autocomplete */
+
+.algolia-autocomplete {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: sub;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  border: 1px #0F2E3D solid;
+  width: 180px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-nav .algolia-autocomplete {
+    display: none;
+    visibility: hidden;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete {
+    display: inline-block;
+    visibility: visible;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+    margin-left: 0;
+    width: 400px;
+    max-height: 400px;
+  }
+}
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 550px;
+  max-height: 70vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 3px;
+  margin-left: -150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+  border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+  overflow: hidden;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+  display: inline-block;
+  overflow: hidden;
+  height: 2.8em;
+  width: 80%;
+  margin-right: 4%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+  display: inline-block;
+  width: 15%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+  height: 3em;
+  width: auto;
+  display: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+  display: initial;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #eee;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+</style>
+
+
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme
+  $('code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Logistic Regression","description":"Blow blog is my individual assignment and I am plan to build the explanatory model.","authors":[{"author":"HAI Dan","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-03-23T00:00:00.000+00:00","citationText":"Dan, 2021"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">G5Project_ISSS602</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="../../index.html">Home</a>
+<a href="../../group5proposal.html">Proposal</a>
+<a href="../../poster.html">Poster</a>
+<a href="../../application.html">Application</a>
+<a href="../../usergudie.html">User Guide</a>
+<a href="../../index.html">Research Paper</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Logistic Regression</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>Blow blog is my individual assignment and I am plan to build the explanatory model.</p></p>
+</div>
+
+<div class="d-byline">
+  HAI Dan  
+  
+<br/>03-23-2021
+</div>
+
+<div class="d-article">
+<h1 id="overview">1. Overview</h1>
+<h2 id="core-purpose-of-dataviz-exercise">1.1 Core Purpose of Dataviz Exercise</h2>
+<ul>
+<li>This makeover aims to visualise the insight of <strong>National 2009 H1N1 Flu Survey (NHFS)</strong> after the analysis with the explanatory model method. This extensive dataset would not just allow us to perform descriptive analytics on how H1N1 vaccination rates vary in USA, but also allows me to derive medical insights about how a person’s individual attributes relate to the willingness of taken H1N1 vaccination. I try to express this response as a function of predictor variables, which are directly or indirectly related to the effect of taken vaccine. More importantly, I want to visualize the results by using the knowledge obtained from Visual Analytics and Application class.</li>
+<li>And at the same time, increasing the interaction with users through shiny applications. With the help of posters and shiny applications, I want to let users know the insight contain and hide in NHFS dataset.The purpose of an explanatory model is to explain rather than predict the outcome of taken vaccination, where the objective of explanation is the application of statistical inference in order to: 1.identify predictor variables with statistically significant impact to the decision of taking H1N1 Flu Vaccination 2.estimate the magnitude of impact of the significant predictors</li>
+</ul>
+<h2 id="literature-review">1.2 Literature review</h2>
+<ul>
+<li><p>Before doing this project, Prof. Kam recommended many very useful packages, so I will use a large number of <strong>blorr packages</strong> in the following paragraphs.Blorr Tools designed to make it easier for users, particularly beginner/intermediate R users to build logistic regression models. Includes comprehensive regression output, variable selection procedures, model validation techniques and a ‘shiny’ app for interactive model building. At the same time, I find the package ‘jtools’ and ‘huxtable’ by using the function ‘summs’, which have the similar function with blorr’s ‘blr_regress’ , so I focus on using <strong>blorr</strong>. And in the end, I using the ‘sjPlot’ package to plot the insight graph on model’s odd ratio. ‘sjPlot’ is the collection of plotting and table output functions for data visualization</p></li>
+<li><p>At the same time, a key consideration in the literature review is how to perform a good explanatory model. I review several article about building the explanatory model. Among those, I review a lot from the Dimitrios Tziotis[—] article. I also read many other articles and the second consultation with Prof Kam, and finally decided to interpret the result after I done the explanatory model.</p></li>
+</ul>
+<h1 id="interactivity">2.0 Interactivity</h1>
+<ul>
+<li>As for the interactivity of explaining model, I want to enable users to directly browse all statistics insight and odd ratio insight through shiny application. Interaction can be created by allowing the user to select the information they want in shiny app to click in the slider bar, such as the model’s odd ratio, which will appear on the right side of the diagram and text explanation, that is, all the functions in the blorr package, I can reach the maximum interactivity by presenting shiny applications to users.</li>
+</ul>
+<h1 id="step-by-step-data-visualisation-preparation">3.0 Step-by-step Data Visualisation Preparation</h1>
+<h2 id="installing-and-launching-r-packages">3.1 Installing and launching R packages</h2>
+<p>A list of packages are required for this makeover exercise. This code chunk installs the required packages and loads them onto RStudio environment.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>packages</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'tidyverse'</span>,<span class='st'>'readr'</span>,<span class='st'>'ISLR'</span>,<span class='st'>'VIM'</span>, <span class='st'>'gridExtra'</span>,<span class='st'>'blorr'</span>,<span class='st'>'jtools'</span>,<span class='st'>'huxtable'</span>,<span class='st'>'boot'</span>,<span class='st'>'sjPlot'</span><span class='op'>)</span>
+<span class='kw'>for</span> <span class='op'>(</span><span class='va'>p</span> <span class='kw'>in</span> <span class='va'>packages</span><span class='op'>)</span><span class='op'>{</span>
+  <span class='kw'>if</span><span class='op'>(</span><span class='op'>!</span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='va'>p</span>, character.only <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
+  <span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='va'>p</span><span class='op'>)</span>
+  <span class='op'>}</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>p</span>,character.only<span class='op'>=</span> <span class='cn'>T</span> <span class='op'>)</span> 
+<span class='op'>}</span> 
+</code></pre>
+</div>
+</div>
+<h2 id="data-preparation">3.2 Data Preparation</h2>
+<h3 id="share-code-in-the-group-project">3.2.1 Share Code in the group project</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>H1N1</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>'data/H1N1_Final_dan_edit.csv'</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'>#exclude the NA column in the target variable</span>
+<span class='va'>H1N1</span> <span class='op'>&lt;-</span> <span class='va'>H1N1</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>H1N1</span><span class='op'>)</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>H1N1</span><span class='op'>)</span> <span class='op'>==</span> <span class='st'>'CONCERN LEVEL'</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='st'>"CONCERN_LEVEL"</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>H1N1</span><span class='op'>[</span><span class='va'>H1N1</span> <span class='op'>==</span> <span class='st'>'#N/A'</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='cn'>NA</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/colSums.html'>colMeans</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>H1N1</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>       VACC_H1N1_F        VACC_SEAS_F       B_H1N1_ANTIV 
+       0.000000000        0.003997732        0.203132974 
+      B_H1N1_AVOID       B_H1N1_FMASK       B_H1N1_HANDS 
+       0.207201588        0.201360930        0.202098100 
+      B_H1N1_LARGE       B_H1N1_RCONT       B_H1N1_TOUCH 
+       0.203189680        0.203274738        0.204678197 
+     CONCERN_LEVEL               HQ23               HQ24 
+       0.203473207        0.854834137        0.963198185 
+            HQ24_B           INT_H1N1           INT_NEXT 
+       0.994740573        0.255146016        0.692755883 
+          INT_SEAS          KNOW_H1N1                Q23 
+       0.459625744        0.204479728        0.960518855 
+               Q24              Q24_B             DOCREC 
+       0.977417068        0.996597675        0.044031755 
+   ILI_DIAG_H1N1_F    ILI_DIAG_SEAS_F              ILI_F 
+       0.961993195        0.961993195        0.020484831 
+       ILI_OTHER_F        ILI_TREAT_F              PSL_1 
+       0.016869861        0.922497874        1.000000000 
+             PSL_2                 Q9             Q9_NUM 
+       1.000000000        1.000000000        1.000000000 
+     CHRONIC_MED_F   CLOSE_UNDER6MO_F    HEALTH_WORKER_F 
+       0.031216331        0.225333144        0.224766090 
+ PATIENT_CONTACT_F             AGEGRP     EDUCATION_COMP 
+       0.264346470        0.000000000        0.242968528 
+        HH_CHILD_R             HISP_I           INC_CAT1 
+       0.007074001        0.000000000        0.213198185 
+            INSURE            MARITAL          N_ADULT_R 
+       1.000000000        0.243592288        0.007074001 
+        N_PEOPLE_R                Q95         Q95_INDSTR 
+       0.003118798        0.994527927        0.594074284 
+         Q95_OCCPN         RACEETH4_I         RENT_OWN_R 
+       0.594074284        0.000000000        0.983612135 
+             SEX_I              STATE REAS_NOH1N1_AHAD_F 
+       0.000000000        0.000000000        0.401020697 
+REAS_NOH1N1_ALLG_F REAS_NOH1N1_CANT_F REAS_NOH1N1_COST_F 
+       0.401020697        0.401020697        0.401020697 
+REAS_NOH1N1_DKNW_F REAS_NOH1N1_DWRK_F REAS_NOH1N1_GOTO_F 
+       0.401020697        0.401020697        0.401020697 
+REAS_NOH1N1_NDOC_F REAS_NOH1N1_NEVR_F REAS_NOH1N1_NNDD_F 
+       0.401020697        0.401020697        0.401020697 
+REAS_NOH1N1_NOTA_F REAS_NOH1N1_OTHR_F REAS_NOH1N1_REFD_F 
+       0.401020697        0.401020697        0.401020697 
+REAS_NOH1N1_SAVE_F REAS_NOH1N1_SEFF_F REAS_NOH1N1_TIME_F 
+       0.401020697        0.401020697        0.401020697 </code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>h1n1data</span> <span class='op'>&lt;-</span><span class='va'>H1N1</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>select</span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span>,
+                   <span class='va'>VACC_SEAS_F</span>,
+                   <span class='va'>B_H1N1_ANTIV</span>,
+                   <span class='va'>B_H1N1_AVOID</span>,
+                   <span class='va'>B_H1N1_FMASK</span>,
+                   <span class='va'>B_H1N1_HANDS</span>,
+                   <span class='va'>B_H1N1_LARGE</span>,
+                   <span class='va'>B_H1N1_RCONT</span>,
+                   <span class='va'>B_H1N1_TOUCH</span>,
+                   <span class='va'>CONCERN_LEVEL</span>,
+                   <span class='va'>INT_H1N1</span>,
+                   <span class='va'>KNOW_H1N1</span>,
+                   <span class='va'>INT_SEAS</span>,  
+                   <span class='va'>DOCREC</span>,
+                   <span class='va'>CHRONIC_MED_F</span>,
+                   <span class='va'>CLOSE_UNDER6MO_F</span>,         
+                   <span class='va'>HEALTH_WORKER_F</span>,
+                   <span class='va'>PATIENT_CONTACT_F</span>,
+                   <span class='va'>AGEGRP</span>,
+                   <span class='va'>EDUCATION_COMP</span>,
+                   <span class='va'>HH_CHILD_R</span>,
+                   <span class='va'>INC_CAT1</span>,
+                   <span class='va'>MARITAL</span>,
+                   <span class='va'>RACEETH4_I</span>,
+                   <span class='va'>N_ADULT_R</span>,
+                   <span class='va'>SEX_I</span>,
+                   <span class='va'>STATE</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>h1n1data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/transform.html'>transform</a></span><span class='op'>(</span><span class='va'>h1n1data</span>,
+                   VACC_H1N1_F<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span><span class='op'>)</span>,
+                   VACC_SEAS_F<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>VACC_SEAS_F</span><span class='op'>)</span>,
+                   B_H1N1_ANTIV<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_ANTIV</span><span class='op'>)</span>,
+                   B_H1N1_AVOID<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_AVOID</span><span class='op'>)</span>,
+                   B_H1N1_FMASK<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_FMASK</span><span class='op'>)</span>,
+                   B_H1N1_HANDS<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_HANDS</span><span class='op'>)</span>,
+                   B_H1N1_LARGE<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_LARGE</span><span class='op'>)</span>,
+                   B_H1N1_RCONT<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_RCONT</span><span class='op'>)</span>,
+                   B_H1N1_TOUCH<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>B_H1N1_TOUCH</span><span class='op'>)</span>,
+                   CONCERN_LEVEL<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>CONCERN_LEVEL</span><span class='op'>)</span>,
+                   INT_H1N1<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>INT_H1N1</span><span class='op'>)</span>,
+                   KNOW_H1N1<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>KNOW_H1N1</span><span class='op'>)</span>,
+                   DOCREC<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>DOCREC</span><span class='op'>)</span>,
+                   CHRONIC_MED_F<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>CHRONIC_MED_F</span><span class='op'>)</span>,
+                   CLOSE_UNDER6MO_F<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>CLOSE_UNDER6MO_F</span><span class='op'>)</span>,
+                   HEALTH_WORKER_F<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>HEALTH_WORKER_F</span><span class='op'>)</span>,
+                   AGEGRP<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>AGEGRP</span><span class='op'>)</span>,
+                   EDUCATION_COMP<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>EDUCATION_COMP</span><span class='op'>)</span>,
+                   HH_CHILD_R<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>HH_CHILD_R</span><span class='op'>)</span>,
+                   INC_CAT1<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>INC_CAT1</span><span class='op'>)</span>,
+                   MARITAL<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>MARITAL</span><span class='op'>)</span>,
+                   RACEETH4_I<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>RACEETH4_I</span><span class='op'>)</span>,
+                   N_ADULT_R<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>N_ADULT_R</span><span class='op'>)</span>,
+                   SEX_I<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>SEX_I</span><span class='op'>)</span>,
+                   STATE<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>STATE</span><span class='op'>)</span>,
+                   PATIENT_CONTACT_F <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>PATIENT_CONTACT_F</span><span class='op'>)</span>,
+                   INT_SEAS <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>INT_SEAS</span><span class='op'>)</span>
+                   <span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>region</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"data/state_region.csv"</span><span class='op'>)</span>
+<span class='va'>h1n1data</span><span class='op'>$</span><span class='va'>state_recoded</span> <span class='op'>&lt;-</span> <span class='fu'>str_to_title</span><span class='op'>(</span><span class='va'>h1n1data</span><span class='op'>$</span><span class='va'>STATE</span><span class='op'>)</span>
+<span class='va'>h1n1data</span> <span class='op'>&lt;-</span> <span class='fu'>left_join</span><span class='op'>(</span><span class='va'>h1n1data</span>, <span class='va'>region</span>,
+                      by<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"state_recoded"</span> <span class='op'>=</span> <span class='st'>"State"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>glimpse</span><span class='op'>(</span><span class='va'>h1n1data</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Rows: 70,540
+Columns: 29
+$ VACC_H1N1_F       &lt;fct&gt; No, No, No, No, No, Yes, No, No, No, No, …
+$ VACC_SEAS_F       &lt;fct&gt; No, Yes, Yes, Yes, No, Yes, Yes, No, Yes,…
+$ B_H1N1_ANTIV      &lt;fct&gt; No, No, NA, No, No, No, No, No, NA, No, N…
+$ B_H1N1_AVOID      &lt;fct&gt; Yes, Yes, NA, Yes, Yes, No, Yes, Yes, NA,…
+$ B_H1N1_FMASK      &lt;fct&gt; No, No, NA, Yes, No, No, No, No, NA, No, …
+$ B_H1N1_HANDS      &lt;fct&gt; Yes, Yes, NA, Yes, Yes, Yes, Yes, Yes, NA…
+$ B_H1N1_LARGE      &lt;fct&gt; Yes, Yes, NA, Yes, Yes, No, No, Yes, NA, …
+$ B_H1N1_RCONT      &lt;fct&gt; Yes, No, NA, Yes, Yes, No, No, No, NA, No…
+$ B_H1N1_TOUCH      &lt;fct&gt; Yes, Yes, NA, Yes, Yes, Yes, No, No, NA, …
+$ CONCERN_LEVEL     &lt;fct&gt; 2, 2, NA, 2, 1, 2, 1, 3, NA, 2, 2, NA, 0,…
+$ INT_H1N1          &lt;fct&gt; 1, 2, 2, 2, 2, NA, 0, 2, 3, 1, 2, NA, 0, …
+$ KNOW_H1N1         &lt;fct&gt; 0, 2, NA, 2, 2, 2, 2, 0, NA, 0, 0, NA, 0,…
+$ INT_SEAS          &lt;fct&gt; 1, NA, NA, NA, 2, NA, NA, 2, NA, NA, NA, …
+$ DOCREC            &lt;fct&gt; 1, NA, 2, 1, NA, 4, 2, 1, 1, 4, 1, 4, 1, …
+$ CHRONIC_MED_F     &lt;fct&gt; No, Yes, Yes, Yes, No, No, No, No, No, No…
+$ CLOSE_UNDER6MO_F  &lt;fct&gt; No, No, NA, No, No, No, No, No, NA, Yes, …
+$ HEALTH_WORKER_F   &lt;fct&gt; No, No, NA, No, Yes, Yes, No, No, NA, No,…
+$ PATIENT_CONTACT_F &lt;fct&gt; No, NA, NA, No, No, Yes, No, No, NA, No, …
+$ AGEGRP            &lt;fct&gt; 65+ Years, 35 - 44 Years, 10 - 17 Years, …
+$ EDUCATION_COMP    &lt;fct&gt; Some College, Some College, NA, 12 Years,…
+$ HH_CHILD_R        &lt;fct&gt; 0, 3, 3, 0, 0, 0, 0, 2, 2, 0, 3, 3, 0, 2,…
+$ INC_CAT1          &lt;fct&gt; &quot;&lt;= $10,000&quot;, &quot;$15,001 - $25,000&quot;, &quot;$15,0…
+$ MARITAL           &lt;fct&gt; Not Married, Not Married, NA, Married, No…
+$ RACEETH4_I        &lt;fct&gt; &quot;Non-Hispanic, White Only&quot;, &quot;Non-Hispanic…
+$ N_ADULT_R         &lt;fct&gt; 1, 1, 1, 2, 2, 4, 2, 2, 2, 1, 2, 2, 2, 2,…
+$ SEX_I             &lt;fct&gt; Female, Female, Female, Female, Female, M…
+$ STATE             &lt;fct&gt; NEW MEXICO, OHIO, OHIO, IDAHO, OREGON, NE…
+$ state_recoded     &lt;chr&gt; &quot;New Mexico&quot;, &quot;Ohio&quot;, &quot;Ohio&quot;, &quot;Idaho&quot;, &quot;O…
+$ Region            &lt;chr&gt; &quot;West Region&quot;, &quot;Midwest Region&quot;, &quot;Midwest…</code></pre>
+</div>
+<h3 id="building-explainatory-model">3.2.2 Building Explainatory Model</h3>
+<p>In order to explain causal effects, we must rely on domain knowledge to isolate the variables that we consider impactful. Variables such as ‘State’ seem relevant but are simply too sparse to be of any use. Below code I remove it.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>dat1</span> <span class='op'>&lt;-</span> <span class='va'>h1n1data</span><span class='op'>[</span>,<span class='op'>-</span><span class='fl'>27</span><span class='op'>]</span>
+</code></pre>
+</div>
+</div>
+<p>Recode the target variable citizen who did take vaccine as value 1 and did not take vaccine as value 0.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>dat1</span><span class='op'>$</span><span class='va'>VACC_H1N1_F</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='va'>dat1</span><span class='op'>$</span><span class='va'>VACC_H1N1_F</span><span class='op'>==</span><span class='st'>"Yes"</span>,<span class='fl'>1</span>,<span class='fl'>0</span><span class='op'>)</span>
+<span class='va'>dat1</span><span class='op'>$</span><span class='va'>HH_CHILD_R</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='va'>dat1</span><span class='op'>$</span><span class='va'>HH_CHILD_R</span><span class='op'>==</span><span class='st'>"0"</span>,<span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h3 id="plot-missing-values">Plot missing values:</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>aggr</span><span class='op'>(</span><span class='va'>dat1</span><span class='op'>[</span>,<span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>]</span>, col <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'green'</span>,<span class='st'>'red'</span><span class='op'>)</span>, numbers <span class='op'>=</span> <span class='cn'>TRUE</span>, sortVars <span class='op'>=</span> <span class='cn'>TRUE</span>, 
+     labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>dat1</span><span class='op'>)</span>, cex.axis <span class='op'>=</span> <span class='fl'>.5</span>, gap <span class='op'>=</span> <span class='fl'>2</span>, 
+     ylab <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Proportion in variable"</span>,<span class='st'>"Proportion in dataset"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="logistic-regression_files/figure-html5/unnamed-chunk-13-1.png" width="624" /></p>
+<pre><code>
+ Variables sorted by number of missings: 
+      Variable       Count
+  B_H1N1_AVOID 0.207201588
+  B_H1N1_TOUCH 0.204678197
+ CONCERN_LEVEL 0.203473207
+  B_H1N1_RCONT 0.203274738
+  B_H1N1_LARGE 0.203189680
+  B_H1N1_ANTIV 0.203132974
+  B_H1N1_HANDS 0.202098100
+  B_H1N1_FMASK 0.201360930
+   VACC_SEAS_F 0.003997732
+   VACC_H1N1_F 0.000000000</code></pre>
+</div>
+<h3 id="base-model">Base model</h3>
+<p>The following is a list of all the possible explanations variable for vaccinations and we did a logistic regression.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>model0</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>B_H1N1_ANTIV</span> <span class='op'>+</span> <span class='va'>B_H1N1_AVOID</span> <span class='op'>+</span> <span class='va'>B_H1N1_FMASK</span><span class='op'>+</span> <span class='va'>B_H1N1_HANDS</span><span class='op'>+</span> <span class='va'>B_H1N1_LARGE</span><span class='op'>+</span> <span class='va'>B_H1N1_RCONT</span><span class='op'>+</span> <span class='va'>B_H1N1_TOUCH</span><span class='op'>+</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>CHRONIC_MED_F</span> <span class='op'>+</span> <span class='va'>HEALTH_WORKER_F</span> <span class='op'>+</span> <span class='va'>MARITAL</span><span class='op'>+</span> <span class='va'>SEX_I</span> <span class='op'>+</span> <span class='va'>HH_CHILD_R</span><span class='op'>+</span> <span class='va'>N_ADULT_R</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>blr_regress</span><span class='op'>(</span><span class='va'>model0</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                               Model Overview                                
+----------------------------------------------------------------------------
+Data Set       Resp Var     Obs.    Df. Model    Df. Residual    Convergence 
+----------------------------------------------------------------------------
+  data      VACC_H1N1_F    48950      48949         48925           TRUE     
+----------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0             37926             1             11024   
+--------------------------------------------------------
+
+                      Maximum Likelihood Estimates                        
+-------------------------------------------------------------------------
+    Parameter         DF    Estimate    Std. Error    z value     Pr(&gt;|z|) 
+-------------------------------------------------------------------------
+   (Intercept)        1     -2.0238        0.0958    -21.1286      0.0000 
+ B_H1N1_ANTIVYes      1      0.2249        0.0531      4.2353      0.0000 
+ B_H1N1_AVOIDYes      1     -0.0066        0.0309     -0.2126      0.8317 
+ B_H1N1_FMASKYes      1      0.2376        0.0454      5.2330      0.0000 
+ B_H1N1_HANDSYes      1      0.1874        0.0389      4.8127      0.0000 
+ B_H1N1_LARGEYes      1     -0.0767        0.0317     -2.4198      0.0155 
+ B_H1N1_RCONTYes      1     -0.1177        0.0323     -3.6497       3e-04 
+ B_H1N1_TOUCHYes      1      0.0837        0.0301      2.7769      0.0055 
+  CONCERN_LEVEL1      1      0.1653        0.0466      3.5515       4e-04 
+  CONCERN_LEVEL2      1      0.4280        0.0457      9.3574      0.0000 
+  CONCERN_LEVEL3      1      0.6492        0.0510     12.7190      0.0000 
+    KNOW_H1N11        1     -0.2401        0.0516     -4.6550      0.0000 
+    KNOW_H1N12        1      0.3009        0.0255     11.7908      0.0000 
+     DOCREC1          1     -0.3930        0.0751     -5.2338      0.0000 
+     DOCREC2          1     -1.0211        0.0847    -12.0508      0.0000 
+     DOCREC3          1      1.2236        0.0902     13.5617      0.0000 
+     DOCREC4          1      1.2981        0.0767     16.9266      0.0000 
+ CHRONIC_MED_FYes     1      0.3219        0.0266     12.1048      0.0000 
+HEALTH_WORKER_FYes    1      0.9243        0.0341     27.0934      0.0000 
+MARITALNot Married    1     -0.1835        0.0322     -5.6921      0.0000 
+    SEX_IMale         1      0.1459        0.0255      5.7112      0.0000 
+    HH_CHILD_R        1     -0.1410        0.0278     -5.0794      0.0000 
+    N_ADULT_R2        1     -0.0429        0.0367     -1.1695      0.2422 
+    N_ADULT_R3        1     -0.1603        0.0473     -3.3912       7e-04 
+    N_ADULT_R4        1     -0.1914        0.0662     -2.8905      0.0038 
+-------------------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.7664          Somers&#39; D        0.5332   
+% Discordant          0.2333          Gamma            0.5331   
+% Tied                3e-04           Tau-a            0.1860   
+Pairs               418096224         c                0.7665   
+---------------------------------------------------------------</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_model_fit_stats</span><span class='op'>(</span><span class='va'>model0</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                               Model Fit Statistics                                 
+-----------------------------------------------------------------------------------
+Log-Lik Intercept Only:     -39033.108    Log-Lik Full Model:            -21883.399 
+Deviance(48925):             43766.798    LR(24):                         34299.418 
+                                          Prob &gt; LR:                          0.000 
+MCFadden&#39;s R2                    0.439    McFadden&#39;s Adj R2:                  0.439 
+ML (Cox-Snell) R2:               0.385    Cragg-Uhler(Nagelkerke) R2:         0.575 
+McKelvey &amp; Zavoina&#39;s R2:         0.231    Efron&#39;s R2:                         0.186 
+Count R2:                        0.798    Adj Count R2:                       0.103 
+BIC:                         44036.762    AIC:                            43816.798 
+-----------------------------------------------------------------------------------</code></pre>
+</div>
+<p>It can be seen that the current AIC is 43816.19. Next, we will try to select variable to fit the model by Stepwise.</p>
+<h3 id="collinearity-diagnostics">collinearity diagnostics</h3>
+<p>VIF that exceed 10 are often regarded as indicating multicollinearity, but in weaker models values above 2.5 may be a cause for concern. In our model, it seem all the explanatory varialbe is fine</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_coll_diag</span><span class='op'>(</span><span class='va'>model0</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>** We also see reports on goodness-of-fit statistics and criteria such as AIC, BIC, Deviance, which can be used for model selection under certain conditions. **</p>
+<p>But the first thing we did was to use Stepwise in the Blorr package to select the predictor most fit the model.Build regression model from a set of candidate predictor variables by removing predictors based on akaike information criterion, in a stepwise manner until there is no variable left to remove any more.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_step_aic_backward</span><span class='op'>(</span><span class='va'>model0</span>, details <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Backward Elimination Method 
+---------------------------
+
+Candidate Terms: 
+
+1 . B_H1N1_ANTIV 
+2 . B_H1N1_AVOID 
+3 . B_H1N1_FMASK 
+4 . B_H1N1_HANDS 
+5 . B_H1N1_LARGE 
+6 . B_H1N1_RCONT 
+7 . B_H1N1_TOUCH 
+8 . CONCERN_LEVEL 
+9 . KNOW_H1N1 
+10 . DOCREC 
+11 . CHRONIC_MED_F 
+12 . HEALTH_WORKER_F 
+13 . MARITAL 
+14 . SEX_I 
+15 . HH_CHILD_R 
+16 . N_ADULT_R 
+
+ Step 0: AIC = 43816.8 
+ VACC_H1N1_F ~ B_H1N1_ANTIV + B_H1N1_AVOID + B_H1N1_FMASK + B_H1N1_HANDS + B_H1N1_LARGE + B_H1N1_RCONT + B_H1N1_TOUCH + CONCERN_LEVEL + KNOW_H1N1 + DOCREC + CHRONIC_MED_F + HEALTH_WORKER_F + MARITAL + SEX_I + HH_CHILD_R + N_ADULT_R 
+
+------------------------------------------------------------
+Variable           DF       AIC          BIC       Deviance  
+------------------------------------------------------------
+B_H1N1_AVOID       1     43814.843    44026.008    43766.843 
+B_H1N1_LARGE       1     43820.665    44031.830    43772.665 
+B_H1N1_TOUCH       1     43822.536    44033.701    43774.536 
+B_H1N1_RCONT       1     43828.154    44039.320    43780.154 
+N_ADULT_R          1     43828.996    44022.564    43784.996 
+B_H1N1_ANTIV       1     43832.422    44043.587    43784.422 
+B_H1N1_HANDS       1     43838.299    44049.464    43790.299 
+HH_CHILD_R         1     43840.786    44051.952    43792.786 
+B_H1N1_FMASK       1     43841.779    44052.945    43793.779 
+SEX_I              1     43847.365    44058.531    43799.365 
+MARITAL            1     43847.476    44058.641    43799.476 
+CHRONIC_MED_F      1     43959.296    44170.462    43911.296 
+KNOW_H1N1          1     44003.376    44205.743    43957.376 
+CONCERN_LEVEL      1     44050.436    44244.004    44006.436 
+HEALTH_WORKER_F    1     44524.798    44735.963    44476.798 
+DOCREC             1     48946.258    49131.028    48904.258 
+------------------------------------------------------------
+
+
+x B_H1N1_AVOID 
+
+
+  Step 1 : AIC = 43814.84 
+ VACC_H1N1_F ~ B_H1N1_ANTIV + B_H1N1_FMASK + B_H1N1_HANDS + B_H1N1_LARGE + B_H1N1_RCONT + B_H1N1_TOUCH + CONCERN_LEVEL + KNOW_H1N1 + DOCREC + CHRONIC_MED_F + HEALTH_WORKER_F + MARITAL + SEX_I + HH_CHILD_R + N_ADULT_R 
+
+------------------------------------------------------------
+Variable           DF       AIC          BIC       Deviance  
+------------------------------------------------------------
+B_H1N1_LARGE       1     43818.814    44021.180    43772.814 
+B_H1N1_TOUCH       1     43820.612    44022.979    43774.612 
+B_H1N1_RCONT       1     43826.384    44028.751    43780.384 
+N_ADULT_R          1     43827.040    44011.810    43785.040 
+B_H1N1_ANTIV       1     43830.459    44032.826    43784.459 
+B_H1N1_HANDS       1     43836.790    44039.157    43790.790 
+HH_CHILD_R         1     43838.895    44041.262    43792.895 
+B_H1N1_FMASK       1     43839.831    44042.198    43793.831 
+MARITAL            1     43845.483    44047.850    43799.483 
+SEX_I              1     43845.571    44047.938    43799.571 
+CHRONIC_MED_F      1     43957.307    44159.674    43911.307 
+KNOW_H1N1          1     44001.499    44195.067    43957.499 
+CONCERN_LEVEL      1     44049.061    44233.831    44007.061 
+HEALTH_WORKER_F    1     44525.056    44727.423    44479.056 
+DOCREC             1     48945.038    49121.009    48905.038 
+------------------------------------------------------------
+
+No more variables to be removed.
+
+Variables Removed: 
+
+- B_H1N1_AVOID 
+
+
+Final Model Output 
+------------------
+
+                               Model Overview                                
+----------------------------------------------------------------------------
+Data Set       Resp Var     Obs.    Df. Model    Df. Residual    Convergence 
+----------------------------------------------------------------------------
+  data      VACC_H1N1_F    48950      48949         48926           TRUE     
+----------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0             37926             1             11024   
+--------------------------------------------------------
+
+                      Maximum Likelihood Estimates                        
+-------------------------------------------------------------------------
+    Parameter         DF    Estimate    Std. Error    z value     Pr(&gt;|z|) 
+-------------------------------------------------------------------------
+   (Intercept)        1     -2.0257        0.0954    -21.2417      0.0000 
+ B_H1N1_ANTIVYes      1      0.2248        0.0531      4.2344      0.0000 
+ B_H1N1_FMASKYes      1      0.2376        0.0454      5.2337      0.0000 
+ B_H1N1_HANDSYes      1      0.1858        0.0383      4.8566      0.0000 
+ B_H1N1_LARGEYes      1     -0.0772        0.0316     -2.4410      0.0146 
+ B_H1N1_RCONTYes      1     -0.1182        0.0322     -3.6746       2e-04 
+ B_H1N1_TOUCHYes      1      0.0825        0.0297      2.7825      0.0054 
+  CONCERN_LEVEL1      1      0.1647        0.0465      3.5451       4e-04 
+  CONCERN_LEVEL2      1      0.4272        0.0456      9.3760      0.0000 
+  CONCERN_LEVEL3      1      0.6484        0.0509     12.7334      0.0000 
+    KNOW_H1N11        1     -0.2396        0.0515     -4.6501      0.0000 
+    KNOW_H1N12        1      0.3008        0.0255     11.7891      0.0000 
+     DOCREC1          1     -0.3930        0.0751     -5.2335      0.0000 
+     DOCREC2          1     -1.0211        0.0847    -12.0510      0.0000 
+     DOCREC3          1      1.2235        0.0902     13.5603      0.0000 
+     DOCREC4          1      1.2980        0.0767     16.9255      0.0000 
+ CHRONIC_MED_FYes     1      0.3218        0.0266     12.1033      0.0000 
+HEALTH_WORKER_FYes    1      0.9246        0.0341     27.1359      0.0000 
+MARITALNot Married    1     -0.1833        0.0322     -5.6887      0.0000 
+    SEX_IMale         1      0.1461        0.0255      5.7253      0.0000 
+    HH_CHILD_R        1     -0.1411        0.0277     -5.0856      0.0000 
+    N_ADULT_R2        1     -0.0430        0.0367     -1.1712      0.2415 
+    N_ADULT_R3        1     -0.1604        0.0473     -3.3927       7e-04 
+    N_ADULT_R4        1     -0.1914        0.0662     -2.8895      0.0039 
+-------------------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.7663          Somers&#39; D        0.5333   
+% Discordant          0.2333          Gamma            0.5331   
+% Tied                4e-04           Tau-a            0.1860   
+Pairs               418096224         c                0.7665   
+---------------------------------------------------------------</code></pre>
+<pre><code>
+            Backward Elimination Summary             
+---------------------------------------------------
+Variable           AIC          BIC       Deviance  
+---------------------------------------------------
+Full Model      43816.798    44036.762    43766.798 
+B_H1N1_AVOID    43814.843    44026.008    43766.843 
+---------------------------------------------------</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_step_aic_forward</span><span class='op'>(</span><span class='va'>model2</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_step_p_backward</span><span class='op'>(</span><span class='va'>model2</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h3 id="model-selection">3.3 Model Selection</h3>
+<p>However, we found that AIC had no change after step wise, which proved that this method was not applicable to our variable. So the next part I will do is to select model begin with our domain knowledge in H1N1 vaccination.</p>
+<p>The model selection process will involve fitting several candidate models until we run into the one that’s closest to the “true” model. At every comparison, candidate models will be evaluated with respect to specific asymptotic criteria (to be explained). We’ll start off with a very simple model。</p>
+<p>We also see reports on goodness-of-fit statistics and criteria such as AIC, BIC, Deviance, which can be used for model selection under certain conditions. The obvious next steps are to add more predictors into the model and see whether the fit improves.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>model</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> , data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>model2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='fu'>blr_multi_model_fit_stats</span><span class='op'>(</span><span class='va'>model</span>,<span class='va'>model2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                               Measures    Model 1    Model 2
+loglik_null      Log-Lik Intercept Only -39033.108 -39033.108
+loglik_model         Log-Lik Full Model -28720.426 -24173.572
+m_deviance                     Deviance  57440.852  48347.144
+lr_ratio                             LR  20625.364  29719.071
+lr_pval                       Prob &gt; LR      0.000      0.000
+mcfadden                  MCFadden&#39;s R2      0.264      0.381
+adj_mcfadden          McFadden&#39;s Adj R2      0.264      0.380
+m_aic                 ML (Cox-Snell) R2  57448.852  48367.144
+cox_snell    Cragg-Uhler(Nagelkerke) R2      0.254      0.344
+m_bic           McKelvey &amp; Zavoina&#39;s R2  57484.598  48455.908
+mckelvey                     Efron&#39;s R2      0.026      0.198
+effron                         Count R2      0.015      0.163
+nagelkerke                 Adj Count R2      0.379      0.514
+count_r2                            AIC      0.787      0.793
+count_adj                           BIC      0.000      0.075</code></pre>
+</div>
+<h3 id="select-behavior-variable-to-continue-build-explanatory-model">Select Behavior Variable to Continue Build Explanatory Model</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>gfit1a</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>B_H1N1_ANTIV</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>gfit1b</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>B_H1N1_ANTIV</span><span class='op'>+</span><span class='va'>B_H1N1_AVOID</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>gfit1c</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>B_H1N1_ANTIV</span> <span class='op'>+</span><span class='va'>B_H1N1_AVOID</span> <span class='op'>+</span><span class='va'>B_H1N1_FMASK</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>gfit1d</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>B_H1N1_ANTIV</span> <span class='op'>+</span><span class='va'>B_H1N1_AVOID</span> <span class='op'>+</span><span class='va'>B_H1N1_FMASK</span><span class='op'>+</span> <span class='va'>B_H1N1_HANDS</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='fu'>blr_multi_model_fit_stats</span><span class='op'>(</span><span class='va'>model2</span>, <span class='va'>gfit1a</span>, <span class='va'>gfit1b</span>,<span class='va'>gfit1c</span>,<span class='va'>gfit1d</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                               Measures    Model 1    Model 2
+loglik_null      Log-Lik Intercept Only -39033.108 -39033.108
+loglik_model         Log-Lik Full Model -24173.572 -24077.127
+m_deviance                     Deviance  48347.144  48154.254
+lr_ratio                             LR  29719.071  29911.962
+lr_pval                       Prob &gt; LR      0.000      0.000
+mcfadden                  MCFadden&#39;s R2      0.381      0.383
+adj_mcfadden          McFadden&#39;s Adj R2      0.380      0.383
+m_aic                 ML (Cox-Snell) R2  48367.144  48176.254
+cox_snell    Cragg-Uhler(Nagelkerke) R2      0.344      0.346
+m_bic           McKelvey &amp; Zavoina&#39;s R2  48455.908  48273.864
+mckelvey                     Efron&#39;s R2      0.198      0.199
+effron                         Count R2      0.163      0.163
+nagelkerke                 Adj Count R2      0.514      0.516
+count_r2                            AIC      0.793      0.793
+count_adj                           BIC      0.075      0.076
+                Model 3    Model 4    Model 5
+loglik_null  -39033.108 -39033.108 -39033.108
+loglik_model -23902.787 -23866.864 -23827.075
+m_deviance    47805.573  47733.729  47654.151
+lr_ratio      30260.643  30332.487  30412.065
+lr_pval           0.000      0.000      0.000
+mcfadden          0.388      0.389      0.390
+adj_mcfadden      0.387      0.388      0.389
+m_aic         47829.573  47759.729  47682.151
+cox_snell         0.349      0.349      0.350
+m_bic         47935.968  47874.984  47806.256
+mckelvey          0.199      0.200      0.201
+effron            0.163      0.164      0.164
+nagelkerke        0.521      0.522      0.523
+count_r2          0.794      0.794      0.795
+count_adj         0.079      0.077      0.081</code></pre>
+</div>
+<p>We found that the Behavior Varible had no significant effect on AIC, So I only kept ‘B_H1N1_ANTIV’ variable, which is define as indicator of taking anti-viral medications</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>gfit1f</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>B_H1N1_ANTIV</span><span class='op'>+</span><span class='va'>CHRONIC_MED_F</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>gfit1g</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>B_H1N1_ANTIV</span><span class='op'>+</span><span class='va'>CHRONIC_MED_F</span> <span class='op'>+</span><span class='va'>HEALTH_WORKER_F</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>blr_multi_model_fit_stats</span><span class='op'>(</span><span class='va'>gfit1a</span>, <span class='va'>gfit1f</span>,<span class='va'>gfit1g</span> <span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                               Measures    Model 1    Model 2
+loglik_null      Log-Lik Intercept Only -39033.108 -39033.108
+loglik_model         Log-Lik Full Model -24077.127 -23323.858
+m_deviance                     Deviance  48154.254  46647.716
+lr_ratio                             LR  29911.962  31418.499
+lr_pval                       Prob &gt; LR      0.000      0.000
+mcfadden                  MCFadden&#39;s R2      0.383      0.402
+adj_mcfadden          McFadden&#39;s Adj R2      0.383      0.402
+m_aic                 ML (Cox-Snell) R2  48176.254  46671.716
+cox_snell    Cragg-Uhler(Nagelkerke) R2      0.346      0.359
+m_bic           McKelvey &amp; Zavoina&#39;s R2  48273.864  46777.826
+mckelvey                     Efron&#39;s R2      0.199      0.203
+effron                         Count R2      0.163      0.166
+nagelkerke                 Adj Count R2      0.516      0.537
+count_r2                            AIC      0.793      0.795
+count_adj                           BIC      0.076      0.086
+                Model 3
+loglik_null  -39033.108
+loglik_model -22884.809
+m_deviance    45769.618
+lr_ratio      32296.598
+lr_pval           0.000
+mcfadden          0.414
+adj_mcfadden      0.413
+m_aic         45795.618
+cox_snell         0.367
+m_bic         45910.528
+mckelvey          0.222
+effron            0.180
+nagelkerke        0.549
+count_r2          0.796
+count_adj         0.089</code></pre>
+</div>
+<p>From above table, we can see that variable ‘CHRONIC_MED_F’ and variable ‘HEALTH_WORKER_F’ are fit to the explanatory table by the large decrease of AIC.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>gfit1h</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>B_H1N1_ANTIV</span><span class='op'>+</span><span class='va'>CHRONIC_MED_F</span> <span class='op'>+</span><span class='va'>HEALTH_WORKER_F</span> <span class='op'>+</span> <span class='va'>MARITAL</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>blr_multi_model_fit_stats</span><span class='op'>(</span><span class='va'>gfit1g</span>, <span class='va'>gfit1h</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                               Measures    Model 1    Model 2
+loglik_null      Log-Lik Intercept Only -39033.108 -39033.108
+loglik_model         Log-Lik Full Model -22884.809 -22322.996
+m_deviance                     Deviance  45769.618  44645.991
+lr_ratio                             LR  32296.598  33420.224
+lr_pval                       Prob &gt; LR      0.000      0.000
+mcfadden                  MCFadden&#39;s R2      0.414      0.428
+adj_mcfadden          McFadden&#39;s Adj R2      0.413      0.428
+m_aic                 ML (Cox-Snell) R2  45795.618  44673.991
+cox_snell    Cragg-Uhler(Nagelkerke) R2      0.367      0.377
+m_bic           McKelvey &amp; Zavoina&#39;s R2  45910.528  44797.405
+mckelvey                     Efron&#39;s R2      0.222      0.225
+effron                         Count R2      0.180      0.182
+nagelkerke                 Adj Count R2      0.549      0.564
+count_r2                            AIC      0.796      0.796
+count_adj                           BIC      0.089      0.091</code></pre>
+</div>
+<p><strong>From above table, we can see that variable ‘Marital’ is fit to the explanatory table by the large decrease of AIC.</strong></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>gfit1i</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>B_H1N1_ANTIV</span><span class='op'>+</span><span class='va'>CHRONIC_MED_F</span> <span class='op'>+</span><span class='va'>HEALTH_WORKER_F</span> <span class='op'>+</span> <span class='va'>MARITAL</span><span class='op'>+</span> <span class='va'>HH_CHILD_R</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>blr_multi_model_fit_stats</span><span class='op'>(</span><span class='va'>gfit1h</span>, <span class='va'>gfit1i</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                               Measures    Model 1    Model 2
+loglik_null      Log-Lik Intercept Only -39033.108 -39033.108
+loglik_model         Log-Lik Full Model -22322.996 -22299.160
+m_deviance                     Deviance  44645.991  44598.320
+lr_ratio                             LR  33420.224  33467.896
+lr_pval                       Prob &gt; LR      0.000      0.000
+mcfadden                  MCFadden&#39;s R2      0.428      0.429
+adj_mcfadden          McFadden&#39;s Adj R2      0.428      0.428
+m_aic                 ML (Cox-Snell) R2  44673.991  44628.320
+cox_snell    Cragg-Uhler(Nagelkerke) R2      0.377      0.378
+m_bic           McKelvey &amp; Zavoina&#39;s R2  44797.405  44760.544
+mckelvey                     Efron&#39;s R2      0.225      0.226
+effron                         Count R2      0.182      0.183
+nagelkerke                 Adj Count R2      0.564      0.564
+count_r2                            AIC      0.796      0.796
+count_adj                           BIC      0.091      0.095</code></pre>
+</div>
+<p><strong>After adding variable ‘HH_CHILE_R’, AIC did not show any significant decrease, so ‘HH_CHILE_R’ are determined not to fit this model</strong></p>
+<h3 id="n_adult_r">N_ADULT_R</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>gfit1j</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>B_H1N1_ANTIV</span><span class='op'>+</span><span class='va'>CHRONIC_MED_F</span> <span class='op'>+</span><span class='va'>HEALTH_WORKER_F</span> <span class='op'>+</span> <span class='va'>MARITAL</span><span class='op'>+</span> <span class='va'>N_ADULT_R</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>blr_multi_model_fit_stats</span><span class='op'>(</span><span class='va'>gfit1h</span>, <span class='va'>gfit1j</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                               Measures    Model 1    Model 2
+loglik_null      Log-Lik Intercept Only -39033.108 -39033.108
+loglik_model         Log-Lik Full Model -22322.996 -22305.967
+m_deviance                     Deviance  44645.991  44611.934
+lr_ratio                             LR  33420.224  33454.282
+lr_pval                       Prob &gt; LR      0.000      0.000
+mcfadden                  MCFadden&#39;s R2      0.428      0.429
+adj_mcfadden          McFadden&#39;s Adj R2      0.428      0.428
+m_aic                 ML (Cox-Snell) R2  44673.991  44645.934
+cox_snell    Cragg-Uhler(Nagelkerke) R2      0.377      0.378
+m_bic           McKelvey &amp; Zavoina&#39;s R2  44797.405  44795.788
+mckelvey                     Efron&#39;s R2      0.225      0.226
+effron                         Count R2      0.182      0.183
+nagelkerke                 Adj Count R2      0.564      0.564
+count_r2                            AIC      0.796      0.796
+count_adj                           BIC      0.091      0.092</code></pre>
+</div>
+<p><strong>After adding variable ‘N_ADULT_R’, AIC did not show any significant decrease, so ‘N_ADULT_R’ are determined not to fit this model</strong></p>
+<p>###SEX_I</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>gfit1k</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> <span class='va'>B_H1N1_ANTIV</span><span class='op'>+</span><span class='va'>CHRONIC_MED_F</span> <span class='op'>+</span><span class='va'>HEALTH_WORKER_F</span> <span class='op'>+</span> <span class='va'>MARITAL</span><span class='op'>+</span> <span class='va'>SEX_I</span>, data<span class='op'>=</span> <span class='va'>dat1</span>, family <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span>link <span class='op'>=</span> <span class='st'>'logit'</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>blr_multi_model_fit_stats</span><span class='op'>(</span><span class='va'>gfit1h</span>, <span class='va'>gfit1k</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                               Measures    Model 1    Model 2
+loglik_null      Log-Lik Intercept Only -39033.108 -39033.108
+loglik_model         Log-Lik Full Model -22322.996 -22310.047
+m_deviance                     Deviance  44645.991  44620.093
+lr_ratio                             LR  33420.224  33446.123
+lr_pval                       Prob &gt; LR      0.000      0.000
+mcfadden                  MCFadden&#39;s R2      0.428      0.428
+adj_mcfadden          McFadden&#39;s Adj R2      0.428      0.428
+m_aic                 ML (Cox-Snell) R2  44673.991  44650.093
+cox_snell    Cragg-Uhler(Nagelkerke) R2      0.377      0.378
+m_bic           McKelvey &amp; Zavoina&#39;s R2  44797.405  44782.322
+mckelvey                     Efron&#39;s R2      0.225      0.226
+effron                         Count R2      0.182      0.183
+nagelkerke                 Adj Count R2      0.564      0.564
+count_r2                            AIC      0.796      0.796
+count_adj                           BIC      0.091      0.092</code></pre>
+</div>
+<p><strong>After adding variable ‘SEX_I’, AIC did not show any significant decrease, so ‘SEX_I’ are determined not to fit this model</strong></p>
+<p>Although this AIC is still lower than original model0 we initially chose, we have evidence to prove that the variable we chose can better explain this model. so our best fit model so fat is gfit1h &lt;- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL, data= dat1, family = binomial(link = ‘logit’))</p>
+<h3 id="blorr-and-sjplot-package-exploration">3.4 ‘blorr’ and ‘sjPlot’ Package Exploration</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_regress</span><span class='op'>(</span><span class='va'>gfit1h</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                               Model Overview                                
+----------------------------------------------------------------------------
+Data Set       Resp Var     Obs.    Df. Model    Df. Residual    Convergence 
+----------------------------------------------------------------------------
+  data      VACC_H1N1_F    49775      49774         49761           TRUE     
+----------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0             38580             1             11195   
+--------------------------------------------------------
+
+                      Maximum Likelihood Estimates                        
+-------------------------------------------------------------------------
+    Parameter         DF    Estimate    Std. Error    z value     Pr(&gt;|z|) 
+-------------------------------------------------------------------------
+   (Intercept)        1     -1.9045        0.0819    -23.2461      0.0000 
+  CONCERN_LEVEL1      1      0.1770        0.0454      3.8969       1e-04 
+  CONCERN_LEVEL2      1      0.4399        0.0434     10.1253      0.0000 
+  CONCERN_LEVEL3      1      0.6585        0.0477     13.7952      0.0000 
+    KNOW_H1N11        1     -0.2424        0.0504     -4.8054      0.0000 
+    KNOW_H1N12        1      0.3155        0.0252     12.5380      0.0000 
+     DOCREC1          1     -0.4120        0.0726     -5.6722      0.0000 
+     DOCREC2          1     -1.0343        0.0824    -12.5586      0.0000 
+     DOCREC3          1      1.1940        0.0878     13.5957      0.0000 
+     DOCREC4          1      1.2756        0.0742     17.1960      0.0000 
+ B_H1N1_ANTIVYes      1      0.2087        0.0517      4.0396       1e-04 
+ CHRONIC_MED_FYes     1      0.3328        0.0260     12.7949      0.0000 
+HEALTH_WORKER_FYes    1      0.9189        0.0333     27.5567      0.0000 
+MARITALNot Married    1     -0.1523        0.0243     -6.2675      0.0000 
+-------------------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.7581          Somers&#39; D        0.5317   
+% Discordant          0.2318          Gamma            0.5263   
+% Tied                0.0101          Tau-a            0.1835   
+Pairs               431903100         c                0.7632   
+---------------------------------------------------------------</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_model_fit_stats</span><span class='op'>(</span><span class='va'>gfit1h</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                               Model Fit Statistics                                 
+-----------------------------------------------------------------------------------
+Log-Lik Intercept Only:     -39033.108    Log-Lik Full Model:            -22322.996 
+Deviance(49761):             44645.991    LR(13):                         33420.224 
+                                          Prob &gt; LR:                          0.000 
+MCFadden&#39;s R2                    0.428    McFadden&#39;s Adj R2:                  0.428 
+ML (Cox-Snell) R2:               0.377    Cragg-Uhler(Nagelkerke) R2:         0.564 
+McKelvey &amp; Zavoina&#39;s R2:         0.225    Efron&#39;s R2:                         0.182 
+Count R2:                        0.796    Adj Count R2:                       0.091 
+BIC:                         44797.405    AIC:                            44673.991 
+-----------------------------------------------------------------------------------</code></pre>
+</div>
+<h3 id="collinearity-diagnostics-1">collinearity diagnostics</h3>
+<p>VIF that <strong>exceed 10</strong> are often regarded as indicating multicollinearity, but in weaker models values <strong>above 2.5</strong> may be a cause for concern. In our model, it seem all the explanatory varialbe is fine.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_coll_diag</span><span class='op'>(</span><span class='va'>gfit1h</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Tolerance and Variance Inflation Factor
+---------------------------------------
+             Variable Tolerance      VIF
+1      CONCERN_LEVEL1 0.3956554 2.527452
+2      CONCERN_LEVEL2 0.3727496 2.682766
+3      CONCERN_LEVEL3 0.4896430 2.042304
+4          KNOW_H1N11 0.9160660 1.091624
+5          KNOW_H1N12 0.9083588 1.100887
+6             DOCREC1 0.1047972 9.542244
+7             DOCREC2 0.1805549 5.538481
+8             DOCREC3 0.4635360 2.157330
+9             DOCREC4 0.1482760 6.744178
+10    B_H1N1_ANTIVYes 0.9857712 1.014434
+11   CHRONIC_MED_FYes 0.9438335 1.059509
+12 HEALTH_WORKER_FYes 0.9576852 1.044184
+13 MARITALNot Married 0.9725132 1.028264
+
+
+Eigenvalue and Condition Index
+------------------------------
+   Eigenvalue Condition Index    intercept CONCERN_LEVEL1
+1  4.47595334        1.000000 4.103814e-05   4.498075e-05
+2  1.23668868        1.902447 5.166615e-06   4.387617e-04
+3  1.16556108        1.959635 7.281643e-07   5.958998e-05
+4  1.03000147        2.084605 2.005268e-08   7.686205e-05
+5  0.99793605        2.117832 2.431683e-07   1.651098e-04
+6  0.95699984        2.162653 4.731020e-08   8.808643e-04
+7  0.90884376        2.219209 1.418821e-07   2.330486e-05
+8  0.82382391        2.330910 3.177016e-07   5.130630e-04
+9  0.79995392        2.365431 4.955707e-06   8.192435e-07
+10 0.58797883        2.759065 1.252409e-05   1.522190e-05
+11 0.53513525        2.892085 1.913908e-06   2.921654e-06
+12 0.38847374        3.394392 1.752155e-04   3.576528e-04
+13 0.08052532        7.455496 1.386463e-03   8.537141e-03
+14 0.01212481       19.213450 4.103343e-02   6.287625e-04
+   CONCERN_LEVEL2 CONCERN_LEVEL3   KNOW_H1N11   KNOW_H1N12
+1    6.620711e-05   3.670524e-05 2.054797e-05 9.189276e-05
+2    1.750621e-05   3.167875e-04 2.533815e-04 9.763749e-05
+3    1.396407e-04   6.035886e-04 8.854450e-04 3.350935e-04
+4    3.443186e-04   2.408446e-04 1.492012e-05 5.011296e-08
+5    5.357656e-04   2.450998e-04 4.708721e-05 1.715065e-06
+6    8.182862e-04   3.330363e-05 4.149938e-04 6.388152e-05
+7    9.105413e-06   4.754821e-07 4.194479e-04 4.908061e-05
+8    4.959919e-06   1.559202e-03 1.291786e-04 1.745905e-04
+9    5.763945e-06   9.807733e-05 1.111088e-03 6.712639e-05
+10   1.356530e-05   2.143261e-05 3.638067e-04 1.324741e-03
+11   1.160403e-05   2.775875e-05 7.581818e-04 1.747545e-03
+12   6.213359e-04   5.874716e-04 1.230971e-04 3.011419e-03
+13   1.177621e-02   5.241067e-03 1.389484e-04 1.185941e-04
+14   8.265211e-04   3.415267e-04 3.586146e-05 2.599130e-05
+        DOCREC1      DOCREC2      DOCREC3      DOCREC4
+1  1.157297e-04 3.374155e-05 8.063685e-06 7.240256e-05
+2  5.660723e-04 5.561475e-06 3.962221e-05 1.558130e-03
+3  1.290438e-04 3.625470e-04 1.297413e-04 2.586889e-05
+4  2.270512e-04 2.211815e-03 6.957570e-04 3.036297e-07
+5  6.058565e-06 5.145264e-05 2.970165e-03 6.091922e-04
+6  2.687834e-04 6.498775e-04 6.096598e-04 4.237834e-06
+7  2.094081e-05 3.934063e-04 2.830208e-04 5.960346e-04
+8  3.274310e-04 6.793432e-05 3.626091e-05 1.823658e-03
+9  1.008630e-04 1.913592e-04 2.013493e-06 4.735430e-05
+10 9.304103e-05 2.028304e-04 2.274589e-05 7.628030e-04
+11 4.422238e-05 3.058448e-05 6.568671e-08 3.244664e-04
+12 4.707379e-04 1.731532e-04 3.803928e-05 4.940525e-04
+13 8.148647e-03 2.422029e-03 5.664855e-04 4.711567e-03
+14 9.792987e-02 2.402457e-02 5.580811e-03 4.447707e-02
+   B_H1N1_ANTIVYes CHRONIC_MED_FYes HEALTH_WORKER_FYes
+1     2.950855e-05     1.987093e-04       4.302490e-04
+2     2.407958e-04     1.484126e-04       2.456596e-03
+3     3.562514e-04     3.306972e-04       5.256532e-03
+4     5.529198e-04     3.877998e-04       4.626853e-04
+5     4.036926e-05     1.336634e-05       1.574600e-04
+6     3.694631e-04     7.757257e-05       7.643660e-04
+7     5.144970e-03     3.510143e-04       1.458814e-06
+8     9.643727e-04     3.136235e-04       1.878534e-03
+9     4.168956e-05     8.455634e-04       3.705783e-02
+10    6.345420e-05     8.979167e-03       8.790117e-03
+11    1.248638e-05     2.577916e-03       2.979031e-04
+12    3.668923e-05     7.529849e-04       7.025951e-06
+13    6.488497e-07     2.727236e-05       1.885855e-05
+14    2.944345e-07     1.510983e-05       1.197428e-05
+   MARITALNot Married
+1        8.977128e-03
+2        6.549090e-03
+3        3.376096e-03
+4        6.937633e-05
+5        1.876332e-06
+6        7.682279e-04
+7        1.981414e-03
+8        4.552646e-06
+9        1.070521e-03
+10       1.338774e-03
+11       2.968223e-01
+12       2.794646e-01
+13       1.686756e-02
+14       5.708095e-03</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_confusion_matrix</span><span class='op'>(</span><span class='va'>gfit1h</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Confusion Matrix and Statistics 
+
+          Reference
+Prediction     0     1
+         0 36127  7718
+         1  2453  3477
+
+                Accuracy : 0.7957 
+     No Information Rate : 0.7751 
+
+                   Kappa : 0.2965 
+
+McNemars&#39;s Test P-Value  : 0.0000 
+
+             Sensitivity : 0.3106 
+             Specificity : 0.9364 
+          Pos Pred Value : 0.5863 
+          Neg Pred Value : 0.8240 
+              Prevalence : 0.2249 
+          Detection Rate : 0.0699 
+    Detection Prevalence : 0.1191 
+       Balanced Accuracy : 0.6235 
+               Precision : 0.5863 
+                  Recall : 0.3106 
+
+        &#39;Positive&#39; Class : 1</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_test_hosmer_lemeshow</span><span class='op'>(</span><span class='va'>gfit1h</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>           Partition for the Hosmer &amp; Lemeshow Test            
+--------------------------------------------------------------
+                        def = 1                 def = 0        
+Group    Total    Observed    Expected    Observed    Expected 
+--------------------------------------------------------------
+  1      5001       356        335.68       4645      4665.32  
+  2      5043       411        455.13       4632      4587.87  
+  3      4913       468        519.45       4445      4393.55  
+  4      4980       556        596.27       4424      4383.73  
+  5      5291       710        718.25       4581      4572.75  
+  6      6115       942        979.04       5173      5135.96  
+  7      3539       667        680.75       2872      2858.25  
+  8      5048       1672      1495.66       3376      3552.34  
+  9      5083       2533      2368.37       2550      2714.63  
+ 10      4762       2880      3046.41       1882      1715.59  
+--------------------------------------------------------------
+
+     Goodness of Fit Test      
+------------------------------
+Chi-Square    DF    Pr &gt; ChiSq 
+------------------------------
+ 93.1307      8       0.0000   
+------------------------------</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_plot_diag_difdev</span><span class='op'>(</span><span class='va'>gfit1h</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="logistic-regression_files/figure-html5/unnamed-chunk-31-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>blr_plot_diag_difchisq</span><span class='op'>(</span><span class='va'>gfit1h</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="logistic-regression_files/figure-html5/unnamed-chunk-32-1.png" width="624" /></p>
+</div>
+<h3 id="model-interpretation">Model interpretation</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/Log.html'>exp</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/coef.html'>coef</a></span><span class='op'>(</span><span class='va'>gfit1h</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>       (Intercept)     CONCERN_LEVEL1     CONCERN_LEVEL2 
+         0.1488963          1.1936463          1.5525988 
+    CONCERN_LEVEL3         KNOW_H1N11         KNOW_H1N12 
+         1.9318415          0.7847801          1.3709536 
+           DOCREC1            DOCREC2            DOCREC3 
+         0.6622965          0.3554634          3.3002736 
+           DOCREC4    B_H1N1_ANTIVYes   CHRONIC_MED_FYes 
+         3.5810001          1.2321034          1.3948007 
+HEALTH_WORKER_FYes MARITALNot Married 
+         2.5064326          0.8587532 </code></pre>
+</div>
+<p>Concern_level :</p>
+<ul>
+<li>H1N1 vaccination probability is 119% higher in concern_level1(not very concerned about H1N1), compared to concern_level0(Not at all concerned about H1N1).</li>
+<li>H1N1 vaccination probability is 155% higher in concern_level2(somewhat concerned about H1N1), compared to concern_level0(Not at all concerned about H1N1).</li>
+<li>H1N1 vaccination probability is 193% higher in concern_level3(very concerned about H1N1), compared to concern_level0(Not at all concerned about H1N1).</li>
+</ul>
+<p>KNOW_H1N1:</p>
+<ul>
+<li><p>H1N1 vaccination probability is 78.47% lower in KNOW_H1N11(little knowledge about H1N1), compared to KNOW_H1N10(No knowledge about H1N1).</p></li>
+<li><p>H1N1 vaccination probability is 137% higher in KNOW_H1N12(a lot knowledge about H1N1), compared to KNOW_H1N10(No knowledge about H1N1).</p></li>
+</ul>
+<p>DOCREC:</p>
+<ul>
+<li><p>H1N1 vaccination probability is 66.23% lower in DOCREC1(DOCTORS RECOMMENDATION FOR NEITHER H1N1 NOR SEASONAL VACCINE), compared to DOCREC0(Doctors opinions don’t know)</p></li>
+<li><p>H1N1 vaccination probability is 35.54% lower in DOCREC1(DOCTORS RECOMMENDATION FOR NEITHER H1N1 NOR SEASONAL VACCINE), compared to DOCREC0(Doctors opinions don’t know)</p></li>
+<li><p>H1N1 vaccination probability is 330% higher in DOCREC1(DOCTORS RECOMMENDATION FOR NEITHER H1N1 NOR SEASONAL VACCINE), compared to DOCREC0(Doctors opinions don’t know)</p></li>
+<li><p>H1N1 vaccination probability is 358% higher in DOCREC1(DOCTORS RECOMMENDATION FOR NEITHER H1N1 NOR SEASONAL VACCINE), compared to DOCREC0(Doctors opinions don’t know)</p></li>
+</ul>
+<p>B_H1N1_ANTIV:</p>
+<ul>
+<li>H1N1 vaccination probability is 123% higher in B_H1N1_ANTIVYes(TAKING ANTIVIRAL MEDICATIONS), compared to B_H1N1_ANTIVNo</li>
+</ul>
+<p>CHRONIC_MED_F:</p>
+<ul>
+<li>H1N1 vaccination probability is 139% higher in CHRONIC_MED_FYes(having chronic medical condition), compared to CHRONIC_MED_FNo</li>
+</ul>
+<p>HEALTH_WORKER_F:</p>
+<ul>
+<li>H1N1 vaccination probability is 250% higher in HEALTH_WORKER_FYes(the person is a health worker), compared to HEALTH_WORKER_FNo</li>
+</ul>
+<p>MARITALNot Married:</p>
+<ul>
+<li>H1N1 vaccination probability is 86% lower in MARITAL-Not Married, compared to MARITAL-Married.</li>
+</ul>
+<h3 id="plot">Plot</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>plot_model</span><span class='op'>(</span><span class='va'>gfit1h</span>, 
+           show.values <span class='op'>=</span> <span class='cn'>TRUE</span>, value.offset <span class='op'>=</span> <span class='fl'>.3</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="logistic-regression_files/figure-html5/unnamed-chunk-34-1.png" width="624" /></p>
+</div>
+<h1 id="sketch-of-proposed-visualisation">4 Sketch of proposed visualisation</h1>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="photo/1.jpeg" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<ul>
+<li>The upper left corner provides the graph or information that the user chooses to see, such as odd ratio, test_hosmer_lemeshow,plot_diag_difdev, then the corresponding graph and the information appears on the right side to showcase</li>
+<li>The bottom left hand corner gives the user the option of selecting variable to see how that variable interprets/explain the model and then on the right hand side the message will show up.</li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
