@@ -799,7 +799,7 @@ User of the shiny app would be able to tune and explore the four different model
 
 1. Probst, P., Wright, M., & Boulesteix, A.-L. (2019). Hyperparameters and Tuning Strategies for Random Forest. https://arxiv.org/pdf/1804.03515.pdf
 2. Band, A. (2020b, May 23). How to find the optimal value of K in KNN? - Towards Data Science. Medium. https://towardsdatascience.com/how-to-find-the-optimal-value-of-k-in-knn-35d936e554eb#:%7E:text=The%20optimal%20K%20value%20usually,be%20aware%20of%20the%20outliers.
-3.Robin, X., Turck, N., Hainard, A., Tiberti, N., Lisacek, F., Sanchez, J. C., & Müller, M. (2011). pROC: an open-source package for R and S+ to analyze and compare ROC curves. BMC Bioinformatics, 12(1), 12. https://doi.org/10.1186/1471-2105-12-77
-4.Panchal, F. S., & Panchal, M. (2014). Review on Methods of Selecting Number of Hidden Nodes in Artificial Neural Network. International Journal of Computer Science and Mobile Computing, 3(11), 455–464. https://www.ijcsmc.com/docs/papers/November2014/V3I11201499a19.pdf
-5.Fridkin, V. (n.d.). Shrooming - Interactive mushroom edibility predictions with XGBoost. Https://Shiny.Rstudio.Com/. https://vfridkin.shinyapps.io/mushroom_app/
+3. Robin, X., Turck, N., Hainard, A., Tiberti, N., Lisacek, F., Sanchez, J. C., & Müller, M. (2011). pROC: an open-source package for R and S+ to analyze and compare ROC curves. BMC Bioinformatics, 12(1), 12. https://doi.org/10.1186/1471-2105-12-77
+4. Panchal, F. S., & Panchal, M. (2014). Review on Methods of Selecting Number of Hidden Nodes in Artificial Neural Network. International Journal of Computer Science and Mobile Computing, 3(11), 455–464. https://www.ijcsmc.com/docs/papers/November2014/V3I11201499a19.pdf
+5. Fridkin, V. (n.d.). Shrooming - Interactive mushroom edibility predictions with XGBoost. Https://Shiny.Rstudio.Com/. https://vfridkin.shinyapps.io/mushroom_app/
 6. Merlino, A. (2018). Machine Learning for Insurance Claims. Https://Www.Tychobra.Com/Posts/Claims-Ml/. https://tychobra.shinyapps.io/wc-pm-dashboard/
