@@ -1,23 +1,42 @@
-dis---
+---
 title: "Logistic Regression"
 description: |
-  A short description of the post.
+  Blow blog is my individual assignment and I am plan to build the explanatory model.
 author:
-  - name: Desmond LIM Pek Loong, HAI Dan, TAY Kai lin
-    url: https://example.com/norajones
+  - name:  HAI Dan
 date: 03-23-2021
 output:
   distill::distill_article:
     self_contained: false
 ---
 
+
+# 1. Overview
+## 1.1 Core Purpose of Dataviz Exercise
+- This makeover aims to visualise the insight of  **National 2009 H1N1 Flu Survey (NHFS)** after the analysis with the explanatory model method. This extensive dataset would not just allow us to perform descriptive analytics on how H1N1 vaccination rates vary in USA, but also allows me to derive medical insights about how a person’s individual attributes relate to the willingness of taken H1N1 vaccination. I try to express this response as a function of predictor variables, which are directly or indirectly related to the effect of taken vaccine. More importantly, I want to visualize the results by using the knowledge obtained from Visual Analytics and Application class. 
+- And at the same time, increasing the interaction with users through shiny applications. With the help of posters and shiny applications, I want to let users know the insight contain and hide in NHFS dataset.The purpose of an explanatory model is to explain rather than predict the outcome of taken vaccination, where the objective of explanation is the application of statistical inference in order to:
+1.identify predictor variables with statistically significant impact to the decision of taking H1N1 Flu Vaccination
+2.estimate the magnitude of impact of the significant predictors
+
+## 1.2 Literature review
+- Before doing this project, Prof. Kam recommended many very useful packages, so I will use a large number of **blorr packages** in the following paragraphs.Blorr Tools designed to make it easier for users, particularly beginner/intermediate R users to build logistic regression models. Includes comprehensive regression output, variable selection procedures, model validation techniques and a ‘shiny’ app for interactive model building. At the same time, I find the package 'jtools' and 'huxtable' by using the function 'summs', which have the similar function with blorr's 'blr_regress' , so I focus on using **blorr**. And in the end, I using the 'sjPlot' package to plot the insight graph on model's odd ratio. 'sjPlot' is the collection of plotting and table output functions for data visualization
+
+- At the same time,  a key consideration in the literature review is how to perform a good explanatory model. I review several article about building the explanatory model. Among those, I review a lot from the Dimitrios Tziotis[---] article. I also read many other articles and the second consultation with Prof Kam, and finally decided to interpret the result after I done the explanatory model.
+
+
+# 2.0 Interactivity
+- As for the interactivity of explaining model, I want to enable users to directly browse all statistics insight and odd ratio insight through shiny application. Interaction can be created by allowing the user to select the information they want in shiny app to click in the slider bar, such as the model's odd ratio, which will appear on the right side of the diagram and text explanation, that is, all the functions in the blorr package, I can reach the maximum interactivity by presenting shiny applications to users.
+
+# 3.0 Step-by-step Data Visualisation Preparation
+## 3.1 Installing and launching R packages
+A list of packages are required for this makeover exercise. This code chunk installs the required packages and loads them onto RStudio environment.
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
-```{r}
-packages = c('tidyverse','readr','ISLR')
+```{r, warning=FALSE, message=FALSE}
+packages = c('tidyverse','readr','ISLR','VIM', 'gridExtra','blorr','jtools','huxtable','boot','sjPlot')
 for (p in packages){
   if(!require(p, character.only = T)){
   install.packages(p)
@@ -27,135 +46,356 @@ for (p in packages){
 
 ```
 
-```{r}
+## 3.2 Data Preparation
+### 3.2.1 Share Code in the group project
+
+```{r,warning=FALSE, message=FALSE}
 H1N1 <- read_csv('data/H1N1_Final_dan_edit.csv')
 ```
-
-```{r}
-glimpse(H1N1)
-```
-
-
-
-
-```{r}
-# using purrr::map to find out the NA percentage for later use. We will only select the column with missing percentage lower than 50% to run my logistic 
-map(H1N1, ~mean(is.na(.)))
-```
-
-
-
-
 
 ```{r}
 #exclude the NA column in the target variable
 H1N1 <- H1N1 %>%
   filter(!is.na(VACC_H1N1_F))
-
-#double check how many NA in the target variable 
-H1N1 %>%
-  summarise(count = sum(is.na(VACC_H1N1_F)))
 ```
 
 ```{r}
-H1N1$VACC_H1N1_F <- ifelse(H1N1$VACC_H1N1_F=="Yes",1,0)
+names(H1N1)[names(H1N1) == 'CONCERN LEVEL'] <- "CONCERN_LEVEL"
 ```
 
 ```{r}
-# in case I mess up, I copy the database
-nH1N1 <- data.frame(H1N1)
+H1N1[H1N1 == '#N/A'] <- NA
 ```
-
-
-
-
-
-
 
 ```{r}
-# data modification, change all the category data with 'YES' 'NO' into 1, 0
-
-
-#target variable VACC_H1N1_F
-H1N1$VACC_H1N1_F <- ifelse(H1N1$VACC_H1N1_F=="Yes",1,0)
-
-
-# variable VACC_SEAS_F
-nH1N1$VACC_SEAS_F  <- nH1N1$VACC_SEAS_F %>%
-  replace_na('No') 
-nH1N1$VACC_SEAS_F  <- ifelse(nH1N1$VACC_SEAS_F =="Yes",1,0)
-
-# variable B_H1N1_ANTIV 
-nH1N1$B_H1N1_ANTIV  <- nH1N1$B_H1N1_ANTIV %>%
-  replace_na('No') 
-nH1N1$B_H1N1_ANTIV  <- ifelse(nH1N1$B_H1N1_ANTIV  =="Yes",1,0)
-
-# variable B_H1N1_AVOID
-nH1N1$B_H1N1_AVOID <- nH1N1$B_H1N1_AVOID %>%
-  replace_na('No')
-nH1N1$B_H1N1_AVOID <- ifelse(nH1N1$B_H1N1_AVOID == "Yes",1,0)
-
-# variable B_H1N1_FMASK 
-nH1N1$B_H1N1_FMASK <- nH1N1$B_H1N1_FMASK %>%
-  replace_na('No')
-nH1N1$B_H1N1_FMASK <- ifelse(nH1N1$B_H1N1_FMASK == "Yes",1,0)
-
-# variable B_H1N1_HANDS
-nH1N1$B_H1N1_HANDS <- nH1N1$B_H1N1_HANDS %>%
-  replace_na('No')
-nH1N1$B_H1N1_HANDS <- ifelse(nH1N1$B_H1N1_HANDS == "Yes",1,0)
-
-# variable B_H1N1_LARGE
-nH1N1$B_H1N1_LARGE <- nH1N1$B_H1N1_LARGE %>%
-  replace_na('No')
-nH1N1$B_H1N1_LARGE <- ifelse(nH1N1$B_H1N1_LARGE == "Yes",1,0)
-
-# variable B_H1N1_RCONT
-nH1N1$B_H1N1_RCONT <- nH1N1$B_H1N1_RCONT %>%
-  replace_na('No')
-nH1N1$B_H1N1_RCONT <- ifelse(nH1N1$B_H1N1_RCONT == "Yes",1,0)
-
-# variable B_H1N1_TOUCH
-nH1N1$B_H1N1_TOUCH <- nH1N1$B_H1N1_TOUCH %>%
-  replace_na('No')
-nH1N1$B_H1N1_TOUCH <- ifelse(nH1N1$B_H1N1_TOUCH == "Yes",1,0)
-
-# variable HEALTH_WORKER_F
-nH1N1$HEALTH_WORKER_F <- nH1N1$HEALTH_WORKER_F %>%
-  replace_na('No')
-nH1N1$HEALTH_WORKER_F <- ifelse(nH1N1$HEALTH_WORKER_F == 'Yes', 1,0)
-
-# variable MARITAL
-nH1N1$MARITAL <- nH1N1$MARITAL %>%
-  replace_na('Not Married')
-nH1N1$MARITAL <- ifelse(nH1N1$MARITAL == 'Married', 1,0)
-
-
+colMeans(is.na(H1N1))
 ```
 
-
+```{r}
+h1n1data <-H1N1 %>%
+  select(VACC_H1N1_F,
+                   VACC_SEAS_F,
+                   B_H1N1_ANTIV,
+                   B_H1N1_AVOID,
+                   B_H1N1_FMASK,
+                   B_H1N1_HANDS,
+                   B_H1N1_LARGE,
+                   B_H1N1_RCONT,
+                   B_H1N1_TOUCH,
+                   CONCERN_LEVEL,
+                   INT_H1N1,
+                   KNOW_H1N1,
+                   INT_SEAS,  
+                   DOCREC,
+                   CHRONIC_MED_F,
+                   CLOSE_UNDER6MO_F,         
+                   HEALTH_WORKER_F,
+                   PATIENT_CONTACT_F,
+                   AGEGRP,
+                   EDUCATION_COMP,
+                   HH_CHILD_R,
+                   INC_CAT1,
+                   MARITAL,
+                   RACEETH4_I,
+                   N_ADULT_R,
+                   SEX_I,
+                   STATE)
+```
 
 
 
 ```{r}
-# continue data modification, to replace the '#N/A' as 0, because replace_na cannot recognize it
+h1n1data <- transform(h1n1data,
+                   VACC_H1N1_F= as.factor(VACC_H1N1_F),
+                   VACC_SEAS_F= as.factor(VACC_SEAS_F),
+                   B_H1N1_ANTIV= as.factor(B_H1N1_ANTIV),
+                   B_H1N1_AVOID= as.factor(B_H1N1_AVOID),
+                   B_H1N1_FMASK= as.factor(B_H1N1_FMASK),
+                   B_H1N1_HANDS= as.factor(B_H1N1_HANDS),
+                   B_H1N1_LARGE= as.factor(B_H1N1_LARGE),
+                   B_H1N1_RCONT= as.factor(B_H1N1_RCONT),
+                   B_H1N1_TOUCH= as.factor(B_H1N1_TOUCH),
+                   CONCERN_LEVEL= as.factor(CONCERN_LEVEL),
+                   INT_H1N1= as.factor(INT_H1N1),
+                   KNOW_H1N1= as.factor(KNOW_H1N1),
+                   DOCREC= as.factor(DOCREC),
+                   CHRONIC_MED_F= as.factor(CHRONIC_MED_F),
+                   CLOSE_UNDER6MO_F= as.factor(CLOSE_UNDER6MO_F),
+                   HEALTH_WORKER_F= as.factor(HEALTH_WORKER_F),
+                   AGEGRP= as.factor(AGEGRP),
+                   EDUCATION_COMP= as.factor(EDUCATION_COMP),
+                   HH_CHILD_R= as.factor(HH_CHILD_R),
+                   INC_CAT1= as.factor(INC_CAT1),
+                   MARITAL= as.factor(MARITAL),
+                   RACEETH4_I= as.factor(RACEETH4_I),
+                   N_ADULT_R= as.factor(N_ADULT_R),
+                   SEX_I= as.factor(SEX_I),
+                   STATE= as.factor(STATE),
+                   PATIENT_CONTACT_F = as.factor(PATIENT_CONTACT_F),
+                   INT_SEAS = as.factor(INT_SEAS)
+                   )
+```
 
-#variable concern.level
-nH1N1$CONCERN.LEVEL[nH1N1$CONCERN.LEVEL == '#N/A'] <- 0
+```{r,warning=FALSE, message=FALSE}
+region <- read_csv("data/state_region.csv")
+h1n1data$state_recoded <- str_to_title(h1n1data$STATE)
+h1n1data <- left_join(h1n1data, region,
+                      by=c("state_recoded" = "State"))
+```
 
-#variable INT_H1N1
-nH1N1$INT_H1N1[nH1N1$INT_H1N1 == '#N/A'] <- 0
 
-#variable KNOW_H1N1
-nH1N1$KNOW_H1N1[nH1N1$KNOW_H1N1 == '#N/A'] <- 0
+```{r}
+glimpse(h1n1data)
+```
 
-#variable DOCREC, redesign it as original column of 'Doctor Recommendation for H1N1 vaccine', exclude other opinion as 0
-nH1N1$DOCREC[nH1N1$DOCREC == '#N/A'] <- 0
-nH1N1$DOCREC[nH1N1$DOCREC == '2' ] <- 0
-nH1N1$DOCREC[nH1N1$DOCREC == '3' ] <- 0
-nH1N1$DOCREC[nH1N1$DOCREC == '4' ] <- 0
+### 3.2.2 Building Explainatory Model
 
+In order to explain causal effects, we must rely on domain knowledge to isolate the variables that we consider impactful. Variables such as 'State' seem relevant but are simply too sparse to be of any use. Below code I remove it. 
+
+```{r}
+dat1 <- h1n1data[,-27]
+```
+
+Recode the target variable citizen who did take vaccine as value 1 and did not take vaccine as value 0.
+
+```{r}
+dat1$VACC_H1N1_F <- ifelse(dat1$VACC_H1N1_F=="Yes",1,0)
+dat1$HH_CHILD_R <- ifelse(dat1$HH_CHILD_R=="0",0,1)
+```
+
+### Plot missing values:
+
+```{r,warning=FALSE}
+
+aggr(dat1[,1:10], col = c('green','red'), numbers = TRUE, sortVars = TRUE, 
+     labels = names(dat1), cex.axis = .5, gap = 2, 
+     ylab = c("Proportion in variable","Proportion in dataset"))
+```
+
+
+### Base model
+
+The following is a list of all the possible explanations variable for vaccinations and we did a logistic regression.
+
+```{r}
+model0 <- glm(VACC_H1N1_F ~ B_H1N1_ANTIV + B_H1N1_AVOID + B_H1N1_FMASK+ B_H1N1_HANDS+ B_H1N1_LARGE+ B_H1N1_RCONT+ B_H1N1_TOUCH+ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + CHRONIC_MED_F + HEALTH_WORKER_F + MARITAL+ SEX_I + HH_CHILD_R+ N_ADULT_R, data= dat1, family = binomial(link = 'logit'))
+blr_regress(model0)
+blr_model_fit_stats(model0)
+```
+
+It can be seen that the current AIC is 43816.19. Next, we will try to select variable to fit the model by Stepwise.
+
+
+### collinearity diagnostics
+VIF that exceed 10 are often regarded as indicating multicollinearity, but in weaker models values above 2.5 may be a cause for concern. In our model, it seem all the explanatory varialbe is fine
+
+```{r, eval=FALSE}
+blr_coll_diag(model0)
+```
+
+** We also see reports on goodness-of-fit statistics and criteria such as AIC, BIC, Deviance, which can be used for model selection under certain conditions. **
+
+But the first thing we did was to use Stepwise in the Blorr package to select the predictor most fit the model.Build regression model from a set of candidate predictor variables by removing predictors based on akaike information criterion, in a stepwise manner until there is no variable left to remove any more.
+
+```{r}
+blr_step_aic_backward(model0, details = TRUE)
+```
+
+```{r, eval=FALSE}
+blr_step_aic_forward(model2)
+```
+
+```{r, eval=FALSE}
+blr_step_p_backward(model2)
+```
+
+
+### 3.3 Model Selection
+However, we found that AIC had no change after step wise, which proved that this method was not applicable to our variable. So the next part I will do is to select model begin with our domain knowledge in H1N1 vaccination.
+
+
+The model selection process will involve fitting several candidate models until we run into the one that’s closest to the “true” model. At every comparison, candidate models will be evaluated with respect to specific asymptotic criteria (to be explained).
+We’ll start off with a very simple model。
+
+We also see reports on goodness-of-fit statistics and criteria such as AIC, BIC, Deviance, which can be used for model selection under certain conditions.
+The obvious next steps are to add more predictors into the model and see whether the fit improves. 
+
+```{r}
+model <- glm(VACC_H1N1_F ~ CONCERN_LEVEL , data= dat1, family = binomial(link = 'logit'))
 
 ```
+
+
+```{r}
+model2 <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC, data= dat1, family = binomial(link = 'logit'))
+
+blr_multi_model_fit_stats(model,model2)
+```
+
+###   Select Behavior Variable to Continue Build Explanatory Model
+
+```{r}
+gfit1a = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV, data= dat1, family = binomial(link = 'logit'))
+gfit1b = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+B_H1N1_AVOID, data= dat1, family = binomial(link = 'logit'))
+gfit1c = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV +B_H1N1_AVOID +B_H1N1_FMASK, data= dat1, family = binomial(link = 'logit'))
+gfit1d = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV +B_H1N1_AVOID +B_H1N1_FMASK+ B_H1N1_HANDS, data= dat1, family = binomial(link = 'logit'))
+
+blr_multi_model_fit_stats(model2, gfit1a, gfit1b,gfit1c,gfit1d)
+```
+
+We found that the Behavior Varible had no significant effect on AIC, So I only kept 'B_H1N1_ANTIV' variable, which is define as indicator of taking anti-viral medications
+
+
+
+```{r}
+gfit1f <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F, data= dat1, family = binomial(link = 'logit'))
+gfit1g <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F, data= dat1, family = binomial(link = 'logit'))
+blr_multi_model_fit_stats(gfit1a, gfit1f,gfit1g )
+```
+
+
+From above table, we can see that variable 'CHRONIC_MED_F' and variable 'HEALTH_WORKER_F' are fit to the explanatory table by the large decrease of AIC.
+
+
+```{r}
+gfit1h <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL, data= dat1, family = binomial(link = 'logit'))
+blr_multi_model_fit_stats(gfit1g, gfit1h)
+```
+
+**From above table, we can see that variable 'Marital' is fit to the explanatory table by the large decrease of AIC.**
+
+
+```{r}
+gfit1i <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL+ HH_CHILD_R, data= dat1, family = binomial(link = 'logit'))
+blr_multi_model_fit_stats(gfit1h, gfit1i)
+```
+
+**After adding variable 'HH_CHILE_R', AIC did not show any significant decrease, so 'HH_CHILE_R' are determined not to fit this model**
+
+
+### N_ADULT_R
+
+```{r}
+gfit1j <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL+ N_ADULT_R, data= dat1, family = binomial(link = 'logit'))
+blr_multi_model_fit_stats(gfit1h, gfit1j)
+```
+
+**After adding variable 'N_ADULT_R', AIC did not show any significant decrease, so 'N_ADULT_R' are determined not to fit this model**
+
+###SEX_I
+
+```{r}
+gfit1k <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL+ SEX_I, data= dat1, family = binomial(link = 'logit'))
+blr_multi_model_fit_stats(gfit1h, gfit1k)
+```
+
+
+**After adding variable 'SEX_I', AIC did not show any significant decrease, so 'SEX_I' are determined not to fit this model**
+
+Although this AIC is still lower than original model0 we initially chose, we have evidence to prove that the variable we chose can better explain this model. so our best fit model so fat is gfit1h <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL, data= dat1, family = binomial(link = 'logit'))
+
+
+### 3.4 'blorr' and 'sjPlot' Package Exploration
+```{r}
+blr_regress(gfit1h)
+blr_model_fit_stats(gfit1h)
+```
+
+
+
+### collinearity diagnostics
+VIF that **exceed 10** are often regarded as indicating multicollinearity, but in weaker models values **above 2.5** may be a cause for concern. In our model, it seem all the explanatory varialbe is fine.
+
+```{r}
+blr_coll_diag(gfit1h)
+```
+
+```{r}
+blr_confusion_matrix(gfit1h)
+```
+```{r}
+blr_test_hosmer_lemeshow(gfit1h)
+```
+
+
+```{r}
+blr_plot_diag_difdev(gfit1h)
+```
+
+```{r}
+blr_plot_diag_difchisq(gfit1h)
+```
+
+
+
+### Model interpretation
+
+
+
+
+```{r}
+exp(coef(gfit1h))
+```
+
+
+Concern_level :
+
+- H1N1 vaccination probability is 119% higher in concern_level1(not very concerned about H1N1), compared to concern_level0(Not at all concerned about H1N1). 
+- H1N1 vaccination probability is 155% higher in concern_level2(somewhat concerned about H1N1), compared to concern_level0(Not at all concerned about H1N1). 
+- H1N1 vaccination probability is 193% higher in concern_level3(very concerned about H1N1), compared to concern_level0(Not at all concerned about H1N1).
+
+KNOW_H1N1:
+
+- H1N1 vaccination probability is 78.47% lower in KNOW_H1N11(little knowledge about H1N1), compared to KNOW_H1N10(No knowledge about H1N1).
+
+- H1N1 vaccination probability is 137% higher in KNOW_H1N12(a lot knowledge about H1N1), compared to KNOW_H1N10(No knowledge about H1N1).
+
+DOCREC:
+
+- H1N1 vaccination probability is 66.23% lower in DOCREC1(DOCTORS RECOMMENDATION FOR NEITHER H1N1 NOR SEASONAL VACCINE), compared to DOCREC0(Doctors opinions don't know)
+
+- H1N1 vaccination probability is 35.54% lower in DOCREC1(DOCTORS RECOMMENDATION FOR NEITHER H1N1 NOR SEASONAL VACCINE), compared to DOCREC0(Doctors opinions don't know)
+
+- H1N1 vaccination probability is 330% higher in DOCREC1(DOCTORS RECOMMENDATION FOR NEITHER H1N1 NOR SEASONAL VACCINE), compared to DOCREC0(Doctors opinions don't know)
+
+- H1N1 vaccination probability is 358% higher in DOCREC1(DOCTORS RECOMMENDATION FOR NEITHER H1N1 NOR SEASONAL VACCINE), compared to DOCREC0(Doctors opinions don't know)
+
+B_H1N1_ANTIV:
+
+- H1N1 vaccination probability is 123% higher in B_H1N1_ANTIVYes(TAKING ANTIVIRAL MEDICATIONS), compared to B_H1N1_ANTIVNo
+
+CHRONIC_MED_F:
+
+- H1N1 vaccination probability is 139% higher in CHRONIC_MED_FYes(having chronic medical condition), compared to CHRONIC_MED_FNo
+
+HEALTH_WORKER_F:
+
+- H1N1 vaccination probability is 250% higher in HEALTH_WORKER_FYes(the person is a health worker), compared to HEALTH_WORKER_FNo
+
+MARITALNot Married:
+
+- H1N1 vaccination probability is 86% lower in MARITAL-Not Married, compared to MARITAL-Married.
+
+
+
+### Plot
+
+```{r}
+plot_model(gfit1h, 
+           show.values = TRUE, value.offset = .3)
+```
+
+# 4 Sketch of proposed visualisation
+
+```{r, out.width='100%',fig.align='center', echo=FALSE}
+knitr::include_graphics('photo/1.jpeg')
+```
+
+- The upper left corner provides the graph or information that the user chooses to see, such as odd ratio, test_hosmer_lemeshow,plot_diag_difdev, then the corresponding graph and the information appears on the right side to showcase
+- The bottom left hand corner gives the user the option of selecting variable to see how that variable interprets/explain the model and then on the right hand side the message will show up.
+
+ 
+
+
 
 
