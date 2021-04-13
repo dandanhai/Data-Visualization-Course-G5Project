@@ -12,22 +12,23 @@ output:
     self_contained: false
 ---
 
-
 # 1. Overview
 ## 1.1 Core Purpose of Dataviz Exercise
-- This makeover aims to visualise the insight of  **National 2009 H1N1 Flu Survey (NHFS)** after the analysis with the explanatory model method. This extensive dataset would not just allow us to perform descriptive analytics on how H1N1 vaccination rates vary in USA, but also allows me to derive medical insights about how a person’s individual attributes relate to the willingness of taken H1N1 vaccination. I try to express this response as a function of predictor variables, which are directly or indirectly related to the effect of taken vaccine. More importantly, I want to visualize the results by using the knowledge obtained from Visual Analytics and Application class. 
-- And at the same time, increasing the interaction with users through shiny applications. With the help of posters and shiny applications, I want to let users know the insight contain and hide in NHFS dataset.The purpose of an explanatory model is to explain rather than predict the outcome of taken vaccination, where the objective of explanation is the application of statistical inference in order to:
-1.identify predictor variables with statistically significant impact to the decision of taking H1N1 Flu Vaccination
-2.estimate the magnitude of impact of the significant predictors
+- This makeover aims to visualise the insight of  **National 2009 H1N1 Flu Survey (NHFS)** after the analysis with the explanatory model method. This extensive dataset would not just allow us to perform descriptive analytics on how H1N1 vaccination rates vary in USA, but also allows me to derive medical insights about how a person’s individual attributes relate to the willingness of taken H1N1 vaccination. I try to explain this insight by using predictor variables, which are directly or indirectly related to the effect of US citizen taken vaccine. More importantly, I want to visualize the results by using the knowledge obtained from Visual Analytics and Application class. 
+
+* And at the same time, increasing the interaction with users through shiny applications. With the help of posters and shiny applications, I want to let users know the insight contain and hide in NHFS dataset.The purpose of an explanatory model is to explain rather than predict the outcome of taken vaccination, where the objective of explanation is the application of statistical inference in order to:<br/> 
+  + identify predictor variables with statistically significant impact to the decision of taking H1N1 Flu Vaccination 
+  + estimate the magnitude of impact of the significant predictors toward the vanccine decision
+  + visualize the insight by using shinny application
 
 ## 1.2 Literature review
-- Before doing this project, Prof. Kam recommended many very useful packages, so I will use a large number of **blorr packages** in the following paragraphs.Blorr Tools designed to make it easier for users, particularly beginner/intermediate R users to build logistic regression models. Includes comprehensive regression output, variable selection procedures, model validation techniques and a ‘shiny’ app for interactive model building. At the same time, I find the package 'jtools' and 'huxtable' by using the function 'summs', which have the similar function with blorr's 'blr_regress' , so I focus on using **blorr**. And in the end, I using the 'sjPlot' package to plot the insight graph on model's odd ratio. 'sjPlot' is the collection of plotting and table output functions for data visualization
+- Before doing this project, Prof. Kam recommended many very useful packages, so I will use a large number of **blorr packages** in the following paragraphs.Blorr Tools designed to make it easier for users, particularly beginner/intermediate R users to build logistic regression models. At the same time, I find the package 'jtools' and 'huxtable' by using the function 'summs', which have the similar function with blorr's 'blr_regress', but after the comparison, I decide to focus on using **blorr**. And in the end, I using the 'sjPlot' package to plot the insight graph on model's odd ratio. 'sjPlot' is the collection of plotting and table output functions for data visualization
 
-- At the same time,  a key consideration in the literature review is how to perform a good explanatory model. I review several article about building the explanatory model. Among those, I review a lot from the <a href='https://towardsdatascience.com/explanatory-modeling-f1f890d11ac2'>Dimitrios Tziotis</a> article. I also read many other articles and the second consultation with Prof Kam, and finally decided to interpret the result after I done the explanatory model.
+- At the same time,  a key consideration in the literature review is how to perform a good explanatory model. I review several article about building the explanatory model. Among those, I review a lot from the <a href='https://towardsdatascience.com/explanatory-modeling-f1f890d11ac2'>Dimitrios Tziotis</a> article. I also read many other articles and after the second consultation with Prof Kam, and I finally decided to interpret the result with the explanatory model and my teammate will building the predictive model.
 
 
 # 2.0 Interactivity
-- As for the interactivity of explaining model, I want to enable users to directly browse all statistics insight and odd ratio insight through shiny application. Interaction can be created by allowing the user to select the information they want in shiny app to click in the slider bar, such as the model's odd ratio, which will appear on the right side of the diagram and text explanation, that is, all the functions in the blorr package, I can reach the maximum interactivity by presenting shiny applications to users.
+- As for the interactivity of explaining model, I want to enable users to directly browse all statistics insight and odd ratio insight through shiny application. Interaction can be created by allowing the user to select the information they want in shiny app to click in the slider bar, such as the model's odd ratio, which will appear on the right side of the diagram and text explanation, that is, all the functions in the 'blorr' package, I can reach the maximum interactivity through shiny applications with synchronized plot and sidebar selection to users.
 
 # 3.0 Step-by-step Data Visualisation Preparation
 ## 3.1 Installing and launching R packages
@@ -50,6 +51,7 @@ for (p in packages){
 
 ## 3.2 Data Preparation
 ### 3.2.1 Share Code in the group project
+we share the same basic modification code to raw data with our teammate to make sure the consistent on each of our own. 
 
 ```{r,warning=FALSE, message=FALSE}
 H1N1 <- read_csv('data/H1N1_Final_dan_edit.csv')
@@ -177,15 +179,17 @@ aggr(dat1[,1:10], col = c('green','red'), numbers = TRUE, sortVars = TRUE,
 
 **Base model**
 
-The following is a list of all the possible explanations variable for vaccinations and we did a logistic regression.
+The following is a list of all the important explanations variable for vaccinations and we did a logistic regression.
 
 ```{r}
-model0 <- glm(VACC_H1N1_F ~ B_H1N1_ANTIV + B_H1N1_AVOID + B_H1N1_FMASK+ B_H1N1_HANDS+ B_H1N1_LARGE+ B_H1N1_RCONT+ B_H1N1_TOUCH+ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + CHRONIC_MED_F + HEALTH_WORKER_F + MARITAL+ SEX_I + HH_CHILD_R+ N_ADULT_R, data= dat1, family = binomial(link = 'logit'))
+model0 <- glm(VACC_H1N1_F ~ B_H1N1_ANTIV + B_H1N1_AVOID + B_H1N1_FMASK+ B_H1N1_HANDS+ B_H1N1_LARGE+ 
+                B_H1N1_RCONT+ B_H1N1_TOUCH+ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + CHRONIC_MED_F + HEALTH_WORKER_F + 
+                MARITAL+ SEX_I + HH_CHILD_R+ N_ADULT_R, data= dat1, family = binomial(link = 'logit'))
 blr_regress(model0)
 blr_model_fit_stats(model0)
 ```
 
-It can be seen that the current AIC is 43816.19. Next, we will try to select variable to fit the model by Stepwise.
+It can be seen that the current AIC is 43816.19. Next, we will try to select variable to fit the model by using Stepwise method. But before that, let us check the collinearity issue in our predictor.
 
 
 **collinearity diagnostics**
@@ -213,7 +217,7 @@ blr_step_p_backward(model2)
 
 
 ## 3.3 Model Selection
-However, we found that AIC had no change after step wise, which proved that this method was not applicable to our variable. So the next part I will do is to select model begin with our domain knowledge in H1N1 vaccination.
+However, we found that AIC had no change after step wise, which proved that this method was not applicable to our case. So the next part I will do is to select model begin with our domain knowledge in considering H1N1 vaccination.
 
 
 The model selection process will involve fitting several candidate models until we run into the one that’s closest to the “true” model. At every comparison, candidate models will be evaluated with respect to specific asymptotic criteria (to be explained).
@@ -231,6 +235,7 @@ Variable  | Definition
 CONCERN LEVEL  0-3  | 0 is not at all,	1 is not very,	2 is somewhat concerned,	3 is very concern
 KNOW_H1N1   0-2    | 0 no knowledge,	1 a little knowledge,	2 a lot
 DOCREC 0-4 | 0 is unknown	and refused, 1 neither vaccine is recommend, 2 seasonal,3 H1N1,	4 both	
+
 ```{r}
 model <- glm(VACC_H1N1_F ~ CONCERN_LEVEL , data= dat1, family = binomial(link = 'logit'))
 
@@ -246,21 +251,27 @@ blr_multi_model_fit_stats(model,model2)
 ### 3.3.2 Select Behavior Variable to Continue Build Explanatory Model
 
 ```{r}
-gfit1a = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV, data= dat1, family = binomial(link = 'logit'))
-gfit1b = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+B_H1N1_AVOID, data= dat1, family = binomial(link = 'logit'))
-gfit1c = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV +B_H1N1_AVOID +B_H1N1_FMASK, data= dat1, family = binomial(link = 'logit'))
-gfit1d = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV +B_H1N1_AVOID +B_H1N1_FMASK+ B_H1N1_HANDS, data= dat1, family = binomial(link = 'logit'))
+gfit1a = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + 
+               DOCREC + B_H1N1_ANTIV, data= dat1, family = binomial(link = 'logit'))
+gfit1b = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + 
+               DOCREC + B_H1N1_ANTIV+B_H1N1_AVOID, data= dat1, family = binomial(link = 'logit'))
+gfit1c = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + 
+               DOCREC + B_H1N1_ANTIV +B_H1N1_AVOID +B_H1N1_FMASK, data= dat1, family = binomial(link = 'logit'))
+gfit1d = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC 
+             + B_H1N1_ANTIV +B_H1N1_AVOID +B_H1N1_FMASK+ B_H1N1_HANDS, data= dat1, family = binomial(link = 'logit'))
 
 blr_multi_model_fit_stats(model2, gfit1a, gfit1b,gfit1c,gfit1d)
 ```
 
-We found that the Behavior Varible had no significant effect on AIC, So I only kept 'B_H1N1_ANTIV' variable, which is define as indicator of taking anti-viral medications
+We found that the Behavior Varible had no significant effect on AIC after insert the first variable 'B_H1N1_ANTIV', which define as indicator of taking anti-viral medications. After consideration, I only kept 'B_H1N1_ANTIV' variable.
 
-
+**continue adding predictor**
 
 ```{r}
-gfit1f <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F, data= dat1, family = binomial(link = 'logit'))
-gfit1g <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F, data= dat1, family = binomial(link = 'logit'))
+gfit1f <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + 
+                DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F, data= dat1, family = binomial(link = 'logit'))
+gfit1g <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + 
+                DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F, data= dat1, family = binomial(link = 'logit'))
 blr_multi_model_fit_stats(gfit1a, gfit1f,gfit1g )
 ```
 
@@ -269,15 +280,17 @@ From above table, we can see that variable 'CHRONIC_MED_F' and variable 'HEALTH_
 
 
 ```{r}
-gfit1h <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL, data= dat1, family = binomial(link = 'logit'))
+gfit1h <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + 
+                B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL, data= dat1, family = binomial(link = 'logit'))
 blr_multi_model_fit_stats(gfit1g, gfit1h)
 ```
 
-**From above table, we can see that variable 'Marital' is fit to the explanatory table by the large decrease of AIC.**
+**From above table, we can see that variable 'Marital' is fit to the explanatory table by a large decrease of AIC.**
 
 
 ```{r}
-gfit1i <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL+ HH_CHILD_R, data= dat1, family = binomial(link = 'logit'))
+gfit1i <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+
+                CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL+ HH_CHILD_R, data= dat1, family = binomial(link = 'logit'))
 blr_multi_model_fit_stats(gfit1h, gfit1i)
 ```
 
@@ -287,7 +300,8 @@ blr_multi_model_fit_stats(gfit1h, gfit1i)
 **N_ADULT_R**
 
 ```{r}
-gfit1j <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL+ N_ADULT_R, data= dat1, family = binomial(link = 'logit'))
+gfit1j <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+
+                CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL+ N_ADULT_R, data= dat1, family = binomial(link = 'logit'))
 blr_multi_model_fit_stats(gfit1h, gfit1j)
 ```
 
@@ -296,14 +310,15 @@ blr_multi_model_fit_stats(gfit1h, gfit1j)
 **SEX_I**
 
 ```{r}
-gfit1k <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL+ SEX_I, data= dat1, family = binomial(link = 'logit'))
+gfit1k <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +
+                HEALTH_WORKER_F + MARITAL+ SEX_I, data= dat1, family = binomial(link = 'logit'))
 blr_multi_model_fit_stats(gfit1h, gfit1k)
 ```
 
 
 **After adding variable 'SEX_I', AIC did not show any significant decrease, so 'SEX_I' are determined not to fit this model**
 
-Although this AIC is still lower than original model0 we initially chose, we have evidence to prove that the variable we chose can better explain this model. so our best fit model so fat is gfit1h <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL, data= dat1, family = binomial(link = 'logit'))
+Although this AIC is still lower than original 'model0' that we initially chose, we have evidence to prove that the variable we chose can better explain this model. **The reason why AIC of Model0 is lower than AIC of the current model is most likely missing value in behavior variable. When R runs logistic regression, these rows containing missing value are automatically ignored, thus reducing AIC. But current models are more convincing.** So our best fit model so fat is gfit1h <- glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC + B_H1N1_ANTIV+CHRONIC_MED_F +HEALTH_WORKER_F + MARITAL, data= dat1, family = binomial(link = 'logit'))
 
 
 ## 3.4 'blorr' and 'sjPlot' Package Exploration
@@ -314,21 +329,24 @@ blr_model_fit_stats(gfit1h)
 
 
 
-**collinearity diagnostics**
+**collinearity diagnostics on current model**
 VIF that **exceed 10** are often regarded as indicating multicollinearity, but in weaker models values **above 2.5** may be a cause for concern. In our model, it seem all the explanatory varialbe is fine.
 
 ```{r}
 blr_coll_diag(gfit1h)
 ```
 
+**confusion_matrix**
 ```{r}
 blr_confusion_matrix(gfit1h)
 ```
+
+**Hosmer lemeshow goodness of fit test**
 ```{r}
 blr_test_hosmer_lemeshow(gfit1h)
 ```
 
-
+**Diagnostics for detecting ill fitted observations**
 ```{r}
 blr_plot_diag_difdev(gfit1h)
 ```
