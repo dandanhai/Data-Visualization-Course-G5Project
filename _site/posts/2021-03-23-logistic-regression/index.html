@@ -117,7 +117,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["data/data.csv","data/H1N1 Edit.xlsx","data/H1N1_Final_dan_edit.csv","data/H1N1_Final.csv","data/H1N1_Kai Lin.xlsx","data/H1N1.csv","data/H1N1.xlsx","data/state_region.csv","logistic-regression_files/anchor-4.2.2/anchor.min.js","logistic-regression_files/bowser-1.9.3/bowser.min.js","logistic-regression_files/distill-2.2.21/template.v2.js","logistic-regression_files/figure-html5/unnamed-chunk-13-1.png","logistic-regression_files/figure-html5/unnamed-chunk-31-1.png","logistic-regression_files/figure-html5/unnamed-chunk-32-1.png","logistic-regression_files/figure-html5/unnamed-chunk-34-1.png","logistic-regression_files/jquery-1.11.3/jquery.min.js","logistic-regression_files/popper-2.6.0/popper.min.js","logistic-regression_files/tippy-6.2.7/tippy-bundle.umd.min.js","logistic-regression_files/tippy-6.2.7/tippy-light-border.css","logistic-regression_files/tippy-6.2.7/tippy.css","logistic-regression_files/tippy-6.2.7/tippy.umd.min.js","logistic-regression_files/webcomponents-2.0.0/webcomponents.js","photo/1.jpeg"]}
+  {"type":"character","attributes":{},"value":["data/H1N1_Final_dan_edit.csv","data/state_region.csv","logistic-regression_files/anchor-4.2.2/anchor.min.js","logistic-regression_files/bowser-1.9.3/bowser.min.js","logistic-regression_files/distill-2.2.21/template.v2.js","logistic-regression_files/figure-html5/unnamed-chunk-13-1.png","logistic-regression_files/figure-html5/unnamed-chunk-31-1.png","logistic-regression_files/figure-html5/unnamed-chunk-32-1.png","logistic-regression_files/figure-html5/unnamed-chunk-34-1.png","logistic-regression_files/jquery-1.11.3/jquery.min.js","logistic-regression_files/popper-2.6.0/popper.min.js","logistic-regression_files/tippy-6.2.7/tippy-bundle.umd.min.js","logistic-regression_files/tippy-6.2.7/tippy-light-border.css","logistic-regression_files/tippy-6.2.7/tippy.css","logistic-regression_files/tippy-6.2.7/tippy.umd.min.js","logistic-regression_files/webcomponents-2.0.0/webcomponents.js","photo/1.jpeg"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2117,7 +2117,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><a href="#building-explainatory-model">3.2.2 Building Explainatory Model</a></li>
 </ul></li>
 <li><a href="#model-selection">3.3 Model Selection</a><ul>
-<li><a href="#add-three-transfrom-varialbes">3.3.1 Add three transfrom varialbes</a></li>
+<li><a href="#add-three-transfrom-variables">3.3.1 Add three transfrom variables</a></li>
 <li><a href="#select-behavior-variable-to-continue-build-explanatory-model">3.3.2 Select Behavior Variable to Continue Build Explanatory Model</a></li>
 </ul></li>
 <li><a href="#blorr-and-sjplot-package-exploration">3.4 ‘blorr’ and ‘sjPlot’ Package Exploration</a></li>
@@ -2645,8 +2645,8 @@ B_H1N1_AVOID    43814.843    44026.008    43766.843
 <p>However, we found that AIC had no change after step wise, which proved that this method was not applicable to our case. So the next part I will do is to select model begin with our domain knowledge in considering H1N1 vaccination.</p>
 <p>The model selection process will involve fitting several candidate models until we run into the one that’s closest to the “true” model. At every comparison, candidate models will be evaluated with respect to specific asymptotic criteria (to be explained). We’ll start off with a very simple model。</p>
 <p>We also see reports on goodness-of-fit statistics and criteria such as AIC, BIC, Deviance, which can be used for model selection under certain conditions. The obvious next steps are to add more predictors into the model and see whether the fit improves.</p>
-<h3 id="add-three-transfrom-varialbes">3.3.1 Add three transfrom varialbes</h3>
-<p>there are three variable we combine and concatenate from original data set</p>
+<h3 id="add-three-transfrom-variables">3.3.1 Add three transfrom variables</h3>
+<p>There are three variables that we combine and concatenate from original raw data set. Below is the definition.</p>
 <table>
 <colgroup>
 <col style="width: 50%" />
@@ -2751,7 +2751,7 @@ nagelkerke        0.521      0.522      0.523
 count_r2          0.794      0.794      0.795
 count_adj         0.079      0.077      0.081</code></pre>
 </div>
-<p>We found that the Behavior Varible had no significant effect on AIC after insert the first variable ‘B_H1N1_ANTIV’, which define as indicator of taking anti-viral medications. After consideration, I only kept ‘B_H1N1_ANTIV’ variable.</p>
+<p><strong>We found that the Behavior Varible had no significant effect on AIC after insert the first variable ‘B_H1N1_ANTIV’, which define as indicator of taking anti-viral medications. After consideration, I only kept ‘B_H1N1_ANTIV’ variable.</strong></p>
 <p><strong>continue adding predictor</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2795,7 +2795,7 @@ nagelkerke        0.549
 count_r2          0.796
 count_adj         0.089</code></pre>
 </div>
-<p>From above table, we can see that variable ‘CHRONIC_MED_F’ and variable ‘HEALTH_WORKER_F’ are fit to the explanatory table by the large decrease of AIC.</p>
+<p><strong>From above table, we can see that variable ‘CHRONIC_MED_F’ and variable ‘HEALTH_WORKER_F’ are fit to the explanatory table by the large decrease of AIC.</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>gfit1h</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>VACC_H1N1_F</span> <span class='op'>~</span> <span class='va'>CONCERN_LEVEL</span> <span class='op'>+</span> <span class='va'>KNOW_H1N1</span> <span class='op'>+</span> <span class='va'>DOCREC</span> <span class='op'>+</span> 

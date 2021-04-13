@@ -226,9 +226,9 @@ We’ll start off with a very simple model。
 We also see reports on goodness-of-fit statistics and criteria such as AIC, BIC, Deviance, which can be used for model selection under certain conditions.
 The obvious next steps are to add more predictors into the model and see whether the fit improves. 
 
-### 3.3.1 Add three transfrom varialbes
+### 3.3.1 Add three transfrom variables
 
-there are three variable we combine and concatenate from original data set
+There are three variables that we combine and concatenate from original raw data set. Below is the definition.
 
 Variable  | Definition
 ------------- | -------------
@@ -263,7 +263,7 @@ gfit1d = glm(VACC_H1N1_F ~ CONCERN_LEVEL + KNOW_H1N1 + DOCREC
 blr_multi_model_fit_stats(model2, gfit1a, gfit1b,gfit1c,gfit1d)
 ```
 
-We found that the Behavior Varible had no significant effect on AIC after insert the first variable 'B_H1N1_ANTIV', which define as indicator of taking anti-viral medications. After consideration, I only kept 'B_H1N1_ANTIV' variable.
+**We found that the Behavior Varible had no significant effect on AIC after insert the first variable 'B_H1N1_ANTIV', which define as indicator of taking anti-viral medications. After consideration, I only kept 'B_H1N1_ANTIV' variable.**
 
 **continue adding predictor**
 
@@ -276,7 +276,7 @@ blr_multi_model_fit_stats(gfit1a, gfit1f,gfit1g )
 ```
 
 
-From above table, we can see that variable 'CHRONIC_MED_F' and variable 'HEALTH_WORKER_F' are fit to the explanatory table by the large decrease of AIC.
+**From above table, we can see that variable 'CHRONIC_MED_F' and variable 'HEALTH_WORKER_F' are fit to the explanatory table by the large decrease of AIC.**
 
 
 ```{r}
