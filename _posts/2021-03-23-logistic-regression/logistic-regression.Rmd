@@ -383,11 +383,11 @@ DOCREC:
 
 - H1N1 vaccination probability is 66.23% lower in DOCREC1(DOCTORS RECOMMENDATION FOR NEITHER H1N1 NOR SEASONAL VACCINE), compared to DOCREC0(Doctors opinions don't know)
 
-- H1N1 vaccination probability is 35.54% lower in DOCREC1(DOCTORS RECOMMENDATION FOR NEITHER H1N1 NOR SEASONAL VACCINE), compared to DOCREC0(Doctors opinions don't know)
+- H1N1 vaccination probability is 35.54% lower in DOCREC2(Doctors recommendation for seasonal), compared to DOCREC0(Doctors opinions don't know)
 
-- H1N1 vaccination probability is 330% higher in DOCREC1(DOCTORS RECOMMENDATION FOR NEITHER H1N1 NOR SEASONAL VACCINE), compared to DOCREC0(Doctors opinions don't know)
+- H1N1 vaccination probability is 330% higher in DOCREC3(Doctors recommendation for H1N1), compared to DOCREC0(Doctors opinions don't know)
 
-- H1N1 vaccination probability is 358% higher in DOCREC1(DOCTORS RECOMMENDATION FOR NEITHER H1N1 NOR SEASONAL VACCINE), compared to DOCREC0(Doctors opinions don't know)
+- H1N1 vaccination probability is 358% higher in DOCREC4(Doctors recommendation for both), compared to DOCREC0(Doctors opinions don't know)
 
 B_H1N1_ANTIV:
 
