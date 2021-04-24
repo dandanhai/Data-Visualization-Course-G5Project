@@ -8,6 +8,8 @@ author:
 date: 04-25-2021
 output:
   distill::distill_article:
+    toc: true
+    toc_depth: 4
     self_contained: false
 ---
 
@@ -17,6 +19,21 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 # User Guide – Vaccination Survey Analysis and Prediction with Shiny
+
+## 1. Strongly Agree and Agree That They Intend to Take The H1N1 Vaccine
+This tab show you the Choropleth map to show the distribution in US
+
+And if you click the botton show the defination on variables
+
+```{r, out.width='100%', fig.align='left'}
+knitr::include_graphics('picture/map.PNG')
+```
+
+It will pop up our variable dictionary
+
+```{r, out.width='100%', fig.align='left'}
+knitr::include_graphics('picture/variable_dictionary.PNG')
+```
 
 ## 2. Agree on Vaccine Distribution and Data Info
 Use this tab to do exploratory data analysis. 

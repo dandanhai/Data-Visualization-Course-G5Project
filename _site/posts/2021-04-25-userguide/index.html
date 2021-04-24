@@ -112,12 +112,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["User_Guide"]},{"type":"character","attributes":{},"value":["Welcome to the ISSS608 G5 User Guide. This user guide is designed to provide documentation for people who will use our shiny application"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Desmond LIM Pek Loong, HAI Dan, TAY Kai Lin"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["04-25-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["User_Guide"]},{"type":"character","attributes":{},"value":["Welcome to the ISSS608 G5 User Guide. This user guide is designed to provide documentation for people who will use our shiny application"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Desmond LIM Pek Loong, HAI Dan, TAY Kai Lin"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["04-25-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[4]},{"type":"logical","attributes":{},"value":[false]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["picture/data_table.png","picture/EM_0.png","picture/EM_1.png","picture/EM_2.png","picture/EM_3.png","picture/EM_4.png","picture/EM_5.png","picture/EM_6.png","picture/User Guide Prediction Tab II.png","picture/User Guide Prediction Tab III.png","picture/User Guide Prediction Tab IV.png","picture/User Guide Prediction Tab V.png","picture/User Guide Prediction Tab.png","picture/user_guide_0.PNG","picture/user_guide_1.PNG","userguide_files/anchor-4.2.2/anchor.min.js","userguide_files/bowser-1.9.3/bowser.min.js","userguide_files/distill-2.2.21/template.v2.js","userguide_files/jquery-1.11.3/jquery.min.js","userguide_files/popper-2.6.0/popper.min.js","userguide_files/tippy-6.2.7/tippy-bundle.umd.min.js","userguide_files/tippy-6.2.7/tippy-light-border.css","userguide_files/tippy-6.2.7/tippy.css","userguide_files/tippy-6.2.7/tippy.umd.min.js","userguide_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["picture/data_table.png","picture/EM_0.png","picture/EM_1.png","picture/EM_2.png","picture/EM_3.png","picture/EM_4.png","picture/EM_5.png","picture/EM_6.png","picture/Map.png","picture/User Guide Prediction Tab II.png","picture/User Guide Prediction Tab III.png","picture/User Guide Prediction Tab IV.png","picture/User Guide Prediction Tab V.png","picture/User Guide Prediction Tab.png","picture/user_guide_0.PNG","picture/user_guide_1.PNG","picture/variable_dictionary.png","userguide_files/anchor-4.2.2/anchor.min.js","userguide_files/bowser-1.9.3/bowser.min.js","userguide_files/distill-2.2.21/template.v2.js","userguide_files/jquery-1.11.3/jquery.min.js","userguide_files/popper-2.6.0/popper.min.js","userguide_files/tippy-6.2.7/tippy-bundle.umd.min.js","userguide_files/tippy-6.2.7/tippy-light-border.css","userguide_files/tippy-6.2.7/tippy.css","userguide_files/tippy-6.2.7/tippy.umd.min.js","userguide_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2101,7 +2101,34 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#user-guide-vaccination-survey-analysis-and-prediction-with-shiny">User Guide – Vaccination Survey Analysis and Prediction with Shiny</a><ul>
+<li><a href="#strongly-agree-and-agree-that-they-intend-to-take-the-h1n1-vaccine">1. Strongly Agree and Agree That They Intend to Take The H1N1 Vaccine</a></li>
+<li><a href="#agree-on-vaccine-distribution-and-data-info">2. Agree on Vaccine Distribution and Data Info</a></li>
+<li><a href="#distribution-of-survey">3.Distribution of Survey</a></li>
+<li><a href="#explanatory-model">4. Explanatory Model</a></li>
+<li><a href="#model-insight">4.1 Model Insight</a></li>
+<li><a href="#model-visualization">4.2 Model Visualization</a></li>
+<li><a href="#predictive-model">5. Predictive Model</a></li>
+<li><a href="#variable-important-tab">6. Variable Important Tab</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
 <h1 id="user-guide-vaccination-survey-analysis-and-prediction-with-shiny">User Guide – Vaccination Survey Analysis and Prediction with Shiny</h1>
+<h2 id="strongly-agree-and-agree-that-they-intend-to-take-the-h1n1-vaccine">1. Strongly Agree and Agree That They Intend to Take The H1N1 Vaccine</h2>
+<p>This tab show you the Choropleth map to show the distribution in US</p>
+<p>And if you click the botton show the defination on variables</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="picture/Map.png" width="100%" style="display: block; margin: auto auto auto 0;" /></p>
+</div>
+<p>It will pop up our variable dictionary</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="picture/variable_dictionary.png" width="100%" style="display: block; margin: auto auto auto 0;" /></p>
+</div>
 <h2 id="agree-on-vaccine-distribution-and-data-info">2. Agree on Vaccine Distribution and Data Info</h2>
 <p>Use this tab to do exploratory data analysis.</p>
 <div class="layout-chunk" data-layout="l-body">
