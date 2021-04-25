@@ -18,8 +18,8 @@ affiliation:
 main_findings:
   - "**VSAP: Let's get vaccinated**."
 logoleft_name: https&#58;//cdn.freelogovectors.net/wp-content/uploads/2020/01/smu-logo-singapore-management-university.png
-logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
-logocenter_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/qr-code-black.png
+logoright_name: https&#58;//encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX0k8A8sk-EyFOv9VitMhljqknF2NULAtbxaLd79SqrMRJ1XJlRBaG6VkD9p2MnOQDTac&usqp=CAU
+logocenter_name: https&#58;//static.reuters.com/resources/r/?m=02&d=20091119&t=2&i=14610118&r=2009-11-19T195632Z_01_BTRE5AI1JEG00_RTROPTP_0_FLU-USA&w=800
 output: 
   posterdown::posterdown_betterport:
     self_contained: false
