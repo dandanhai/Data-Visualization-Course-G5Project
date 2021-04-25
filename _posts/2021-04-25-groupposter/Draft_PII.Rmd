@@ -134,3 +134,9 @@ i) Additional user interaction features within the app: allowing modification i.
  
 ii) The application could be enhanced to allow the uploading of similar survey data to make use of EDA and modeling capabilities already present in the application.  
 
+```{r}
+library(pagedown)
+
+pagedown::chrome_print("Draft PII.html")
+```
+
