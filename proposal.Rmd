@@ -1,5 +1,5 @@
 ---
-title: "Proposal"
+title: "Group 5 Proposal"
 site: distill::distill_website
 listing: 
   posts:
@@ -7,4 +7,3 @@ listing:
     
 
 ---
-

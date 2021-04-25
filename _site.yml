@@ -9,7 +9,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Proposal"
-      href: group5proposal.html
+      href: proposal.html
     - text: "Poster"
       href: poster.html
     - text: "Application"
