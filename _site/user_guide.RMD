@@ -1,8 +1,0 @@
----
-title: "User Guide"
-site: distill::distill_website
-listing: 
-  posts:
-    - 2021-04-25-groupposter
----
-
