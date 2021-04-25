@@ -1,7 +1,7 @@
 ---
 title: "poster"
 description: |
-  A short description of the post.
+  With subsequent waves of Covid-19 infections recurring in multiple countries across the globe, vaccinationas the solution to this global pandemic.
 author:
   - name: Desmond LIM Pek Loong, HAI Dan, TAY Kai Lin
     url: {}
