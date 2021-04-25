@@ -17,23 +17,6 @@
     "input_file": {}
   },
   {
-    "path": "posts/2021-04-25-researchpaper/",
-    "title": "research_paper",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "Desmond LIM Pek Loong, HAI Dan, TAY Kai Lin",
-        "url": {}
-      }
-    ],
-    "date": "2021-04-25",
-    "categories": [],
-    "contents": "\n\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-04-25T17:28:47+08:00",
-    "input_file": "researchpaper.utf8.md"
-  },
-  {
     "path": "posts/2021-03-23-decision-tree/",
     "title": "Predictive Modeling of H1N1 Vaccination",
     "description": "The predictive modeling component of the Shiny application allows the user to customize and use different modeling techniques to build a predictive model to predict whether an individual would take the H1N1 vaccine.",
