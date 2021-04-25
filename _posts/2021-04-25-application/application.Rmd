@@ -1,0 +1,24 @@
+---
+title: "Application"
+description: |
+  Come and explore the shiny application with our team. 
+author:
+  - name: Desmond LIM Pek Loong, HAI Dan, TAY Kai Lin
+    url: {}
+date: 04-25-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Dear users:
+  If you want to browse the Application, please click the following link. It is recommended that you browse the User Guide before click the link. 
+
+## <a href="https://danhai.shinyapps.io/ISSS608_SHINY/">Let's get vaccinated. </a> 
+
+
