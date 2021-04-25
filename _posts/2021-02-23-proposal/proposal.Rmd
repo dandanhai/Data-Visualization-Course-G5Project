@@ -8,6 +8,8 @@ author:
 date: 02-23-2021
 output:
   distill::distill_article:
+    toc: true
+    toc_depth: 4
     self_contained: false
 ---
 
@@ -16,11 +18,15 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+# Vaccination Survey Analysis and Prediction 
+
 # Motivation of the project
 
 With the outbreak of Covid-19 and recent advancements in vaccination, an important task that public health authorities are looking into is increasing vaccination rates. This would entail looking into the factors that result in an individual undergoing vaccination and how to predict whether an individual would go for the vaccine. 
 
-Our team is interested in drawing a parallel to another 21st century pandemic, the H1N1 virus, which is also known as the swine flu, that broke out in 2009. An extensive study had been conducted by the USA known as the **National 2009 H1N1 Flu Survey (NHFS)** into the demographics, attitudes towards H1N1 virus or the vaccine, and whether an individual had taken the H1N1 vaccine. This extensive dataset would not just allow us to perform descriptive analytics on how H1N1 vaccination rates vary in USA, but also allows us to do predictions on whether an individual would go for the vaccine. 
+Our team is interested in research the increase vaccination rates and reduce vaccination hesitancy would entail looking into the factors that result in an individual undergoing vaccination. The project was motivated by a desire to firstly understand what the factors influencing an individual to go for vaccination and how assist authorities to improve vaccination rates. 
+
+An extensive study had been conducted by the USA known as the **National 2009 H1N1 Flu Survey (NHFS)** into the demographics, attitudes towards H1N1 virus or the vaccine, and whether an individual had taken the H1N1 vaccine. This extensive dataset would not just allow us to perform descriptive analytics on how H1N1 vaccination rates vary in USA, but also allows us to do predictions on whether an individual would go for the vaccine. 
 
 # Data Source
 
@@ -70,16 +76,33 @@ Page 2: Exploratory Data Analysis (EDA) - Density Plot & Multiplot
 knitr::include_graphics('picture/2.jpg')
 ```
 
-Page 3: Predictive Analytics
+Stacked Bar Chart and Mosaic Plot
+
+Bar charts visualize the distribution of variables and is suit- able for categorical variables (as compared to a histogram that is suitable for continuous variables). By using a stacked bar chart, the chart can be used to differentiate values in the dataset along another parameter.
+
+Mosaic plots are used to visualize categorical data and can be used to visualize the numbers from a contingency table. For this project, mosaic plots are plotted to visualize the relationship between key behavioural and risk factors with the binary target variabl
+
+
+```{r, out.width='60%', fig.align='left'}
+knitr::include_graphics('picture/5.1.png')
+```
+
+
+Page 3: Explanatory Model
+
+Bar chart
+
+a bar chart is selected to vi- sualize how the probabilities of vaccination vary according to different categories under each variable in the explana- tory model. From example, we found that H1N1 vaccina- tion probability is 119% higher for respondents with con- cern level1 (not very concerned about H1N1), compared to respondents with concern level0 (not at all concerned about H1N1).
+
+Dot Chart with Error bar
+
+A dot chart is selected to plot the odds ratio in a single plot as it is an appropriate and precise way to present the data visualization. Standard deviation and standard error are the characteristic of the population.
+
+Page 4: Predictive Model and Model Comparison
 
 ```{r, out.width='60%', fig.align='left'}
 knitr::include_graphics('picture/3.jpg')
 ```
-
-Page 4: Decision Tree/Random Forest
-
-Page 5: Model Comparison 
-
 
 # R Packages to be used
 
