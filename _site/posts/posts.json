@@ -1,5 +1,39 @@
 [
   {
+    "path": "posts/2021-04-25-poster/",
+    "title": "poster",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Desmond LIM Pek Loong, HAI Dan, TAY Kai Lin",
+        "url": {}
+      }
+    ],
+    "date": "2021-04-25",
+    "categories": [],
+    "contents": "\n\n\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-25T22:36:53+08:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2021-04-25-researchpaper/",
+    "title": "research_paper",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Desmond LIM Pek Loong, HAI Dan, TAY Kai Lin",
+        "url": {}
+      }
+    ],
+    "date": "2021-04-25",
+    "categories": [],
+    "contents": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-25T22:33:35+08:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-04-25-userguide/",
     "title": "User_Guide",
     "description": "Welcome to the ISSS608 G5 User Guide. This user guide is designed to provide documentation for people who will use our shiny application",

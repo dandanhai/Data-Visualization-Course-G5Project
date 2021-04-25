@@ -1,0 +1,23 @@
+---
+title: "poster"
+description: |
+  A short description of the post.
+author:
+  - name: Desmond LIM Pek Loong, HAI Dan, TAY Kai Lin
+    url: {}
+date: 04-25-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, out.width='100%', fig.align='center'}
+knitr::include_graphics('Pics/ISSS608_Grp5_VSAPS Poster-page-001.jpg')
+```
+
+
