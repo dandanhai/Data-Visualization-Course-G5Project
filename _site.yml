@@ -1,5 +1,6 @@
 name: "G5Project"
 title: "G5Project_ISSS602"
+theme: theme.css
 description: |
   G5Project_ISSS602
 output_dir: "_site"
