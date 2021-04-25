@@ -12,15 +12,15 @@
       "path": "index.html",
       "title": "G5Project_ISSS602",
       "author": [],
-      "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-25T17:28:47+08:00"
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-04-25T19:33:40+08:00"
     },
     {
       "path": "user_guide.html",
       "title": "User Guide",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-04-25T19:31:57+08:00"
+      "last_modified": "2021-04-25T19:33:33+08:00"
     }
   ],
   "collections": ["posts/posts.json"]
